@@ -1,0 +1,116 @@
+#details-container {
+    padding: 0 20px 0 20px;
+}
+#image_container li {
+    float: left;
+    display: inline-block;
+    position: relative;
+}
+.move-image {
+    cursor: move;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: #666;
+    color: #fff;
+    padding: 2px;
+    padding-left: 9px;
+    padding-right: 9px;
+    /* IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+
+    /* IE 5-7 */
+    filter: alpha(opacity=70);
+
+    /* Netscape */
+    -moz-opacity: 0.7;
+
+    /* Safari 1.x */
+    -khtml-opacity: 0.7;
+
+    /* Good browsers */
+    opacity: 0.7;
+}
+.move-image:hover{
+    color: #000;
+}
+
+.delete-image {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    background-color: #666;
+    color: #fff;
+    padding: 2px;
+    /* IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+
+    /* IE 5-7 */
+    filter: alpha(opacity=70);
+
+    /* Netscape */
+    -moz-opacity: 0.7;
+
+    /* Safari 1.x */
+    -khtml-opacity: 0.7;
+
+    /* Good browsers */
+    opacity: 0.7;
+}
+.delete-image:hover{
+    color: #000;
+}
+#thumb_preview{
+    display: none;
+}
+#thumb_preview img{
+    width: 240px;
+}
+
+.disabled { opacity: 0.5; }
+
+#thumb_preview img{
+    display: block;
+    -moz-box-shadow: 0 0 5px #ccc;
+    -webkit-box-shadow: 0 0 5px #ccc;
+    box-shadow: 0 0 5px #ccc;
+    border: solid #fff 5px;
+    background: #fff;
+}
+
+#image_container span{
+    display: block;
+    -moz-box-shadow: 0 0 5px #ccc;
+    -webkit-box-shadow: 0 0 5px #ccc;
+    box-shadow: 0 0 5px #ccc;
+    border: solid #fff 5px;
+    background: #fff;
+    width: 150px;
+    height: 120px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+#image_container img{
+    width: 150px;
+    height: 120px;
+}
+
+#detail-preview img{
+    display: block;
+    -moz-box-shadow: 0 0 5px #ccc;
+    -webkit-box-shadow: 0 0 5px #ccc;
+    box-shadow: 0 0 5px #ccc;
+    border: solid #fff 5px;
+    background: #fff;
+}
+.uploaded_progress{
+    width: 300px;
+    background-color: #ff9;
+    padding: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+}

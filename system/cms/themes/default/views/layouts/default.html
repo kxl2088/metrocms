@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ lang:code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ settings:site_name }} - {{ template:title }}</title>
+
+    {{ theme:partial name="metadata" }}    
+  </head>
+
+  <body>
+
+    {{ theme:partial name="navigation" }}
+
+    {{ if page:is_home }}
+        {{ theme:partial name="slides" }}
+    {{ endif }}
+
+    {{ template:body }}
+
+    {{ theme:partial name="footer" }}
+
+  </body>
+</html>

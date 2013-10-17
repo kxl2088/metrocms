@@ -1,0 +1,63 @@
+.left {
+    width: 50%;
+    float: left;
+}
+
+.left th {
+    width: 33%;
+    text-align: right;
+}
+
+.right {
+    float: left;
+    padding-left: 1%;
+    width: 49%;
+}
+
+.right .buttons {
+    padding-bottom: 32px;
+}
+
+ul.dynatree-container li ul li {
+    padding: 1px 0 1px 16px;
+}
+
+ul.dynatree-container {
+    border: none;
+}
+
+#tree2 {
+    margin-top: 10px;
+}
+
+.size {
+    position: absolute;
+    right: 51%;
+    color: #adadad;
+}
+
+.date {
+    position: absolute;
+    left: 28%;
+    color: #adadad;
+}
+
+.oversized .dynatree-title {
+    color: red;
+    font-weight: bold;
+}
+.dynatree-title .date{
+    margin-left: 225px;
+}
+
+.oversized span.dynatree-icon {
+    background-position: 0 -112px;
+}
+
+.saved-in-database span.dynatree-icon {
+    background: url('../img/saved-in-database.png') no-repeat;
+}
+
+h2 {
+    margin: 2px 0;
+}

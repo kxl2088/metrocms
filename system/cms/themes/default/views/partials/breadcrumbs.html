@@ -1,0 +1,3 @@
+{{ if template:has_breadcrumbs }}
+    <ol class="breadcrumb"><li>{{ url:anchor segments='home' title='Home' }}</li>{{ template:breadcrumbs }}{{ if uri }}<li>{{ url:anchor segments=uri title=name }}</li>{{ else }}<li class="active"><span class="current">{{ name }}</span></li>{{ endif }}{{ /template:breadcrumbs }}</ol>
+{{ endif }}

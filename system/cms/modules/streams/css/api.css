@@ -1,0 +1,4 @@
+.expired th, .expired td{
+    font-weight: bold;
+    color: red;
+}

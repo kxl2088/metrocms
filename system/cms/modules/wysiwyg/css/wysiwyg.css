@@ -1,0 +1,490 @@
+h3 span {
+	font-size: 12px;
+	padding-left: 10px;
+}
+select {
+    width: 20em;
+}
+input#insert_width {
+    border: 0;
+    font-weight: bold;
+    font-size: 12px;
+}
+#options-bar {
+    float: left;
+}
+#options-bar, #radio-group {
+    margin-bottom: 10px;
+}
+#radio-group {
+    margin-left: 15px;
+    float: right;
+	display: none;
+}
+#radio-group > label {
+	display: inline-block;
+	font-weight: bold;
+	font-size: 11px;
+	text-align: right;
+	padding-right: 10px;
+}
+#radio-group > .set {
+	display: inline-block;
+}
+#slider {
+    margin: 0 0 10px 0;
+    clear: both;
+	display: none;
+}
+#files_browser {
+	display: table;
+	width: 100%;
+	margin-bottom: 20px;
+	background-color: #FFFFFF;
+	color: #333333;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #CCCCCC;
+}
+#files_left_pane {
+	width: 20%;
+	display: table-cell;
+	border-right: 1px solid #CCCCCC;
+	padding: 10px 0;
+	vertical-align: top;
+}
+#files_panel ul,
+#files_panel ul li {
+        float: left;
+        display: inline-block;
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+#files_left_pane ul,
+#files_left_pane ul li,
+#files_toolbar ul,
+#files_toolbar ul li {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+#files_browser h3 {
+	margin: 0px;
+	padding: 3px 0 5px 0px;
+}
+#files_browser .table-list .metro-image {
+	cursor:pointer;
+}
+#files_left_pane h3 {
+	padding-left: 10px;
+}
+#files_right_pane {
+	width: 80%;
+	display: table-cell;
+	padding: 10px;
+}
+#files_right_pane > * {
+/*	display: none;*/
+}
+#files_left_pane li a {
+	padding: 10px;
+	background: transparent;
+	display: block;
+	text-decoration: none;
+	color: #666666;
+}
+#files_left_pane li a:hover {
+	background-color: #F4F4F4;
+	color: #333333;
+}
+#files_left_pane li.current a {
+	background-color: #3a4043;
+	color: #FFFFFF;
+}
+#files_left_pane li.upload a {
+	font-weight: bold;
+	margin-top: 10px;
+}
+#files_toolbar {
+	padding: 5px;
+}
+#files_toolbar ul li {
+	display: inline-block;
+	padding-left: 5px;
+}
+#files_toolbar label {
+	font-weight: bold;
+}
+/** Tables **/
+table {
+	width: 100%;
+	border-collapse: separate;
+}
+table th,
+table td {
+	padding: 4px;
+	vertical-align: middle;
+}
+
+table thead th {
+	font-weight: bold;
+	font-size: 11px;
+	border-bottom: 1px solid #c2c2c2;
+	text-align: left;
+}
+table thead th.checkboxes {
+	width: 18px;
+}
+table tfoot td {
+	padding: 0;
+	border-bottom: 1px solid #DDDDDD;
+}
+table tbody tr.alt {
+	background-color: #F3F3F3;
+}
+td p {
+    margin: 0;
+}
+td.image {
+    width: 42px;
+}
+td.name-description {
+    width: 160px;
+}
+td.meta {
+    width: 40px;
+    text-align: center;
+}
+#upload-box {
+	background-color: #ffffff;
+	border: 2px solid #c2c2c2;
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 7px;
+	width: 96%;
+	padding: 8px;
+	z-index: 99;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+#upload-box form label {
+	padding: 0 10px 0 0;
+	display: block;
+	float: left;
+	width: 100px;
+}
+#upload-box form li {
+	list-style: none;
+	padding-top: 10px;
+}
+#upload-box form textarea {
+	height: 100px;
+}
+#upload-box h2 span {
+	float: right;
+}
+span.close {
+	cursor: pointer;
+}
+
+input,
+button,
+select,
+textarea {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  display: inline-block;
+  height: 20px;
+  padding: 4px 6px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #555555;
+  vertical-align: middle;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+
+input,
+textarea,
+.uneditable-input {
+  width: 206px;
+}
+
+textarea {
+  height: auto;
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+     -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+       -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+          transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: rgba(82, 168, 236, 0.8);
+  outline: 0;
+  outline: thin dotted \9;
+  /* IE6-9 */
+
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+  *margin-top: 0;
+  line-height: normal;
+}
+
+input[type="file"],
+input[type="image"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+}
+
+select,
+input[type="file"] {
+  height: 30px;
+  /* In IE7, the height of the select element cannot be changed by height, only font-size */
+
+  *margin-top: 4px;
+  /* For IE7, add top margin to align select with labels */
+
+  line-height: 30px;
+}
+
+select {
+  width: 200px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+}
+
+select[multiple],
+select[size] {
+  height: auto;
+}
+
+select:focus,
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+.uneditable-input,
+.uneditable-textarea {
+  color: #999999;
+  cursor: not-allowed;
+  background-color: #fcfcfc;
+  border-color: #cccccc;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
+     -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
+          box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
+}
+
+.uneditable-input {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.uneditable-textarea {
+  width: auto;
+  height: auto;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #999999;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #999999;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.radio,
+.checkbox {
+  min-height: 20px;
+  padding-left: 20px;
+}
+
+.radio input[type="radio"],
+.checkbox input[type="checkbox"] {
+  float: left;
+  margin-left: -20px;
+}
+
+#insert_width{
+    background: none;
+    font-size: 10px;
+    width: 150px;
+    font-weight: normal;
+    border: 0px solid;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+span.required{
+    color: red;
+    font-size: 9px;
+    margin-top: -2px;
+}
+
+/**
+ * Tables
+ */
+
+table {
+  width: 100%;
+  padding: 0;
+  margin-bottom: 18px;
+  font-size: 13px;
+  border: 1px solid #ddd;
+	border-collapse: separate;
+	border-spacing: 0px;
+	*border-collapse: expression('separate', cellSpacing = '0px');
+  border-radius: 3px;
+}
+
+table th,
+table td {
+  padding: 10px;
+  line-height: 13.5px;
+  text-align: left;
+  vertical-align: middle;
+  border-top: 1px solid #ddd;
+}
+
+table th {
+  font-weight: 700;
+  border-top: none;
+}
+
+table tr {
+  background: #f5f5f5;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#f5f5f5), to(#f3f3f3));
+  background-image: -moz-linear-gradient(#f5f5f5, #f3f3f3);
+  background-image: -ms-linear-gradient(#f5f5f5, #f3f3f3);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f5f5f5), color-stop(100%, #f3f3f3));
+  background-image: -webkit-linear-gradient(#f5f5f5, #f3f3f3);
+  background-image: -o-linear-gradient(#f5f5f5, #f3f3f3);
+  background-image: linear-gradient(#f5f5f5, #f3f3f3);
+  background-repeat: repeat-x;
+  border: 1px solid #fff;
+  border-bottom: 1px solid #eee;
+}
+
+/* Added alt tables globally. To remove just chnage table to .table */
+
+table tbody tr:nth-child(odd) td {
+  background-color: #f9f9f9;
+}
+
+table tbody tr:hover td {
+  background-color: #f5f5f5;
+}
+
+table .actions {
+  text-align: right;
+}
+
+table .actions a {
+  display: block;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+#size-bar {
+    width: 100%;
+    margin-bottom: 10px;
+    float: left !important;
+}
+.panel_no_files{
+    
+    float: left;
+    width: 100%;
+}

@@ -1,0 +1,32 @@
+span.move-handle {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	float:right;
+	margin-right:6px;
+	width:18px;
+	height:18px;
+	cursor:move;
+	background:url('../../../themes/metrocms/img/icons/drag_handle.gif') no-repeat;
+}
+
+div.tabs fieldset ol li {
+	cursor:default;
+}
+
+div.type-checkbox label {
+	text-align:left;
+	font-weight:400;
+	width: auto !important;
+	margin: 0;
+}
+div.type-textarea textarea {
+        width: 97%;
+        margin-bottom: 10px;
+}
+.control-group i.icon-move{
+    cursor: move;
+    float: right;
+    vertical-align: top;
+    display: inline-block;
+}

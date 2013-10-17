@@ -1,0 +1,11 @@
+#item-multiple-list tr td{
+    background-color: #fff; 
+}
+a#add-item-multiple.add:before {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.8);
+    vertical-align: 0;
+    content: '+ ';
+}
