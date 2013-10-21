@@ -16,9 +16,7 @@
 	</script>
         <!-- styles -->
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('font-awesome.css', TRUE); ?>">
-        <!--[if IE 7]>
-                    <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('font-awesome-ie7.min.css', TRUE); ?>">
-        <![endif]-->
+
 	<?php echo $template['metadata']; ?>
 
 	<script type="text/javascript">
@@ -69,6 +67,11 @@
 		})(jQuery);
 	</script>
 
+        <!--[if lt IE 7 ]>
+	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+	<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+	<![endif]-->
+        
 	<?php echo Asset::css('admin/basic_layout.css'); ?>
         <?php echo Asset::css('bootstrap.min.css'); ?>
 </head>

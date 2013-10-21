@@ -65,6 +65,12 @@ class Plugin_Setcookie extends Plugin
 						'default' => '',// attribute defaults to this if no value is given
 						'required' => true,// is this attribute required?
 					),
+                                    'expires' => array(// this is the order-dir="asc" attribute
+						'type' => 'int',// Can be: slug, number, flag, text, array, any.
+						'flags' => '',// flags are predefined values like this.
+						'default' => '7',// attribute defaults to this if no value is given
+						'required' => false,// is this attribute required?
+					),
                                     ),
 				),
 			);
@@ -115,7 +121,8 @@ class Plugin_Setcookie extends Plugin
 	public function set_userdata()
 	{
             $name  = $this->attribute('name');  
-            $value  = $this->attribute('value');  
+            $value  = $this->attribute('value');
+            $expires  = $this->attribute('expires', 7);
             
             $userdata = $this->input->cookie('default_setcookie') ? unserialize($this->input->cookie('default_setcookie')) : false;
             
@@ -126,7 +133,7 @@ class Plugin_Setcookie extends Plugin
                     
                 $newdata =  array('error' => FALSE) + $setcookie + $userdata;  
 
-                setcookie('default_setcookie', serialize($newdata), time()+(60*60*24*365), '/');
+                setcookie('default_setcookie', serialize($newdata), time()+(60*60*24*$expires), '/');
             }
             
             return false;            

@@ -42,10 +42,13 @@ class Setcookie extends Public_Controller {
             {
                 $dataset[$key] = $value;                
             }
+            unset($dataset['expires']);            
+            $this->request['expires'] = $this->request['expires'] ? $this->request['expires'] : 365;
         }
         
+        
         $newdata =  array('error' => FALSE) + $dataset + $userdata;  
-        setcookie('default_setcookie', serialize($newdata), time()+(60*60*24*365), '/');                        
+        setcookie('default_setcookie', serialize($newdata), time()+(60*60*24*$this->request['expires']), '/');                        
         echo (json_encode(array('error' => FALSE) + $dataset + $userdata));
     }
 

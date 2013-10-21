@@ -14,9 +14,7 @@
         <link href="<?php echo base_url(); ?>assets/css/bootstrap-responsive.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>assets/css/jquery.gritter.css" rel="stylesheet">
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-awesome.css">
-        <!--[if IE 7]>
-        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-awesome-ie7.min.css">
-        <![endif]-->
+
         <link href="<?php echo base_url(); ?>assets/css/styles.css" rel="stylesheet">
         <!--[if IE 7]>
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/ie/ie7.css" />
@@ -28,7 +26,11 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/ie/ie9.css" />
         <![endif]-->
         <link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'> 
-        
+        <!--[if lt IE 7 ]>
+	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+	<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+	<![endif]-->
+                
         <!--fav and touch icons -->
         <link rel="shortcut png" href="<?php echo base_url(); ?>assets/images/favicon/favicon.png">
         <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/images/favicon/favicon.ico">

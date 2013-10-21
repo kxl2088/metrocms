@@ -18,9 +18,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('bootstrap-responsive.css', TRUE); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('bootstrap-slider.css', TRUE); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('font-awesome.css', TRUE); ?>">
-        <!--[if IE 7]>
-                    <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('font-awesome-ie7.min.css', TRUE); ?>">
-                <![endif]-->
+
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('tablecloth.css', TRUE); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('styles.css', TRUE); ?>">
         <!--[if IE 7]>
@@ -45,6 +43,10 @@
 	<link rel="apple-touch-icon-precomposed" sizes="114x114"  href="<?php echo Asset::get_filepath_img('favicon/apple-touch-icon-114-precomposed.png', true); ?>">
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo Asset::get_filepath_img('favicon/apple-touch-icon-72-precomposed.png', true); ?>">
 	<link rel="apple-touch-icon-precomposed" href="<?php echo Asset::get_filepath_img('favicon/apple-touch-icon-57-precomposed.png', true); ?>">
+	<!--[if lt IE 7 ]>
+	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+	<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+	<![endif]-->
         
         <!-- Esscencial jQuery -->
         <script type="text/javascript" src="<? echo Asset::get_filepath_js('jquery/jquery.js', TRUE); ?>"></script>
@@ -108,11 +110,6 @@
 		</ul>
 	</div>	
         
-	<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6. chromium.org/developers/how-tos/chrome-frame-getting-started -->
-	<!--[if lt IE 7 ]>
-	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-	<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-	<![endif]-->
 </div>
 </body>
 </html>

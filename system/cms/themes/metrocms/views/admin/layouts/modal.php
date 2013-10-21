@@ -21,9 +21,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('bootstrap.min.css', TRUE); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('bootstrap-responsive.css', TRUE); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('font-awesome.css', TRUE); ?>">
-        <!--[if IE 7]>
-                    <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('font-awesome-ie7.min.css', TRUE); ?>">
-                <![endif]-->
+
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('tablecloth.css', TRUE); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('styles.css', TRUE); ?>">
         <!--[if IE 7]>
@@ -41,6 +39,11 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('custom.css', TRUE); ?>">
 	<!-- End CSS-->
 
+	<!--[if lt IE 7 ]>
+	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+	<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+	<![endif]-->
+        
         <script type="text/javascript" src="<? echo Asset::get_filepath_js('jquery/jquery.js', TRUE); ?>"></script>
         <script type="text/javascript" src="<? echo Asset::get_filepath_js('jquery/jquery-ui-1.10.1.custom.min.js', TRUE); ?>"></script>        
         <script type="text/javascript" src="<? echo Asset::get_filepath_js('jquery/bootstrap.js', TRUE); ?>"></script>

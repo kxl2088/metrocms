@@ -23,7 +23,7 @@ body {
 	color:#fff !important;
 }
 .left-secondary-nav, .left-nav {
-	background:#4d4d4d url(../img/low_contrast_linen_@2X.png) repeat !important;
+	background: #4d4d4d url('../img/low_contrast_linen_@2X.png') repeat !important;
 }
 .left-primary-nav ul li.active a {
 	background:#121e25 !important;
@@ -33,7 +33,7 @@ body {
 	background: #c62500 !important;
 }
 .main-wrapper {
-	background: #eee url(../img/fabric_plaid_@2X.png) repeat !important;
+	background: #eee url('../img/fabric_plaid_@2X.png') repeat !important;
 }
 .navbar .nav > li > .dropdown-menu:after {
 	border-bottom: 6px solid #121e25 !important;
@@ -107,7 +107,7 @@ body {
 	border: 1px solid #ccc;
 }
 .switch-board {
-	background:#4d4d4d url(../img/low_contrast_linen_@2X.png) repeat !important;
+	background:#4d4d4d url('../img/low_contrast_linen_@2X.png') repeat !important;
 }
 .form-signin {
 	border: 2px solid #000;

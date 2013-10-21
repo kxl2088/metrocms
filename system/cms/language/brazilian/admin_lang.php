@@ -17,6 +17,7 @@ $lang['cp:manage_files']				= 'Gerenciar arquivos';
 $lang['cp:manage_users']				= 'Gerenciar usuários';
 $lang['cp:manage_blog']                                 = 'Gerenciar posts';
 $lang['cp:manage_settings']				= 'Gerenciar configurações';
+$lang['cp:manage_navigation']				= 'Gerenciar Navegação';
 
 $lang['cp:comments']				= 'Comentários';
 $lang['cp:pages']				= 'Páginas';
@@ -24,6 +25,7 @@ $lang['cp:files']				= 'Arquivos';
 $lang['cp:users']				= 'Usuários';
 $lang['cp:blog']				= 'Blog';
 $lang['cp:settings']				= 'Configs';
+$lang['cp:navigation']				= 'Navegação';
 
 // Header
 $lang['cp:to_home'] 					= 'Voltar para o Dashboard';

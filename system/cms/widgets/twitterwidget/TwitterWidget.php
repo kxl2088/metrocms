@@ -140,7 +140,7 @@ class Widget_TwitterWidget extends Widgets
 		}
 
 		if ($options['clear_cache']) {
-			$this->pyrocache->delete('twitter_cache');
+			$this->metrocache->delete('twitter_cache');
 		}
 		return $options;
 	}
@@ -210,7 +210,7 @@ class Widget_TwitterWidget extends Widgets
 			'consumer_key' => $options['consumer_key'],
 			'consumer_secret' => $options['consumer_secret']
 			);
-		if (!$data = $this->pyrocache->get('twitter_cache')) {
+		if (!$data = $this->metrocache->get('twitter_cache')) {
 			require_once('lib/twitter-api-php/TwitterAPIExchange.php');
 			$url = 'https://api.twitter.com/1.1/'.$options['rest_choice'].'.json';
 			$getfield = '?screen_name='.$options['username'];
@@ -219,9 +219,9 @@ class Widget_TwitterWidget extends Widgets
 			$tweets = $twitter->setGetfield($getfield)
 			->buildOauth($url, $requestMethod)
 			->performRequest();
-			$this->pyrocache->write($tweets, 'twitter_cache', $options['expiry']);
+			$this->metrocache->write($tweets, 'twitter_cache', $options['expiry']);
 		} else {
-			$tweets = $this->pyrocache->get('twitter_cache');
+			$tweets = $this->metrocache->get('twitter_cache');
 		}
 		$tweets = json_decode($tweets);
 		$tweets = array_slice($tweets, 0, $options['limit']);

@@ -15,9 +15,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('bootstrap.css', TRUE); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('bootstrap-responsive.css', TRUE); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('font-awesome.css', TRUE); ?>">
-        <!--[if IE 7]>
-                    <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('font-awesome-ie7.min.css', TRUE); ?>">
-                <![endif]-->
+
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('styles.css', TRUE); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('animate/animate.css', TRUE); ?>">
         <!--[if IE 7]>
@@ -31,6 +29,11 @@
                 <![endif]-->
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('dosis-font.css', TRUE); ?>"> 
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('login.css', TRUE); ?>"> 
+        
+	<!--[if lt IE 7 ]>
+	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+	<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+	<![endif]-->
         
 	<!-- Load up some favicons -->        
         <link rel="shortcut png" href="<?php echo Asset::get_filepath_img('favicon/favicon.png', true); ?>">
@@ -82,10 +85,5 @@
 
     </div>
 
-    <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6. chromium.org/developers/how-tos/chrome-frame-getting-started -->
-    <!--[if lt IE 7 ]>
-    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-    <![endif]-->
 </body>
 </html>

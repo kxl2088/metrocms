@@ -81,9 +81,9 @@
                                                             <a class="brown  tooltip-t" title="<?php echo lang('cp:manage_users') ?>" href="<?php echo site_url('admin/users') ?>"><i class="icon-user"></i><span><?php echo lang('cp:users'); ?></span></a>
                                                     </li>
                                                     <?php endif ?>                                                    
-                                                    <?php if(array_key_exists('settings', $this->permissions) OR $this->current_user->group == 'admin'): ?>
+                                                    <?php if(array_key_exists('navigation', $this->permissions) OR $this->current_user->group == 'admin'): ?>
                                                     <li>
-                                                            <a class="green tooltip-t" title="<?php echo lang('cp:manage_settings') ?>" href="<?php echo site_url('admin/settings') ?>"><i class="icon-cogs"></i><span><?php echo lang('cp:settings'); ?></span></a>
+                                                            <a class="green tooltip-t" title="<?php echo lang('cp:manage_navigation') ?>" href="<?php echo site_url('admin/navigation') ?>"><i class="icon-globe"></i><span><?php echo lang('cp:navigation'); ?></span></a>
                                                     </li>
                                                     <?php endif ?>
                                             </ul>

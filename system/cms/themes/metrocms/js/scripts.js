@@ -16,6 +16,10 @@ $(document).ready(function() {
 		url_titles	: {}
 	};
         
+        $('.responsive-leftbar').click(function(){
+            $('.leftbar').toggleClass('leftbar-close expand',500, 'easeOutExpo');
+        });
+        
         // Is Mobile?
 	metro.is_mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
         
