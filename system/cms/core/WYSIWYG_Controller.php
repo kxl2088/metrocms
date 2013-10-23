@@ -51,11 +51,14 @@ class WYSIWYG_Controller extends MY_Controller
 		$this->template
 			->set_theme(ADMIN_THEME)
 			->set_layout('wysiwyg', 'admin')
-			->enable_parser(false)
-			->append_css('module::wysiwyg.css')
-			->append_css('jquery/ui-lightness/jquery-ui.css')
+			->enable_parser(false)			
+                        ->append_css('bootstrap.min.css')
+                        ->append_css('bootstrap-responsive.min.css')                        
+			->append_css('jmetro-ui.css')
+                        ->append_css('styles.css')
+                        ->append_css('module::wysiwyg.css')
 			->append_js('jquery/jquery.js')
-			->append_js('jquery/jquery-ui.min.js')
+			->append_js('jquery/jquery-ui-1.10.1.custom.min.js')
 			->append_js('plugins.js')
 			->append_js('module::wysiwyg.js');
 	}

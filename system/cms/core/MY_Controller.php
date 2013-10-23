@@ -147,6 +147,16 @@ class MY_Controller extends MX_Controller
 		// load all modules (the Events library uses them all) and make their details widely available
 		ci()->enabled_modules = $this->module_m->get_all();
 
+                // get all enabled modules and check if it have an extra array key
+                ci()->modules_extra = array();                
+                foreach (ci()->enabled_modules as $modules)
+                {
+                    if(!empty($modules['extra']))
+                    {
+                        ci()->modules_extra[] = array('name' => $modules['name'], 'slug' => $modules['slug']) + (is_array(unserialize($modules['extra'])) ? unserialize($modules['extra']) : array());
+                    }                    
+                }                
+                
 		// now that we have a list of enabled modules
 		$this->load->library('events');
 
@@ -173,6 +183,7 @@ class MY_Controller extends MX_Controller
 				'slug' => null,
 				'version' => null,
 				'description' => null,
+                                'extra' => null,
 				'skip_xss' => null,
 				'is_frontend' => null,
 				'is_backend' => null,

@@ -133,6 +133,7 @@ class Module_import
 			  `version` varchar(20) NOT NULL,
 			  `type` varchar(20) DEFAULT NULL,
 			  `description` TEXT DEFAULT NULL,
+                          `extra` TEXT DEFAULT NULL,
 			  `skip_xss` tinyint(1) NOT NULL,
 			  `is_frontend` tinyint(1) NOT NULL,
 			  `is_backend` tinyint(1) NOT NULL,

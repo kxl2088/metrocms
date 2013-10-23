@@ -36,10 +36,10 @@ $(function() {
     $('.accordion-nav li').each(function () {
         if ($(this).children('ul').length > 0) {
             if ($(this).children('ul').is(":visible")) {
-                $(this).prepend('<img src="images/imgOnOpen.png" />');
+                $(this).prepend('<img src="../../img/imgOnOpen.png" />');
             }
             else {
-                $(this).prepend('<img src="images/imgOffClosed.png" />');
+                $(this).prepend('<img src="../../img/imgOffClosed.png" />');
             }
         }
     });
@@ -50,14 +50,14 @@ $(function() {
     $('.accordion-nav img').click(function() {
         if ($(this).parent('li').children('ul').html() != null) {
             $(this).parent('li').parent('ul').children('li').children('ul').hide(slideSpeed);
-            $(this).parent('li').parent('ul').children('li').children('img').attr('src', 'images/imgOffClosed.png');
+            $(this).parent('li').parent('ul').children('li').children('img').attr('src', '../../img/imgOffClosed.png');
             $(this).delay(100).is(':hidden');
             if ($(this).parent('li').children('ul').css('display') == "block") {
                 $(this).parent('li').children('ul').hide(slideSpeed);
-                $(this).attr('src', 'images/imgOffClosed.png');
+                $(this).attr('src', '../../img/imgOffClosed.png');
             } else {
                 $(this).parent('li').children('ul').show(slideSpeed);
-                $(this).attr('src', 'images/imgOnOpen.png');
+                $(this).attr('src', '../../img/imgOnOpen.png');
             }
             return false;
         }

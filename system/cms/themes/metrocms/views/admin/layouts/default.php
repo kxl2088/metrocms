@@ -2,9 +2,7 @@
 <head lang="en">
 	<meta charset="utf-8">
 
-	<!-- You can use .htaccess and remove these lines to avoid edge case issues. -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
 	<title><?php echo $template['title'].' - '.lang('cp:admin_title') ?></title>
 
 	<base href="<?php echo base_url(); ?>" />
@@ -15,53 +13,37 @@
         
         <!-- styles -->
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('bootstrap.min.css', TRUE); ?>">        
-        <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('bootstrap-responsive.css', TRUE); ?>">
-        <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('bootstrap-slider.css', TRUE); ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('bootstrap-responsive.min.css', TRUE); ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('jquery.gritter.css', TRUE); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('font-awesome.css', TRUE); ?>">
-
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('tablecloth.css', TRUE); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('styles.css', TRUE); ?>">
-        <!--[if IE 7]>
-                    <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('ie/ie7.css', TRUE); ?>" />
-                <![endif]-->
-        <!--[if IE 8]>
-                    <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('ie/ie8.css', TRUE); ?>" />
-                <![endif]-->
-        <!--[if IE 9]>
-                    <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('ie/ie9.css', TRUE); ?>" />
-                <![endif]-->
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('aristo-ui.css', TRUE); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('dosis-font.css', TRUE); ?>"> 
-        <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('animate/animate.css', TRUE); ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('animate.css', TRUE); ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('chosen.css', TRUE); ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('fancybox/jquery.fancybox.css', TRUE); ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('jquery/codemirror.css', TRUE); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('custom.css', TRUE); ?>">
 	<!-- End CSS-->
 
 	<!-- Load up some favicons -->        
         <link rel="shortcut png" href="<?php echo Asset::get_filepath_img('favicon/favicon.png', true); ?>">
-	<link rel="shortcut icon" href="<?php echo Asset::get_filepath_img('favicon/favicon.ico', true); ?>">
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo Asset::get_filepath_img('favicon/apple-touch-icon-144-precomposed.png', true); ?>">
 	<link rel="apple-touch-icon-precomposed" sizes="114x114"  href="<?php echo Asset::get_filepath_img('favicon/apple-touch-icon-114-precomposed.png', true); ?>">
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo Asset::get_filepath_img('favicon/apple-touch-icon-72-precomposed.png', true); ?>">
 	<link rel="apple-touch-icon-precomposed" href="<?php echo Asset::get_filepath_img('favicon/apple-touch-icon-57-precomposed.png', true); ?>">
+        
+        <!-- Esscencial jQuery -->
+        <script type="text/javascript" src="<?php echo Asset::get_filepath_js('jquery/jquery.js', TRUE); ?>"></script>        
+        <script type="text/javascript" src="<?php echo Asset::get_filepath_js('jquery/jquery-ui-1.10.1.custom.min.js', TRUE); ?>"></script>
+        <script type="text/javascript" src="<?php echo Asset::get_filepath_js('jquery/jquery.easing.1.3.js', TRUE); ?>"></script>    
+	<?php file_partial('metadata'); ?>
+        
 	<!--[if lt IE 7 ]>
 	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
 	<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
 	<![endif]-->
-        
-        <!-- Esscencial jQuery -->
-        <script type="text/javascript" src="<? echo Asset::get_filepath_js('jquery/jquery.js', TRUE); ?>"></script>
-        <script type="text/javascript" src="<? echo Asset::get_filepath_js('jquery/spin.min.js', TRUE); ?>"></script>
-        <script type="text/javascript" src="<? echo Asset::get_filepath_js('spin.js', TRUE); ?>"></script>
-        <script type="text/javascript" src="<? echo Asset::get_filepath_js('jquery/jquery-ui-1.10.1.custom.min.js', TRUE); ?>"></script>        
-        <script type="text/javascript" src="<? echo Asset::get_filepath_js('jquery/bootstrap.min.js', TRUE); ?>"></script>
-        <script type="text/javascript" src="<? echo Asset::get_filepath_js('jquery/bootstrap-fileupload.min.js', TRUE); ?>"></script>  
-        <script type="text/javascript" src="<? echo Asset::get_filepath_js('jquery/bootstrap-colorpicker.js', TRUE); ?>"></script>
-        <script type="text/javascript" src="<? echo Asset::get_filepath_js('jquery/bootstrap-datetimepicker.min.js', TRUE); ?>"></script>       
-        <script type="text/javascript" src="<? echo Asset::get_filepath_js('jquery/bootstrap-tab-ajax.js', TRUE); ?>"></script> 
-        <script type="text/javascript" src="<? echo Asset::get_filepath_js('jquery/bootstrap-slider.js', TRUE); ?>"></script> 
-	<!-- metadata needs to load before some stuff -->
-	<?php file_partial('metadata'); ?>
-
 </head>
 
 <body>

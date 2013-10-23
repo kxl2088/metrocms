@@ -12,29 +12,14 @@
         <base href="<?php echo base_url(); ?>"/>
         
         <!-- styles -->
-        <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('bootstrap.css', TRUE); ?>">
-        <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('bootstrap-responsive.css', TRUE); ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('bootstrap.min.css', TRUE); ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('bootstrap-responsive.min.css', TRUE); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('font-awesome.css', TRUE); ?>">
-
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('styles.css', TRUE); ?>">
-        <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('animate/animate.css', TRUE); ?>">
-        <!--[if IE 7]>
-                    <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('ie/ie7.css', TRUE); ?>" />
-                <![endif]-->
-        <!--[if IE 8]>
-                    <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('ie/ie8.css', TRUE); ?>" />
-                <![endif]-->
-        <!--[if IE 9]>
-                    <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('ie/ie9.css', TRUE); ?>" />
-                <![endif]-->
+        <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('animate.css', TRUE); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('dosis-font.css', TRUE); ?>"> 
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('login.css', TRUE); ?>"> 
-        
-	<!--[if lt IE 7 ]>
-	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-	<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-	<![endif]-->
-        
+                
 	<!-- Load up some favicons -->        
         <link rel="shortcut png" href="<?php echo Asset::get_filepath_img('favicon/favicon.png', true); ?>">
 	<link rel="shortcut icon" href="<?php echo Asset::get_filepath_img('favicon/favicon.ico', true); ?>">
@@ -45,9 +30,14 @@
         <!--============javascript===========-->
         <script type="text/javascript" src="<?php echo Asset::get_filepath_js('jquery/jquery.js', TRUE); ?>"></script>
         <script type="text/javascript" src="<?php echo Asset::get_filepath_js('jquery/jquery-ui-1.10.1.custom.min.js', TRUE); ?>"></script>
+        <script type="text/javascript" src="<?php echo Asset::get_filepath_js('jquery/jquery.easing.1.3.js', TRUE); ?>"></script>  
         <script type="text/javascript" src="<?php echo Asset::get_filepath_js('jquery/bootstrap.js', TRUE); ?>"></script>
         <script type="text/javascript" src="<?php echo Asset::get_filepath_js('login.js', TRUE); ?>"></script>
-   
+        
+	<!--[if lt IE 7 ]>
+	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+	<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+	<![endif]-->   
 </head>
 <body>
     <div class="layout">

@@ -17,9 +17,9 @@ $(document).ready(function() {
 	};
         
         $('.responsive-leftbar').click(function(){
-            $('.leftbar').toggleClass('leftbar-close expand',500, 'easeOutExpo');
+            $('.leftbar').toggleClass('leftbar-close expand', 500, 'easeOutExpo');
         });
-        
+
         // Is Mobile?
 	metro.is_mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
         
@@ -160,6 +160,13 @@ $(document).ready(function() {
 			});
 		});
                 
+                $(".paper-table").tablecloth({
+                    theme: "paper",
+                    striped: true,
+                    sortable: true,
+                    condensed: false
+                });
+
                 $.fn.datetimepicker.defaults = {
                     maskInput: true,           // disables the text input mask
                     pickDate: true,            // disables the date picker
@@ -171,11 +178,13 @@ $(document).ready(function() {
                 };
                 
                 $('#datetimepicker1, .datetimepicker1').datetimepicker({
-                    pickTime: true
+                    pickTime: true,
+                    language: 'pt-BR'
                 });
                 
                 $('#datetimepicker2, .datetimepicker2').datetimepicker({
-                    pickTime: false
+                    pickTime: false,
+                    language: 'pt-BR'
                 });
                                                  
 		// Fade in the notifications
@@ -751,35 +760,8 @@ $(document).ready(function() {
 
         });
         
-	//functions for codemirror
-	$('.html_editor').each(function() {
-		CodeMirror.fromTextArea(this, {
-		    mode: 'text/html',
-		    tabMode: 'indent',
-			height : '500px',
-			width : '500px',
-		});
-	});
-
-	$('.css_editor').each(function() {
-		CodeMirror.fromTextArea(this, {
-		    mode: 'css',
-		    tabMode: 'indent',
-			height : '500px',
-			width : '500px',
-		});
-	});
-
-	$('.js_editor').each(function() {
-		CodeMirror.fromTextArea(this, {
-		    mode: 'javascript',
-		    tabMode: 'indent',
-			height : '500px',
-			width : '500px',
-		});
-	});     
-        
         $(".scroll-top").hide();
+        
         $(window).scroll(function () {
             if ($(this).scrollTop() > 100) {
                 $('.scroll-top').fadeIn();
@@ -814,7 +796,7 @@ $(document).ready(function() {
         $('.left-primary-nav li a').tooltip({
             placement: 'right'
         });
-            $('.row-action .btn').tooltip({
+        $('.row-action .btn').tooltip({
             placement: 'top'
         });
 });

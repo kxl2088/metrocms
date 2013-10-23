@@ -4,11 +4,15 @@
 
                 <!-- Navbar
             ================================================== -->
-                <div class="navbar navbar-inverse top-nav">
+                <div class="navbar navbar-inverse navbar-static-top navbar-static top-nav">
                         <div class="navbar-inner">
-                                <div class="container">
-                                    <?php echo anchor('admin', Asset::img('metrocms_logo_large.png'), ' class="brand"') ?>
-                                                 
+                                <div class="container-fluid">
+                                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                                      <span class="icon-bar"></span>
+                                      <span class="icon-bar"></span>
+                                      <span class="icon-bar"></span>
+                                    </button>
+                                    <?php echo anchor('admin', Asset::img('metrocms_logo_large.png'), ' class="brand"') ?>    
                                     <?php file_partial('navigation') ?>                                   
                                 </div>
                         </div>
@@ -43,6 +47,7 @@
                             <div class="responsive-leftbar">
                                     <i class="icon-list"></i>
                             </div>
+
                             <div class="left-secondary-nav tab-content">
                                     <div class="tab-pane <?php if(!$module_details['slug'] || empty($module_details['sections'])): ?>active<?php endif;?>" id="main">
                                             <h4 class="side-head"><?php echo lang('global:dashboard'); ?></h4>
@@ -53,40 +58,9 @@
                                                                 <i class="icon-search"></i>
                                                     </div>
                                                 </form>
-                                            </div>
+                                            </div>                                              
                                             <!--- Quick Links --->
-                                            <ul class="metro-sidenav clearfix">
-                                                    <?php if((array_key_exists('comments', $this->permissions) OR $this->current_user->group == 'admin') AND module_enabled('comments')): ?>
-                                                    <li>
-                                                        <a class="blue-violate tooltip-t" title="<?php echo lang('cp:manage_comments') ?>" href="<?php echo site_url('admin/comments') ?>"><i class="icon-comments"></i><span><?php echo lang('cp:comments'); ?></span></a>
-                                                    </li>
-                                                    <?php endif; ?>    
-                                                    <?php if((array_key_exists('pages', $this->permissions) OR $this->current_user->group == 'admin') AND module_enabled('pages')): ?>
-                                                    <li>
-                                                            <a class="dark-yellow  tooltip-t" title="<?php echo lang('cp:manage_pages') ?>" href="<?php echo site_url('admin/pages') ?>"><i class="icon-file-alt"></i><span><?php echo lang('cp:pages'); ?></span></a>
-                                                    </li>
-                                                    <?php endif ?>
-                                                    <?php if((array_key_exists('files', $this->permissions) OR $this->current_user->group == 'admin') AND module_enabled('files')): ?>
-                                                    <li>
-                                                            <a class="blue tooltip-t" title="<?php echo lang('cp:manage_files') ?>" href="<?php echo site_url('admin/files') ?>"><i class="icon-folder-open"></i><span><?php echo lang('cp:files'); ?></span></a>
-                                                    </li>
-                                                    <?php endif ?>
-                                                    <?php if(array_key_exists('blog', $this->permissions) OR $this->current_user->group == 'admin'): ?>
-                                                    <li>
-                                                            <a class="magenta tooltip-t" title="<?php echo lang('cp:manage_blog') ?>" href="<?php echo site_url('admin/blog') ?>"><i class="icon-file"></i><span><?php echo lang('cp:blog'); ?></span></a>
-                                                    </li>
-                                                    <?php endif ?>
-                                                    <?php if(array_key_exists('users', $this->permissions) OR $this->current_user->group == 'admin'): ?>
-                                                    <li>
-                                                            <a class="brown  tooltip-t" title="<?php echo lang('cp:manage_users') ?>" href="<?php echo site_url('admin/users') ?>"><i class="icon-user"></i><span><?php echo lang('cp:users'); ?></span></a>
-                                                    </li>
-                                                    <?php endif ?>                                                    
-                                                    <?php if(array_key_exists('navigation', $this->permissions) OR $this->current_user->group == 'admin'): ?>
-                                                    <li>
-                                                            <a class="green tooltip-t" title="<?php echo lang('cp:manage_navigation') ?>" href="<?php echo site_url('admin/navigation') ?>"><i class="icon-globe"></i><span><?php echo lang('cp:navigation'); ?></span></a>
-                                                    </li>
-                                                    <?php endif ?>
-                                            </ul>
+<?php file_partial('dashboard') ?>  
                                             <!--- /Quick Links --->
                                             <?php if($cpanel_stats): ?>
                                             <div class="side-widget">

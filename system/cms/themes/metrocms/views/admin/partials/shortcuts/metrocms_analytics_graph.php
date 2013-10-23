@@ -61,46 +61,7 @@
                                     /* Second y axis */
                                     position: "right" /* left or right */
                                 }]
-                            });
-                            //Generate 
-                            $.plot($("#pie-chart-donut #pie-donutContainer"), 
-                            [{
-                                label: "<?php echo lang('global:statistics-visits'); ?>",
-                                data: visits
-                            }, {
-                                label: "<?php echo lang('global:statistics-page-views'); ?>",
-                                data: views
-                            }],
-                            {
-                                series: {
-                                    pie: {
-                                        show: true,
-                                        innerRadius: 0.5,
-                                        label: {
-                                            show: false,
-                                            threshold: 0.1
-                                        }
-                                    }
-                                },
-                                selection: { mode: "x" },
-                                xaxis: { mode: "time" },
-                                legend: {
-                                    show: true
-                                },
-                                grid: {
-                                    hoverable: true,
-                                    clickable: true
-                                },
-                                colors: ["#b086c3", "#ea701b"],
-                                tooltip: true,
-                                tooltipOpts: {
-                                    shifts: { 
-                                              x: -100                     //10
-                                      },
-                                    defaultTheme: false
-                                }
-                            }
-                            );
+                            });                            
 			}
                         
 			// create the analytics graph when the page loads
@@ -124,24 +85,14 @@
                                 </div>
                                 <div class="board-widgets-content">
                                         <div class="row-fluid">
-                                                <div class="span8">
+                                                <div class="span12">
                                                         <div class="widget-container">
                                                                 <div id="visitors-chart">
                                                                         <div id="visitors-container" style="width: 100%;height:300px; text-align: center; margin:0 auto;">
                                                                         </div>
                                                                 </div>
                                                         </div>
-                                                </div>
-                                                <div class="span4">
-                                                        <div class="widget-container">
-                                                                <div id="pie-chart-donut" class="pie-chart">
-                                                                        <div id="legendPlaceholder">
-                                                                        </div>
-                                                                        <div id="pie-donutContainer" style="width: 100%;height:280px; text-align: left;">
-                                                                        </div>
-                                                                </div>
-                                                        </div>
-                                                </div>
+                                                </div>                                                
                                         </div>
                                 </div>
                         </div>

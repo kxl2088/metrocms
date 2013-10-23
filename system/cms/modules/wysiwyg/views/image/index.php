@@ -1,5 +1,5 @@
 <div id="upload-box">
-	<h2><?php echo lang('files:upload') ?><span class="close ui-icon ui-icon-closethick"><?php echo lang('buttons:close') ?></span></h2>
+	<h3><?php echo lang('files:upload') ?><span class="close ui-icon ui-icon-closethick"><?php echo lang('buttons:close') ?></span></h3>
 	<?php echo form_open_multipart('admin/wysiwyg/upload') ?>
 		<?php echo form_hidden('redirect_to', 'image') ?>
 		<ul>
@@ -71,8 +71,10 @@
 			</div>
 			<!-- image size -->
 			<div id="size-bar">
-				<label for="insert_width"><?php echo lang('wysiwyg.label.insert_width') ?></label>
-				<input id="insert_width" data-name="<?php echo lang('wysiwyg.label.no_limit') ?>" type="text" name="insert_width" value="0" />
+				<label for="insert_width"><?php echo lang('wysiwyg.label.insert_width') ?>
+                                <input id="insert_width" data-name="<?php echo lang('wysiwyg.label.no_limit') ?>" type="text" name="insert_width" value="0" />
+                                </label>
+				
 			</div>
 			<div id="slider"></div>
 			<!-- folder contents -->

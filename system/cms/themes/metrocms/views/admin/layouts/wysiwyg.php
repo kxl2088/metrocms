@@ -71,9 +71,7 @@
 	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
 	<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
 	<![endif]-->
-        
-	<?php echo Asset::css('admin/basic_layout.css'); ?>
-        <?php echo Asset::css('bootstrap.min.css'); ?>
+
 </head>
 <body>
 	<?php $this->load->view('admin/partials/notices') ?>

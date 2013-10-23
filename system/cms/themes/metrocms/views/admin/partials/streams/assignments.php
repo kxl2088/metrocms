@@ -1,5 +1,5 @@
 <?php if ($assignments): ?>
-<? /*
+<?php /*
 <div class="row-fluid">
     <div class="span12">
         <div class="content-widgets">   
@@ -78,7 +78,7 @@
 
                         ?>
                 </div><!--.no_data-->
-                <? /*
+                <?php /*
             </div>
         </div>
     </div>
