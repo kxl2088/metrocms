@@ -23,16 +23,9 @@ class Module_Navigation extends Module {
 			),
                         'extra' => array(
                             'dashboard' => array(
-                                'en' => array(
-                                    'class' => 'green',
-                                    'title' => 'lang:cp:manage_navigation',
-                                    'icon' => 'icon-globe'
-                                ),
-                                'br' => array(
-                                    'class' => 'green',
-                                    'title' => 'lang:cp:manage_navigation',
-                                    'icon' => 'icon-globe'
-                                )
+                                'class' => 'green',
+                                'title' => 'lang:cp:manage_navigation',
+                                'icon' => 'icon-globe'                                
                             )
                         ),
 			'frontend' => false,

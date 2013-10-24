@@ -18,7 +18,7 @@
                                             <th width="25"><?php echo lang('redirects:type');?></th>
                                             <th width="25%"><?php echo lang('redirects:from');?></th>
                                             <th><?php echo lang('redirects:to');?></th>
-                                            <th width="200"><?php echo lang('global:actions'); ?></th>
+                                            <th width="180"><?php echo lang('global:actions'); ?></th>
                                     </tr>
                         </thead>
                         <tbody>
@@ -30,8 +30,15 @@
                                     <td><?php echo $redirect->to;?></td>
                                     <td class="align-center">
                                     <div class="actions">
-                                        <?php echo anchor('admin/redirects/edit/' . $redirect->id, lang('redirects:edit'), 'class="btn btn-primary edit"');?>
-                                            <?php echo anchor('admin/redirects/delete/' . $redirect->id, lang('redirects:delete'), array('class'=>'confirm btn btn-danger delete'));?>
+<div class="btn-group">
+  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <ul class="dropdown-menu">
+      <li><?php echo anchor('admin/redirects/edit/' . $redirect->id, lang('redirects:edit'), 'class="edit"');?></li>
+      <li><?php echo anchor('admin/redirects/delete/' . $redirect->id, lang('redirects:delete'), array('class'=>'confirm delete'));?></li>
+  </ul>
+</div>
+                                        
                                     </div>
                                     </td>
                                 </tr>

@@ -14,7 +14,7 @@
                                                     <th><?php echo lang('name_label');?></th>
                                                     <th class="collapse"><span><?php echo lang('desc_label');?></span></th>
                                                     <th><?php echo lang('version_label');?></th>
-                                                    <th width="280"></th>
+                                                    <th width="180"><?php echo lang('global:actions'); ?></th>
                                             </tr>
                                     </thead>
                                     <tbody>
@@ -25,21 +25,29 @@
                                                     <td><?php echo $module['description'] ?></td>
                                                     <td class="align-center"><?php echo $module['version'] ?></td>
                                                     <td class="actions">
-                                                            <?php if ($module['installed']): ?>
-                                                                    <?php if ($module['enabled']): ?>
-                                                                            <?php echo anchor('admin/addons/modules/disable/'.$module['slug'], lang('global:disable'), array('class'=>'confirm btn btn-warning small', 'title'=>lang('addons:modules:confirm_disable'))) ?>
-                                                                    <?php else: ?>
-                                                                            <?php echo anchor('admin/addons/modules/enable/'.$module['slug'], lang('global:enable'), array('class'=>'confirm btn btn-primary small', 'title'=>lang('addons:modules:confirm_enable'))) ?>
-                                                                    <?php endif ?>
-                                                                    <?php if ($module['is_current']): ?>
-                                                                            <?php echo anchor('admin/addons/modules/uninstall/'.$module['slug'], lang('global:uninstall'), array('class'=>'confirm btn btn-danger small', 'title'=>lang('addons:modules:confirm_uninstall'))) ?>
-                                                                    <?php else: ?>
-                                                                            <?php echo anchor('admin/addons/modules/upgrade/'.$module['slug'], lang('global:upgrade'), array('class'=>'confirm btn btn-warning small', 'title'=>lang('addons:modules:confirm_upgrade'))) ?>
-                                                                    <?php endif ?>
-                                                            <?php else: ?>
-                                                                    <?php echo anchor('admin/addons/modules/install/'.$module['slug'], lang('global:install'), array('class'=>'confirm btn btn-primary small', 'title'=>lang('addons:modules:confirm_install'))) ?>
-                                                            <?php endif ?>
-                                                            <?php echo anchor('admin/addons/modules/delete/'.$module['slug'], lang('global:delete'), array('class'=>'confirm btn btn-info small', 'title'=>lang('addons:modules:confirm_delete'))) ?>
+<div class="btn-group">
+  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <ul class="dropdown-menu">
+      
+    <?php if ($module['installed']): ?>
+        <?php if ($module['enabled']): ?>
+                <li><?php echo anchor('admin/addons/modules/disable/'.$module['slug'], lang('global:disable'), array('class'=>'confirm', 'title'=>lang('addons:modules:confirm_disable'))) ?></li>
+        <?php else: ?>
+                <li><?php echo anchor('admin/addons/modules/enable/'.$module['slug'], lang('global:enable'), array('class'=>'confirm', 'title'=>lang('addons:modules:confirm_enable'))) ?></li>
+        <?php endif ?>
+        <?php if ($module['is_current']): ?>
+                <li><?php echo anchor('admin/addons/modules/uninstall/'.$module['slug'], lang('global:uninstall'), array('class'=>'confirm', 'title'=>lang('addons:modules:confirm_uninstall'))) ?></li>
+        <?php else: ?>
+                <li><?php echo anchor('admin/addons/modules/upgrade/'.$module['slug'], lang('global:upgrade'), array('class'=>'confirm', 'title'=>lang('addons:modules:confirm_upgrade'))) ?></li>
+        <?php endif ?>
+    <?php else: ?>
+        <li><?php echo anchor('admin/addons/modules/install/'.$module['slug'], lang('global:install'), array('class'=>'confirm', 'title'=>lang('addons:modules:confirm_install'))) ?></li>
+    <?php endif ?>
+        <li><?php echo anchor('admin/addons/modules/delete/'.$module['slug'], lang('global:delete'), array('class'=>'confirm ', 'title'=>lang('addons:modules:confirm_delete'))) ?></li>
+     
+  </ul>
+</div>                                                            
                                                     </td>
                                             </tr>
                                     <?php endforeach ?>
@@ -71,7 +79,7 @@
                                                     <th><?php echo lang('name_label');?></th>
                                                     <th><span><?php echo lang('desc_label');?></span></th>
                                                     <th><?php echo lang('version_label');?></th>
-                                                    <th></th>
+                                                    <th width="180"><?php echo lang('global:actions'); ?></th>
                                             </tr>
                                     </thead>	
                                     <tbody>
@@ -82,11 +90,17 @@
                                                     <td><?php echo $module['description'] ?></td>
                                                     <td class="align-center"><?php echo $module['version'] ?></td>
                                                     <td class="actions">
-                                                    <?php if ($module['enabled']): ?>
-                                                            <?php echo anchor('admin/addons/modules/disable/'.$module['slug'], lang('global:disable'), array('class'=>'confirm btn btn-danger small', 'title'=>lang('addons:modules:confirm_disable'))) ?>
-                                                    <?php else: ?>
-                                                            <?php echo anchor('admin/addons/modules/enable/'.$module['slug'], lang('global:enable'), array('class'=>'confirm btn btn-primary small', 'title'=>lang('addons:modules:confirm_enable'))) ?>
-                                                    <?php endif ?>
+<div class="btn-group">
+  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <ul class="dropdown-menu">
+    <?php if ($module['enabled']): ?>
+      <li><?php echo anchor('admin/addons/modules/disable/'.$module['slug'], lang('global:disable'), array('class'=>'confirm', 'title'=>lang('addons:modules:confirm_disable'))) ?><li>
+    <?php else: ?>
+      <li><?php echo anchor('admin/addons/modules/enable/'.$module['slug'], lang('global:enable'), array('class'=>'confirm', 'title'=>lang('addons:modules:confirm_enable'))) ?></li>
+    <?php endif ?>
+  </ul>
+</div>
                                                     </td>
                                             </tr>
                                     <?php endforeach ?>

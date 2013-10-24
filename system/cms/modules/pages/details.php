@@ -23,16 +23,9 @@ class Module_Pages extends Module
 			),
                         'extra' => array(
                             'dashboard' => array(
-                                'en' => array(
-                                    'class' => 'dark-yellow',
-                                    'title' => 'lang:cp:manage_pages',
-                                    'icon' => 'icon-file-alt'
-                                ),
-                                'br' => array(
-                                    'class' => 'dark-yellow',
-                                    'title' => 'lang:cp:manage_pages',
-                                    'icon' => 'icon-file-alt'
-                                )
+                                'class' => 'dark-yellow',
+                                'title' => 'lang:cp:manage_pages',
+                                'icon' => 'icon-file-alt'
                             )
                         ),
 			'frontend' => true,

@@ -8,7 +8,7 @@
 				<th width="25%"><?php echo lang('comments:item_label') ?></th>
 				<th><?php echo lang('global:author') ?></th>
 				<th width="180"><?php echo lang('comments:date_label') ?></th>
-				<th width="<?php echo Settings::get('moderate_comments') ? 320 : 180 ?>"><?php echo lang('global:actions'); ?></th>
+				<th width="180"><?php echo lang('global:actions'); ?></th>
 			</tr>
 		</thead>
 	
@@ -43,17 +43,23 @@
 					<td><?php echo format_date($comment->created_on) ?></td>
 					
 					<td class="align-center buttons buttons-small">
+<div class="btn-group">
+  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <ul class="dropdown-menu">
 						<?php if ($this->settings->moderate_comments): ?>
 							<?php if ($comment->is_active): ?>
-								<?php echo anchor('admin/comments/unapprove/'.$comment->id, lang('buttons:deactivate'), 'class="btn btn-warning deactivate"') ?>
+      <li><?php echo anchor('admin/comments/unapprove/'.$comment->id, lang('buttons:deactivate'), 'class="confirm deactivate"') ?></li>
 							<?php else: ?>
-								<?php echo anchor('admin/comments/approve/'.$comment->id, lang('buttons:activate'), 'class="btn btn-primary activate"') ?>
+      <li><?php echo anchor('admin/comments/approve/'.$comment->id, lang('buttons:activate'), 'class="activate"') ?></li>
 							<?php endif ?>
 						<?php endif ?>
 					
-						<?php echo anchor('admin/comments/edit/'.$comment->id, lang('global:edit'), 'class="btn btn-primary edit"') ?>
-						<?php echo anchor('admin/comments/delete/'.$comment->id, lang('global:delete'), array('class'=>'confirm btn btn-danger delete')) ?>
-						<?php echo anchor('admin/comments/report/'.$comment->id, lang('comments:report'), array('class'=>'btn btn-info edit')) ?>
+      <li><?php echo anchor('admin/comments/edit/'.$comment->id, lang('global:edit'), 'class="edit"') ?></li>
+      <li><?php echo anchor('admin/comments/delete/'.$comment->id, lang('global:delete'), array('class'=>'confirm delete')) ?></li>
+      <li><?php echo anchor('admin/comments/report/'.$comment->id, lang('comments:report'), array('class'=>'confirm edit')) ?><li>
+  </ul>
+</div>
 					</td>
 				</tr>
 			<?php endforeach ?>

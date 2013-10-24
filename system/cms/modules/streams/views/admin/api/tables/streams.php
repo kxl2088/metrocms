@@ -23,8 +23,14 @@
                                         <td class="collapse"><?php echo $api->expires_on < date('Y-m-d H:i:s') ? lang('global:yes') : lang('global:no') ?></td>
 					<td class="collapse"><?php echo lang('global:'.$api->enabled) ?></td>
 					<td>
-						<a href="<?php echo site_url('admin/streams/api/edit/' . $api->id) ?>" title="<?php echo lang('global:edit')?>" class="btn btn-primary"><?php echo lang('global:edit')?></a>
-						<a href="<?php echo site_url('admin/streams/api/delete/' . $api->id) ?>" title="<?php echo lang('global:delete')?>" class="btn btn-danger confirm"><?php echo lang('global:delete')?></a>
+<div class="btn-group">
+  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <ul class="dropdown-menu">
+      <li><a href="<?php echo site_url('admin/streams/api/edit/' . $api->id) ?>" title="<?php echo lang('global:edit')?>" class=""><?php echo lang('global:edit')?></a></li>
+      <li><a href="<?php echo site_url('admin/streams/api/delete/' . $api->id) ?>" title="<?php echo lang('global:delete')?>" class=" confirm"><?php echo lang('global:delete')?></a></li>
+  </ul>
+</div>
 					</td>
 				</tr>
 			<?php endforeach ?>

@@ -287,7 +287,7 @@ class Admin extends Admin_Controller
 		$email_template = $this->email_templates_m->get($id);
 
 		$this->template
-			->set_layout('modal')
+			->set_layout(FALSE)
 			->build('admin/preview', $email_template);
 	}
 

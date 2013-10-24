@@ -9,7 +9,7 @@
 				<?php foreach ($stream->view_options as $view_option): ?>
 				<th><?php echo lang_label($stream_fields->$view_option->field_name); ?></th>
 				<?php endforeach; ?>
-			    <th></th>
+                                <th width="180"><?php echo lang('global:actions'); ?></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -17,7 +17,7 @@
 
 			<tr>
 
-				<?php if ($stream->sorting == 'custom'): ?><td width="30" class="handle"><i class="icon-move"></i></td><?php endif; ?>
+				<?php if ($stream->sorting == 'custom'): ?><td width="30" style="text-align: center"><i class="icon-move"></i></td><?php endif; ?>
 
 				<?php if (is_array($stream->view_options)): foreach( $stream->view_options as $view_option ): ?>
 				<td>
@@ -43,8 +43,11 @@
 				?></td>
 				<?php endforeach; endif; ?>
 				<td class="actions">
-				
-					<?php
+<div class="btn-group">
+  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <ul class="dropdown-menu">
+                <?php
 				
 						if (isset($buttons))
 						{						
@@ -52,16 +55,18 @@
 
 							foreach($buttons as $button)
 							{
-								$class = (isset($button['confirm']) and $button['confirm']) ? 'btn btn-danger confirm' : 'btn btn-primary';
+								$class = (isset($button['confirm']) and $button['confirm']) ? 'confirm' : '';
 								$class .= (isset($button['class']) and ! empty($button['class'])) ? ' '.$button['class'] : null;
-								$all_buttons[] = anchor(str_replace('-entry_id-', $data_item->id, $button['url']), $button['label'], 'class="'.$class.'"');
+								$all_buttons[] = '<li>' . anchor(str_replace('-entry_id-', $data_item->id, $button['url']), $button['label'], 'class="'.$class.'"') . '</li>';
 							}
 						
-							echo implode('&nbsp;', $all_buttons);
+							echo implode('', $all_buttons);
 							unset($all_buttons);
 						}
 						
-					?>			
+					?>
+  </ul>
+</div>
 				</td>
 			</tr>
 		<?php } ?>

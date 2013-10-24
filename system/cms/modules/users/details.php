@@ -23,16 +23,9 @@ class Module_Users extends Module {
 			),
                         'extra' => array(
                             'dashboard' => array(
-                                'en' => array(
-                                    'class' => 'brown',
-                                    'title' => 'lang:cp:manage_users',
-                                    'icon' => 'icon-user'
-                                ),
-                                'br' => array(
-                                    'class' => 'brown',
-                                    'title' => 'lang:cp:manage_users',
-                                    'icon' => 'icon-user'
-                                )
+                                'class' => 'brown',
+                                'title' => 'lang:cp:manage_users',
+                                'icon' => 'icon-user'
                             )
                         ),
 			'frontend' 	=> false,

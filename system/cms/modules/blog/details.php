@@ -23,16 +23,9 @@ class Module_Blog extends Module
 			),
                         'extra' => array(
                             'dashboard' => array(
-                                'en' => array(
-                                    'class' => 'magenta',
-                                    'title' => 'lang:cp:manage_blog',
-                                    'icon' => 'icon-file'
-                                ),
-                                'br' => array(
-                                    'class' => 'magenta',
-                                    'title' => 'lang:cp:manage_blog',
-                                    'icon' => 'icon-file'
-                                )
+                                'class' => 'magenta',
+                                'title' => 'lang:cp:manage_blog',
+                                'icon' => 'icon-file'                                
                             )
                         ),
 			'frontend' => true,

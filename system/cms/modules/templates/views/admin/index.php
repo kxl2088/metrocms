@@ -19,7 +19,7 @@
                                     <th><?php echo lang('name_label') ?></th>
                                     <th class="collapse"><?php echo lang('global:description') ?></th>
                                     <th class="collapse"><?php echo lang('templates:language_label') ?></th>
-                                    <th width="220"><?php echo lang('global:actions'); ?></th>
+                                    <th width="180"><?php echo lang('global:actions'); ?></th>
                                 </tr>
                             </thead>
 
@@ -33,11 +33,15 @@
                                     <td class="collapse"><?php echo $template->description ?></td>
                                     <td class="collapse"><?php echo $template->lang ?></td>
                                     <td class="actions">
-                                                    <div class="buttons buttons-small align-center">
-                                                            <?php echo anchor('admin/templates/preview/' . $template->id, lang('buttons:preview'), 'class="btn btn-success preview modal-popup"') ?>
-                                        <?php echo anchor('admin/templates/edit/' . $template->id, lang('buttons:edit'), 'class="btn btn-primary edit"') ?>
-                                                            <?php echo anchor('admin/templates/create_copy/' . $template->id, lang('buttons:clone'), 'class="btn btn-info clone"') ?>
-                                                    </div>
+<div class="btn-group">
+  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <ul class="dropdown-menu">
+      <li><?php echo anchor('admin/templates/preview/' . $template->id, lang('buttons:preview'), 'class="preview modal-ajax" title="'. lang('buttons:preview') . ' - ' . $template->name .'"') ?></li>
+      <li><?php echo anchor('admin/templates/edit/' . $template->id, lang('buttons:edit'), 'class="edit"') ?></li>
+      <li><?php echo anchor('admin/templates/create_copy/' . $template->id, lang('buttons:clone'), 'class="clone"') ?></li>
+  </ul>
+</div>
                                     </td>
                                 </tr>
                                     <?php endif ?>
@@ -72,7 +76,7 @@
 		                <th><?php echo lang('name_label') ?></th>
 		                <th><?php echo lang('global:description') ?></th>
 		                <th><?php echo lang('templates:language_label') ?></th>
-		                <th width="220"><?php echo lang('global:actions'); ?></th>
+		                <th width="180"><?php echo lang('global:actions'); ?></th>
 		            </tr>
 		        </thead>
 		
@@ -86,11 +90,15 @@
 		                <td><?php echo $template->description ?></td>
 		                <td><?php echo $template->lang ?></td>
 		                <td class="actions">
-						<div class="buttons buttons-small align-center">
-							<?php echo anchor('admin/templates/preview/' . $template->id, lang('buttons:preview'), 'class="btn btn-success preview modal"') ?>
-		                    <?php echo anchor('admin/templates/edit/' . $template->id, lang('buttons:edit'), 'class="btn btn-primary edit"') ?>
-							<?php echo anchor('admin/templates/delete/' . $template->id, lang('buttons:delete'), 'class="btn btn-danger delete"') ?>
-						</div>
+<div class="btn-group">
+  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <ul class="dropdown-menu">
+      <li><?php echo anchor('admin/templates/preview/' . $template->id, lang('buttons:preview'), 'class= preview modal-ajax" title="'. lang('buttons:preview') . ' - ' . $template->name .'"') ?></li>
+      <li><?php echo anchor('admin/templates/edit/' . $template->id, lang('buttons:edit'), 'class="edit"') ?></li>
+      <li><?php echo anchor('admin/templates/delete/' . $template->id, lang('buttons:delete'), 'class="delete"') ?></li>
+  </ul>
+</div>
 		                </td>
 		            </tr>
 				<?php endif ?>

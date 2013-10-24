@@ -11,8 +11,6 @@ class Migration_Update_modules extends CI_Migration {
                 $this->load->library('settings/settings');
                 $this->load->model('addons/module_m');
                                 
-                $this->module_m->import_unknown(); 
-                $this->module_m->import_unknown(); 
                 $this->module_m->import_unknown();                
                 return true;
 	}

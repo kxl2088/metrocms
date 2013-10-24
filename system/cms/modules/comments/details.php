@@ -24,16 +24,9 @@ class Module_Comments extends Module
 			),
                         'extra' => array(
                             'dashboard' => array(
-                                'en' => array(
-                                    'class' => 'blue-violate',
-                                    'title' => 'lang:cp:manage_comments',
-                                    'icon' => 'icon-comments'
-                                ),
-                                'br' => array(
-                                    'class' => 'blue-violate',
-                                    'title' => 'lang:cp:manage_comments',
-                                    'icon' => 'icon-comments'
-                                )
+                                'class' => 'blue-violate',
+                                'title' => 'lang:cp:manage_comments',
+                                'icon' => 'icon-comments'
                             )
                         ),
 			'frontend' => false,

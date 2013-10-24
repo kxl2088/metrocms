@@ -24,16 +24,9 @@ class Module_Files extends Module
 			),
                         'extra' => array(
                             'dashboard' => array(
-                                'en' => array(
-                                    'class' => 'blue',
-                                    'title' => 'lang:cp:manage_files',
-                                    'icon' => 'icon-folder-open'
-                                ),
-                                'br' => array(
-                                    'class' => 'blue',
-                                    'title' => 'lang:cp:manage_files',
-                                    'icon' => 'icon-folder-open'
-                                )
+                                'class' => 'blue',
+                                'title' => 'lang:cp:manage_files',
+                                'icon' => 'icon-folder-open'
                             )
                         ),
 			'frontend' => false,

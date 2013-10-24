@@ -13,7 +13,7 @@
                                                     <tr>
                                                             <th style="text-align: left!important;"><?php echo lang('groups:name');?></th>
                                                             <th><?php echo lang('groups:short_name');?></th>
-                                                            <th width="340"><?php echo lang('global:actions'); ?></th>
+                                                            <th width="180"><?php echo lang('global:actions'); ?></th>
                                                     </tr>
                                             </thead>
                                             <tbody>
@@ -22,13 +22,19 @@
                                                             <td style="text-align: left!important;"><?php echo $group->description ?></td>
                                                             <td><?php echo $group->name ?></td>
                                                             <td class="actions">
-                                                            <?php echo anchor('admin/groups/edit/'.$group->id, lang('buttons:edit'), 'class="btn btn-primary edit"') ?>
+<div class="btn-group">
+  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <ul class="dropdown-menu">
+      <li><?php echo anchor('admin/groups/edit/'.$group->id, lang('buttons:edit'), 'class=" edit"') ?></li>
                                                             <?php if ( ! in_array($group->name, array('user', 'admin'))): ?>
-                                                                    <?php echo anchor('admin/groups/delete/'.$group->id, lang('buttons:delete'), 'class="confirm btn btn-danger delete"') ?>
+      <li><?php echo anchor('admin/groups/delete/'.$group->id, lang('buttons:delete'), 'class="confirm delete"') ?></li>
                                                             <?php endif ?>
                                                             <?php if ( ! in_array($group->name, array('admin'))): ?>
-                                                            <?php echo anchor('admin/permissions/group/'.$group->id, lang('permissions:edit').' &rarr;', 'class="btn btn-info edit"') ?>
+      <li><?php echo anchor('admin/permissions/group/'.$group->id, lang('permissions:edit'), 'class=" edit"') ?></li>
                                                             <?php endif; ?>
+  </ul>
+</div>
                                                             </td>
                                                     </tr>
                                             <?php endforeach;?>

@@ -13,7 +13,7 @@
                                 <thead>
                                         <tr>
                                                 <th style="text-align: left!important;"><?php echo lang('keywords:name');?></th>
-                                                <th width="200"><?php echo lang('global:actions'); ?></th>
+                                                <th width="180"><?php echo lang('global:actions'); ?></th>
                                         </tr>
                                 </thead>
                                 <tbody>
@@ -21,10 +21,16 @@
                                         <tr>
                                                 <td style="text-align: left!important;"><?php echo $keyword->name ?></td>
                                                 <td class="actions">
-                                                <?php echo anchor('admin/keywords/edit/'.$keyword->id, lang('global:edit'), 'class="btn btn-primary edit"') ?>
+<div class="btn-group">
+  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <ul class="dropdown-menu">
+      <li><?php echo anchor('admin/keywords/edit/'.$keyword->id, lang('global:edit'), 'class="edit"') ?></li>
                                                 <?php if ( ! in_array($keyword->name, array('user', 'admin'))): ?>
-                                                        <?php echo anchor('admin/keywords/delete/'.$keyword->id, lang('global:delete'), 'class="confirm btn btn-danger delete"') ?>
+      <li><?php echo anchor('admin/keywords/delete/'.$keyword->id, lang('global:delete'), 'class="confirm delete"') ?></li>
                                                 <?php endif ?>
+  </ul>
+</div>
                                                 </td>
                                         </tr>
                                 <?php endforeach;?>

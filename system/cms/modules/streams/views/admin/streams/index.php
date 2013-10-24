@@ -10,14 +10,14 @@
 
 <?php if (!empty($streams)): ?>
 			
-<table border="0" class="table-list table-lg-center responsive table table-hover table-striped table-bordered" cellspacing="0">
+<table border="0" class="table-list responsive table table-hover table-striped table-bordered" cellspacing="0">
 	<thead>
 		<tr>
 		    <th><?php echo lang('streams:stream_name');?></th>
 		    <th><?php echo lang('streams:stream_slug');?></th>
 		    <th><?php echo lang('streams:about');?></th>
 		    <th><?php echo lang('streams:total_entries');?></th>
-		    <th width="320"><?php echo lang('global:actions'); ?></th>
+		    <th width="180"><?php echo lang('global:actions'); ?></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -46,10 +46,15 @@
 			<td><?php if($table_exists): echo number_format($this->streams_m->count_stream_entries($stream->stream_slug, $stream->stream_namespace)); endif; ?></td>
 			
 			<td class="actions">
-				<?php if(group_has_role('streams', 'admin_streams')): echo anchor('admin/streams/manage/' . $stream->id, lang('streams:manage'), 'class="btn btn-primary edit"'); endif; ?> 
-				<?php echo anchor('admin/streams/entries/index/' . $stream->id, lang('streams:entries'), 'class="btn btn-warning edit"');?> 
-				<?php echo anchor('admin/streams/entries/add/'.$stream->id, lang('streams:new_entry'), 'class="btn btn-success green"');?> 
-			
+<div class="btn-group">
+  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <ul class="dropdown-menu">
+      <?php if(group_has_role('streams', 'admin_streams')): echo '<li>' . anchor('admin/streams/manage/' . $stream->id, lang('streams:manage'), 'class="edit"') . '</li>'; endif; ?> 
+      <li><?php echo anchor('admin/streams/entries/index/' . $stream->id, lang('streams:entries'), 'class="edit"');?></li>
+      <li><?php echo anchor('admin/streams/entries/add/'.$stream->id, lang('streams:new_entry'), 'class=""');?></li>
+  </ul>
+</div>
 			</td>
 		</tr>
 	<?php endforeach;?>

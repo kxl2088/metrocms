@@ -11,7 +11,7 @@
                                     <thead>
                                             <tr>
                                                     <th style="text-align: left !important;"><?php echo lang('permissions:group') ?></th>
-                                                    <th width="320"><?php echo lang('global:actions'); ?></th>
+                                                    <th width="290"><?php echo lang('global:actions'); ?></th>
                                             </tr>
                                     </thead>
                                     <tbody>
@@ -19,11 +19,19 @@
                                             <tr>
                                                     <td style="text-align: left !important;"><?php echo $group->description ?></td>
                                                     <td class="buttons actions">
+<?php if ($admin_group != $group->name):?>
+<div class="btn-group">
+  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <ul class="dropdown-menu">
                                                             <?php if ($admin_group != $group->name):?>
-                                                            <?php echo anchor('admin/permissions/group/' . $group->id, lang('permissions:edit'), array('class'=>'btn btn-primary')) ?>
-                                                            <?php else: ?>
-                                                            <?php echo lang('permissions:admin_has_all_permissions') ?>
+      <li><?php echo anchor('admin/permissions/group/' . $group->id, lang('permissions:edit'), array('class'=>'')) ?></li>
                                                             <?php endif ?>
+  </ul>
+<?php else: ?>
+<?php echo lang('permissions:admin_has_all_permissions') ?>
+<?php endif ?>
+</div>
                                                     </td>
                                             </tr>
                                             <?php endforeach ?>

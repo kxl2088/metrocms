@@ -8,7 +8,7 @@
 				<th class="collapse"><?php echo lang('blog:date_label') ?></th>
 				<th class="collapse"><?php echo lang('blog:written_by_label') ?></th>
 				<th><?php echo lang('blog:status_label') ?></th>
-				<th width="280"><?php echo lang('global:actions') ?></th>
+				<th width="180"><?php echo lang('global:actions') ?></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -26,14 +26,20 @@
 					<?php endif ?>
 					</td>
 					<td><?php echo lang('blog:'.$post->status.'_label') ?></td>
-					<td style="padding-top:10px;">
-                        <?php if($post->status=='live') : ?>
-							<a href="<?php echo site_url('blog/'.date('Y/m', $post->created_on).'/'.$post->slug) ?>" title="<?php echo lang('global:view')?>" class="btn btn-success" target="_blank"><?php echo lang('global:view')?></a>
-                        <?php else: ?>
-							<a href="<?php echo site_url('blog/preview/' . $post->preview_hash) ?>" title="<?php echo lang('global:preview')?>" class="btn btn-success" target="_blank"><?php echo lang('global:preview')?></a>
-                        <?php endif ?>
-						<a href="<?php echo site_url('admin/blog/edit/' . $post->id) ?>" title="<?php echo lang('global:edit')?>" class="btn btn-primary"><?php echo lang('global:edit')?></a>
-						<a href="<?php echo site_url('admin/blog/delete/' . $post->id) ?>" title="<?php echo lang('global:delete')?>" class="btn btn-danger confirm"><?php echo lang('global:delete')?></a>
+					<td>
+<div class="btn-group">
+  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <ul class="dropdown-menu">
+        <?php if($post->status=='live') : ?>
+      <li><a href="<?php echo site_url('blog/'.date('Y/m', $post->created_on).'/'.$post->slug) ?>" title="<?php echo lang('global:view')?>" target="_blank"><?php echo lang('global:view')?></a></li>
+        <?php else: ?>
+      <li><a href="<?php echo site_url('blog/preview/' . $post->preview_hash) ?>" title="<?php echo lang('global:preview')?>" target="_blank"><?php echo lang('global:preview')?></a></li>
+        <?php endif ?>
+      <li><a href="<?php echo site_url('admin/blog/edit/' . $post->id) ?>" title="<?php echo lang('global:edit')?>" class=""><?php echo lang('global:edit')?></a></li>
+      <li><a href="<?php echo site_url('admin/blog/delete/' . $post->id) ?>" title="<?php echo lang('global:delete')?>" class="confirm"><?php echo lang('global:delete')?></a></li>
+  </ul>
+</div>
 					</td>
 				</tr>
 			<?php endforeach ?>

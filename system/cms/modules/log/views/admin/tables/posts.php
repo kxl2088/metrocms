@@ -10,7 +10,7 @@
         <th><?php echo lang('log.size_label'); ?></th>
         <th><?php echo lang('log.date_label'); ?></th>
         <th><?php echo lang('log.date_synced_label'); ?></th>
-        <th width="320"><?php echo lang('global:actions'); ?></th>
+        <th width="180"><?php echo lang('global:actions'); ?></th>
     </tr>
     </thead>
     <tbody>
@@ -21,10 +21,16 @@
         <td><?php echo byte_size($log->size); ?></td>
         <td><?php echo format_date($log->date); ?></td>
         <td><?php echo format_date($log->created_on); ?></td>
-        <td style="text-align: right;">
-            <?php echo anchor('admin/' . $this->module . '/preview/' . $log->id, lang('global:view'), 'class="btn btn-success"'); ?>
-            <?php echo anchor('admin/' . $this->module . '/delete/' . $log->id, lang('global:delete'), array('class' => 'confirm btn btn-danger delete')); ?>
-            <?php echo (isset($physical_files[$log->name]) && $log->size != $physical_files[$log->name]['size']) ? (anchor('admin/' . $this->module . '/resync/' . $log->id, lang('log.resync_label'), 'class="btn btn-success"')) : (null); ?>
+        <td>
+<div class="btn-group">
+  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <ul class="dropdown-menu">
+      <li><?php echo anchor('admin/' . $this->module . '/preview/' . $log->id, lang('global:view'), 'class=""'); ?></li>
+      <li><?php echo anchor('admin/' . $this->module . '/delete/' . $log->id, lang('global:delete'), array('class' => 'confirm delete')); ?></li>
+      <li><?php echo (isset($physical_files[$log->name]) && $log->size != $physical_files[$log->name]['size']) ? (anchor('admin/' . $this->module . '/resync/' . $log->id, lang('log.resync_label'), 'class=""')) : (null); ?></li>
+  </ul>
+</div>
         </td>
     </tr><?php
     endforeach; ?>

@@ -18,7 +18,7 @@
                                         <th><?php echo lang('desc_label') ?></th>
                                         <th width="130"><?php echo lang('global:author') ?></th>
                                         <th width="80" class="align-center"><?php echo lang('version_label') ?></th>
-                                        <th width="150"></th>
+                                        <th width="180"><?php echo lang('global:actions'); ?></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -35,11 +35,18 @@
                                                 </td>
                                                 <td class="align-center"><?php echo $widget->version ?></td>
                                                 <td class="align-center buttons buttons-small actions">
-                                                <?php if ($widget->enabled == '1'): ?>
-                                                        <?php echo anchor('admin/addons/widgets/disable/' . $widget->id, lang('buttons:disable'), 'class="btn btn-danger disable"') ?>
-                                                <?php else: ?>
-                                                        <?php echo anchor('admin/addons/widgets/enable/' . $widget->id, lang('buttons:enable'), 'class="btn btn-primary enable"') ?>
-                                                <?php endif ?>
+<div class="btn-group">
+  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <ul class="dropdown-menu">
+        <?php if ($widget->enabled == '1'): ?>
+      <li><?php echo anchor('admin/addons/widgets/disable/' . $widget->id, lang('buttons:disable'), 'class="disable"') ?></li>
+        <?php else: ?>
+      <li><?php echo anchor('admin/addons/widgets/enable/' . $widget->id, lang('buttons:enable'), 'class="enable"') ?></li>
+        <?php endif ?>
+  </ul>
+</div>
+
                                                 </td>
                                         </tr>
                                         <?php endforeach ?>

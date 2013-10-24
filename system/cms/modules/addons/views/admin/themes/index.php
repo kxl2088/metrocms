@@ -18,8 +18,8 @@
                                                     <th width="15%"><?php echo lang('addons:themes:theme_label') ?></th>
                                                     <th class="collapse"><?php echo lang('global:description') ?></th>
                                                     <th class="collapse" width="15%"><?php echo lang('global:author') ?></th>
-                                                    <th width="50px" class="align-center"><?php echo lang('addons:themes:version_label') ?></th>
-                                                    <th width="250px"></th>
+                                                    <th width="50" class="align-center"><?php echo lang('addons:themes:version_label') ?></th>
+                                                    <th width="180"><?php echo lang('global:actions'); ?></th>
                                             </tr>
                                     </thead>
                                     <tbody>
@@ -46,9 +46,16 @@
 
                                                     <td class="align-center"><?php echo $theme->version ?></td>
                                                     <td class="actions">
-                                                            <?php echo isset($theme->options) ? anchor('admin/addons/themes/options/'.$theme->slug, lang('addons:themes:options'), 'title="'.$theme->name.'" class="btn btn-warning options"') : '' ?>
-                                                            <a href="<?php echo $theme->screenshot ?>" rel="screenshots" title="<?php echo $theme->name ?>" class="btn btn-success fancybox"><?php echo lang('buttons:preview') ?></a>
-                                                            <?php if($theme->slug != 'admin_theme') { echo anchor('admin/addons/themes/delete/'.$theme->slug, lang('buttons:delete'), 'class="confirm btn btn-danger delete"'); } ?>
+<div class="btn-group">
+  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <ul class="dropdown-menu">
+      <?php echo isset($theme->options) ? '<li>' . anchor('admin/addons/themes/options/'.$theme->slug, lang('addons:themes:options'), 'title="'.$theme->name.'" class="options"') . '</li>' : '' ?>
+      <li><a href="<?php echo $theme->screenshot ?>" rel="screenshots" title="<?php echo $theme->name ?>" class="fancybox"><?php echo lang('buttons:preview') ?></a></li>
+      <?php if($theme->slug != 'admin_theme') { echo '<li>' . anchor('admin/addons/themes/delete/'.$theme->slug, lang('buttons:delete'), 'class="confirm delete"') . '</li>'; } ?>
+  </ul>
+</div>
+
                                                     </td>
                                             </tr>
                                             <?php endforeach ?>
@@ -57,7 +64,7 @@
 
                             <?php $this->load->view('admin/partials/pagination') ?>
 
-                            <div>
+                            <div class="action_buttons">
                                     <?php $this->load->view('admin/partials/buttons', array('buttons' => array('save') )) ?>
                             </div>
 

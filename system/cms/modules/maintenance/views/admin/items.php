@@ -15,7 +15,7 @@
 						<tr>
 							<th><?php echo lang('maintenance:table_label') ?></th>
 							<th class="align-center"><?php echo lang('maintenance:record_label') ?></th>
-							<th width="340"></th>
+							<th width="180"><?php echo lang('global:actions'); ?></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -24,11 +24,17 @@
 							<td><?php echo $table['name'] ?></td>
 							<td class="align-center"><?php echo $table['count'] ?></td>
 							<td class="buttons buttons-small align-center actions">
+<div class="btn-group">
+  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <ul class="dropdown-menu">
 								<?php if ($table['count'] > 0):
-									echo anchor('admin/maintenance/export/'.$table['name'].'/xml', lang('maintenance:export_xml'), array('class'=>'btn btn-primary')).' ';
-									echo anchor('admin/maintenance/export/'.$table['name'].'/csv', lang('maintenance:export_csv'), array('class'=>'btn btn-primary')).' ';
-									echo anchor('admin/maintenance/export/'.$table['name'].'/json', lang('maintenance:export_json'), array('class'=>'btn btn-primary')).' ';
+									echo '<li>' . anchor('admin/maintenance/export/'.$table['name'].'/xml', lang('maintenance:export_xml'), array('class'=>'')).'</li>';
+									echo '<li>' . anchor('admin/maintenance/export/'.$table['name'].'/csv', lang('maintenance:export_csv'), array('class'=>'')).'</li>';
+									echo '<li>' . anchor('admin/maintenance/export/'.$table['name'].'/json', lang('maintenance:export_json'), array('class'=>'')).'</li>';
 								endif ?>
+  </ul>
+</div>
 							</td>
 						</tr>
 						<?php endforeach ?>
@@ -58,7 +64,7 @@
 						<tr>
 							<th><?php echo lang('name_label') ?></th>
 							<th class="align-center"><?php echo lang('maintenance:count_label') ?></th>
-							<th width="320"></th>
+							<th width="180"><?php echo lang('global:actions'); ?></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -67,8 +73,14 @@
 							<td><?php echo $folder['name'] ?></td>
 							<td class="align-center"><?php echo $folder['count'] ?></td>
 							<td class="buttons buttons-small align-center actions">
-								<?php if ($folder['count'] > 0) echo anchor('admin/maintenance/cleanup/'.$folder['name'], lang('global:empty'), array('class'=>'btn btn-info confirm empty')) ?>
-								<?php if ( ! $folder['cannot_remove']) echo anchor('admin/maintenance/cleanup/'.$folder['name'].'/1', lang('global:remove'), array('class'=>'btn btn-danger hide confirm remove')) ?>
+<div class="btn-group">
+  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <ul class="dropdown-menu">
+								<?php if ($folder['count'] > 0) echo '<li>' . anchor('admin/maintenance/cleanup/'.$folder['name'], lang('global:empty'), array('class'=>'confirm empty')) . '</li>' ?>
+								<?php if ( ! $folder['cannot_remove']) echo '<li>' . anchor('admin/maintenance/cleanup/'.$folder['name'].'/1', lang('global:remove'), array('class'=>'confirm remove')) . '</li>' ?>
+  </ul>
+</div>
 							</td>
 						</tr>
 						<?php endforeach ?>

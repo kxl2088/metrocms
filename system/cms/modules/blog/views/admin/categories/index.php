@@ -28,8 +28,15 @@
                                                     <td><?php echo $category->title ?></td>
                                                     <td><?php echo $category->slug ?></td>
                                                     <td class="align-center buttons buttons-small">
-                                                            <?php echo anchor('admin/blog/categories/edit/'.$category->id, lang('global:edit'), 'class="btn btn-primary edit"') ?>
-                                                            <?php echo anchor('admin/blog/categories/delete/'.$category->id, lang('global:delete'), 'class="confirm btn btn-danger delete"') ;?>
+<div class="btn-group">
+  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <ul class="dropdown-menu">
+      <li><?php echo anchor('admin/blog/categories/edit/'.$category->id, lang('global:edit'), 'class="edit"') ?></li>
+      <li><?php echo anchor('admin/blog/categories/delete/'.$category->id, lang('global:delete'), 'class="confirm delete"') ;?></li>
+  </ul>
+</div>
+                                                            
                                                     </td>
                                             </tr>
                                             <?php endforeach ?>
