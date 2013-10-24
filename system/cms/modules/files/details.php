@@ -22,6 +22,20 @@ class Module_Files extends Module
 				'en' => 'Manages files and folders for your site.',
 				'br' => 'Permite gerenciar facilmente os arquivos de seu site.',
 			),
+                        'extra' => array(
+                            'dashboard' => array(
+                                'en' => array(
+                                    'class' => 'blue',
+                                    'title' => 'lang:cp:manage_files',
+                                    'icon' => 'icon-folder-open'
+                                ),
+                                'br' => array(
+                                    'class' => 'blue',
+                                    'title' => 'lang:cp:manage_files',
+                                    'icon' => 'icon-folder-open'
+                                )
+                            )
+                        ),
 			'frontend' => false,
 			'backend' => true,
 			'menu' => 'content',

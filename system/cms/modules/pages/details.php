@@ -16,12 +16,25 @@ class Module_Pages extends Module
 			'name' => array(
 				'en' => 'Pages',
 				'br' => 'Páginas',
-            	'se' => 'Sidor',
 			),
 			'description' => array(
 				'en' => 'Add custom pages to the site with any content you want.',
 				'br' => 'Adicionar páginas personalizadas ao site com qualquer conteúdo que você queira.',
 			),
+                        'extra' => array(
+                            'dashboard' => array(
+                                'en' => array(
+                                    'class' => 'dark-yellow',
+                                    'title' => 'lang:cp:manage_pages',
+                                    'icon' => 'icon-file-alt'
+                                ),
+                                'br' => array(
+                                    'class' => 'dark-yellow',
+                                    'title' => 'lang:cp:manage_pages',
+                                    'icon' => 'icon-file-alt'
+                                )
+                            )
+                        ),
 			'frontend' => true,
 			'backend'  => true,
 			'skip_xss' => true,

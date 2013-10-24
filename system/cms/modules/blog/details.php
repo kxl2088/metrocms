@@ -21,6 +21,20 @@ class Module_Blog extends Module
 				'en' => 'Post blog entries.',
 				'br' => 'Escrever publicações de blog.',
 			),
+                        'extra' => array(
+                            'dashboard' => array(
+                                'en' => array(
+                                    'class' => 'magenta',
+                                    'title' => 'lang:cp:manage_blog',
+                                    'icon' => 'icon-file'
+                                ),
+                                'br' => array(
+                                    'class' => 'magenta',
+                                    'title' => 'lang:cp:manage_blog',
+                                    'icon' => 'icon-file'
+                                )
+                            )
+                        ),
 			'frontend' => true,
 			'backend' => true,
 			'skip_xss' => true,

@@ -21,6 +21,20 @@ class Module_Users extends Module {
 				'en' => 'Let users register and log in to the site, and manage them via the control panel.',
 				'br' => 'Permite com que usuários se registrem e entrem no site e também que eles sejam gerenciáveis apartir do painel de controle.',
 			),
+                        'extra' => array(
+                            'dashboard' => array(
+                                'en' => array(
+                                    'class' => 'brown',
+                                    'title' => 'lang:cp:manage_users',
+                                    'icon' => 'icon-user'
+                                ),
+                                'br' => array(
+                                    'class' => 'brown',
+                                    'title' => 'lang:cp:manage_users',
+                                    'icon' => 'icon-user'
+                                )
+                            )
+                        ),
 			'frontend' 	=> false,
 			'backend'  	=> true,
 			'menu'	  	=> false,

@@ -21,6 +21,20 @@ class Module_Navigation extends Module {
 				'en' => 'Manage links on navigation menus and all the navigation groups they belong to.',
 				'br' => 'Gerenciar links do menu de navegação e todos os grupos de navegação pertencentes a ele.',
 			),
+                        'extra' => array(
+                            'dashboard' => array(
+                                'en' => array(
+                                    'class' => 'green',
+                                    'title' => 'lang:cp:manage_navigation',
+                                    'icon' => 'icon-globe'
+                                ),
+                                'br' => array(
+                                    'class' => 'green',
+                                    'title' => 'lang:cp:manage_navigation',
+                                    'icon' => 'icon-globe'
+                                )
+                            )
+                        ),
 			'frontend' => false,
 			'backend'  => true,
 			'menu'	  => 'structure',

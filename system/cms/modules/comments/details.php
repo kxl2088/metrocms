@@ -22,6 +22,20 @@ class Module_Comments extends Module
 				'en' => 'Users and guests can write comments for content like blog, pages and photos.',
 				'br' => 'Usuários e convidados podem escrever comentários para quase tudo com suporte nativo ao captcha.',
 			),
+                        'extra' => array(
+                            'dashboard' => array(
+                                'en' => array(
+                                    'class' => 'blue-violate',
+                                    'title' => 'lang:cp:manage_comments',
+                                    'icon' => 'icon-comments'
+                                ),
+                                'br' => array(
+                                    'class' => 'blue-violate',
+                                    'title' => 'lang:cp:manage_comments',
+                                    'icon' => 'icon-comments'
+                                )
+                            )
+                        ),
 			'frontend' => false,
 			'backend' => true,
 			'menu' => 'content'
