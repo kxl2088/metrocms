@@ -14,11 +14,11 @@
                             <table class="table-list responsive table table-hover table-striped table-bordered" cellspacing="0">
                                     <thead>
                                             <tr>
-                                                    <th width="120px" class="align-center"><?php echo lang('addons:themes:default_theme_label') ?></th>
+                                                    <th width="120" class="center"><?php echo lang('addons:themes:default_theme_label') ?></th>
                                                     <th width="15%"><?php echo lang('addons:themes:theme_label') ?></th>
                                                     <th class="collapse"><?php echo lang('global:description') ?></th>
-                                                    <th class="collapse" width="15%"><?php echo lang('global:author') ?></th>
-                                                    <th width="50" class="align-center"><?php echo lang('addons:themes:version_label') ?></th>
+                                                    <th class="collapse" width="10%"><?php echo lang('global:author') ?></th>
+                                                    <th width="50" class="center"><?php echo lang('addons:themes:version_label') ?></th>
                                                     <th width="180"><?php echo lang('global:actions'); ?></th>
                                             </tr>
                                     </thead>
@@ -44,7 +44,7 @@
                                                             <?php endif ?>
                                                     </td>
 
-                                                    <td class="align-center"><?php echo $theme->version ?></td>
+                                                    <td class="center"><?php echo $theme->version ?></td>
                                                     <td class="actions">
 <div class="btn-group">
   <button type="button" class="btn btn-primary"><?php echo lang('global:actions'); ?></button>

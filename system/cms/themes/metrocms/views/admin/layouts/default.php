@@ -16,14 +16,14 @@
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('bootstrap-responsive.min.css', TRUE); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('jquery.gritter.css', TRUE); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('font-awesome.css', TRUE); ?>">
-        <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('tablecloth.css', TRUE); ?>">
-        <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('styles.css', TRUE); ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('tablecloth.css', TRUE); ?>">        
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('aristo-ui.css', TRUE); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('dosis-font.css', TRUE); ?>"> 
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('animate.css', TRUE); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('chosen.css', TRUE); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('fancybox/jquery.fancybox.css', TRUE); ?>">
-        <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('jquery/codemirror.css', TRUE); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('styles.css', TRUE); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css($theme_options->default_theme, TRUE); ?>">
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('custom.css', TRUE); ?>">
 	<!-- End CSS-->
 
@@ -38,6 +38,10 @@
         <script type="text/javascript" src="<?php echo Asset::get_filepath_js('jquery/jquery.js', TRUE); ?>"></script>        
         <script type="text/javascript" src="<?php echo Asset::get_filepath_js('jquery/jquery-ui-1.10.1.custom.min.js', TRUE); ?>"></script>
         <script type="text/javascript" src="<?php echo Asset::get_filepath_js('jquery/jquery.easing.1.3.js', TRUE); ?>"></script>    
+	<?php if ((isset($analytic_visits) OR isset($analytic_views)) AND $theme_options->metrocms_analytics_graph == 'yes'): ?>
+	<!-- Google Chart -->
+	<script src="https://www.google.com/jsapi"></script>
+	<?php endif; ?>
 	<?php file_partial('metadata'); ?>
         
 	<!--[if lt IE 7 ]>

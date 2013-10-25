@@ -7,7 +7,7 @@ class Streams_api extends Public_Controller {
             parent::__construct();
      
             $this->load->helper('streams/streams');
-            $this->lang->load('streams');
+            $this->lang->load('streams/streams');
     }
 
     public function index($actions = FALSE)

@@ -2,14 +2,21 @@
 
 class Theme_Metrocms extends Theme {
 
-    public $name			= 'MetroCMS - Admin Theme';
-    public $author			= 'MetroCMS Dev Team';
-    public $author_website	= 'http://fabriciorabelo.com/';
-    public $website			= 'http://fabriciorabelo.com/';
-    public $description		= 'MetroCMS admin theme. HTML5 and CSS3 styling.';
-    public $version			= '1.0.0';
+    public $name			= 'Falgun - Metro Style Bootstrap Admin Dashboard';
+    public $author			= 'westilian';
+    public $author_website	= 'http://themeforest.net/user/westilian';
+    public $website			= 'http://themeforest.net/item/falgun-metro-style-bootstrap-admin-dashboard/4257951';
+    public $description		= 'Falgun admin theme. A Metro style Bootstrap admin theme, using HTML5 and CSS3.';
+    public $version			= '1.1.0';
     public $type			= 'admin';
     public $options 		= array(
+	'default_theme' => array(
+				    'title'	    => 'Default Dashboard Theme',
+                                    'description'   => 'Select the default dashboard theme do you like display',
+                                    'default'       => 'theme-default.css',
+                                    'type'          => 'select',
+                                    'options'       => 'theme-default.css=Default|theme-blue.css=Blue|theme-dark-orange.css=Dark Orange|theme-fabrics.css=Fabrics|theme-wooden.css=Wooden',
+                                    'is_required'   => false),
         'metrocms_recent_comments' => array('title' 		=> 'Recent Comments',
                                     'description'   => 'Would you like to display recent comments on the dashboard?',
                                     'default'       => 'yes',
@@ -68,8 +75,15 @@ class Theme_Metrocms extends Theme {
 			{
 				$data['analytic_visits'] = $cached_response['analytic_visits'];
 				$data['analytic_views'] = $cached_response['analytic_views'];
+				$data['analytic_visits'] = $cached_response['analytic_visits'];
+				$data['analytic_views'] = $cached_response['analytic_views'];
+				$data['analytic_timeonsite'] = $cached_response['analytic_timeonsite'];
+				$data['analytic_visitsperhour'] = $cached_response['analytic_visitsperhour'];
+				$data['analytic_browsers'] = $cached_response['analytic_browsers'];
+				$data['analytic_os'] = $cached_response['analytic_os'];
+				$data['analytic_refers'] = $cached_response['analytic_refers'];
+				$data['analytic_keywords'] = $cached_response['analytic_keywords'];
 			}
-
 			else
 			{
 				try
@@ -89,7 +103,13 @@ class Theme_Metrocms extends Theme {
 
 					$visits = $this->analytics->getVisitors();
 					$views = $this->analytics->getPageviews();
-
+					$timeonsite = $this->analytics->getTimeOnSite();
+					$visitsperhour = $this->analytics->getVisitsPerHour();
+					$browsers = $this->analytics->getBrowsers();
+					$os = $this->analytics->getOperatingSystem();
+					$refers = $this->analytics->getReferrers();
+					$searchwords = $this->analytics->getSearchWords();
+					
 					/* build tables */
 					if (count($visits))
 					{
@@ -111,9 +131,24 @@ class Theme_Metrocms extends Theme {
 
 					$data['analytic_visits'] = $flot_data_visits;
 					$data['analytic_views'] = $flot_data_views;
+					$data['analytic_timeonsite'] = $timeonsite;
+					$data['analytic_visitsperhour'] = $visitsperhour;
+					$data['analytic_browsers'] = $browsers;
+					$data['analytic_os'] = $os;
+					$data['analytic_refers'] = $refers;
+					$data['analytic_keywords'] = $searchwords;
 
 					// Call the model or library with the method provided and the same arguments
-					$this->metrocache->write(array('analytic_visits' => $flot_data_visits, 'analytic_views' => $flot_data_views), 'analytics', 60 * 60 * 6); // 6 hours
+					$this->metrocache->write(array(
+						'analytic_visits' => $flot_data_visits, 
+						'analytic_views' => $flot_data_views,
+						'analytic_timeonsite' => $timeonsite,
+						'analytic_visitsperhour' => $visitsperhour,
+						'analytic_browsers' => $browsers,
+						'analytic_os' => $os,
+						'analytic_refers' => $refers,
+						'analytic_keywords' => $searchwords
+					), 'analytics', 60 * 60 * 6); // 6 hours
 				}
 
 				catch (Exception $e)

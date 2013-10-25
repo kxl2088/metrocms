@@ -285,4 +285,4 @@ li.empty-drop-item.loading {
 }
 
 #widgets-list > tbody > tr { cursor: auto; }
-td span.move-handle { float: right; margin-left: auto; margin-right: auto; width: 18px; height: 18px; cursor: move; background: url(../../../themes/metrocms/img/icons/cursor_drag_arrow.png) no-repeat; }
+td span.move-handle { display: block; margin-left: auto; margin-right: auto; width: 18px; height: 18px; cursor: move; background: url(../../../themes/metrocms/img/icons/cursor_drag_arrow.png) no-repeat; }

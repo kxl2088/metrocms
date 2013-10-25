@@ -780,7 +780,17 @@ $(document).ready(function() {
             }, 500);
             return false;
         });
-        
+	
+	$(".left-primary-nav a").hover(function () {
+	    $(this).stop().animate({
+		fontSize: "30px"
+	    }, 200);
+	}, function () {
+	    $(this).stop().animate({
+		fontSize: "24px"
+	    }, 100);
+	});
+
         $('#myTab a').click(function (e) {
             e.preventDefault();
             $(this).tab('show');

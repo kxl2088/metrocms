@@ -26,7 +26,8 @@ class Admin_Entries extends Admin_Controller {
 		$this->load->driver('Streams');
 		$this->load->config('streams/streams');
 		$this->load->helper('streams/streams');
-
+                $this->lang->load('streams/streams');
+                
 		$this->data = new stdClass();
  		$this->data->types = $this->type->types;
  		

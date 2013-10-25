@@ -202,17 +202,17 @@ table tr td i.icon-move{
 }
 .filters, #filters{
     position: relative;
-    display: table;
+    display: block;
 }
 .filters ul:not(.chzn-results), #filters ul:not(.chzn-results){
     margin: 0;
     padding: 0;
-    display: table-row;
+    display: inline-block;
 }
 .filters ul:not(.chzn-results) li:not(.active-result), #filters ul:not(.chzn-results) li:not(.active-result){
     list-style-type:none;
     position: relative;
-    display: table-cell;
+    display: inline-block;
     margin-top: auto;
     padding: 4px;
     vertical-align: bottom;

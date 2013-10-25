@@ -17,14 +17,15 @@
                                         <th width="20%"><?php echo lang('global:title') ?></th>
                                         <th><?php echo lang('desc_label') ?></th>
                                         <th width="130"><?php echo lang('global:author') ?></th>
-                                        <th width="80" class="align-center"><?php echo lang('version_label') ?></th>
+                                        <th width="80" class="center"><?php echo lang('version_label') ?></th>
+					<th width="100" class="center"><?php echo lang('addons:modules:status');?></th>
                                         <th width="180"><?php echo lang('global:actions'); ?></th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                         <?php foreach ($widgets as $widget): ?>
                                         <tr>
-                                                <td>
+					    <td class="center">
                                                     <span class="move-handle"></span>
                                                     <input type="hidden" name="action_to[]" value="<?php echo $widget->id; ?>">
                                                 </td>
@@ -33,7 +34,14 @@
                                                 <td>
                                                         <?php echo $widget->website ? anchor($widget->website, $widget->author, array('target' => '_blank')) : $widget->author ?>
                                                 </td>
-                                                <td class="align-center"><?php echo $widget->version ?></td>
+                                                <td class="center"><?php echo $widget->version ?></td>
+						<td class="center">
+						<?php if ($widget->enabled == '1'): ?>
+						<?php echo lang('addons:modules:installed'); ?>  
+						<?php else: ?>
+					        <?php echo lang('addons:modules:disabled'); ?>  
+						<?php endif ?>
+						</td>
                                                 <td class="align-center buttons buttons-small actions">
 <div class="btn-group">
   <button type="button" class="btn btn-primary"><?php echo lang('global:actions'); ?></button>

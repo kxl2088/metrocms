@@ -13,8 +13,8 @@
                                             <tr>
                                                     <th><?php echo lang('name_label');?></th>
                                                     <th class="collapse"><span><?php echo lang('desc_label');?></span></th>
-                                                    <th class="center"><?php echo lang('version_label');?></th>
-                                                    <th width="140" class="center"><?php echo lang('addons:modules:status');?></th>
+                                                    <th class="center" width="80"><?php echo lang('version_label');?></th>
+                                                    <th width="100" class="center"><?php echo lang('addons:modules:status');?></th>
                                                     <th width="180"><?php echo lang('global:actions'); ?></th>
                                             </tr>
                                     </thead>
@@ -92,8 +92,8 @@
                                             <tr>
                                                     <th><?php echo lang('name_label');?></th>
                                                     <th><span><?php echo lang('desc_label');?></span></th>
-                                                    <th class="center"><?php echo lang('version_label');?></th>
-                                                    <th width="140" class="center"><?php echo lang('addons:modules:status');?></th>
+                                                    <th class="center" width="80"><?php echo lang('version_label');?></th>
+                                                    <th width="100" class="center"><?php echo lang('addons:modules:status');?></th>
                                                     <th width="180"><?php echo lang('global:actions'); ?></th>
                                             </tr>
                                     </thead>	

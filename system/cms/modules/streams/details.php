@@ -21,11 +21,11 @@ class Module_Streams extends Module {
 		$info = array(
 			'name' => array(
 				'en' => 'Streams',
-				'br' => 'Streams',
+				'br' => 'Fluxos de Dados',
 			),
 			'description' => array(
 				'en' => 'Manage, structure, and display data.',
-				'br' => 'Gerencie, estruture e exiba dados streams.',
+				'br' => 'Gerencie, estruture e exiba fluxos de dados.',
 			),
 			'frontend' => TRUE,
 			'backend' => TRUE,
@@ -63,7 +63,7 @@ class Module_Streams extends Module {
                         if (group_has_role('streams', 'admin_api'))
 			{
 				$info['sections']['api'] = array(
-					    'name' => 	'API',
+					    'name' => 	'streams:api',
 					    'uri' => 	'admin/streams/api',
                                             'shortcuts' => array(
 							array(

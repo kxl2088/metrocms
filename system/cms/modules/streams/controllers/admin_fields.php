@@ -36,7 +36,8 @@ class Admin_Fields extends Admin_Controller {
 
 		$this->load->config('streams/streams');
 		$this->load->driver('Streams');
-
+                $this->lang->load('streams/streams');
+                 
 		$this->data = new stdClass();
  		$this->data->types = $this->type->types;
 	}

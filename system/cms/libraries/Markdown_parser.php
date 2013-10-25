@@ -185,7 +185,10 @@ class Markdown_Parser {
 		$this->html_hashes = array();
 	}
 
-
+	function parse($text){
+	    return $this->transform($text);
+	}
+	
 	function transform($text) {
 	#
 	# Main function. Performs some preprocessing on the input text
