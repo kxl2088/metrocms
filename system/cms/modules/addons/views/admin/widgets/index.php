@@ -36,8 +36,8 @@
                                                 <td class="align-center"><?php echo $widget->version ?></td>
                                                 <td class="align-center buttons buttons-small actions">
 <div class="btn-group">
-  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
-  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <button type="button" class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" type="button" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
   <ul class="dropdown-menu">
         <?php if ($widget->enabled == '1'): ?>
       <li><?php echo anchor('admin/addons/widgets/disable/' . $widget->id, lang('buttons:disable'), 'class="disable"') ?></li>

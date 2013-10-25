@@ -17,8 +17,8 @@
 				<td><?php echo $this->type->types->{$field->field_type}->field_type_name; ?></td>
 				<td class="actions">
 <div class="btn-group">
-  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
-  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <button type="button" class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" type="button" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
   <ul class="dropdown-menu">
 <?php
 					

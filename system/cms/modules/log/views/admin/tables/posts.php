@@ -23,8 +23,8 @@
         <td><?php echo format_date($log->created_on); ?></td>
         <td>
 <div class="btn-group">
-  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
-  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <button type="button" class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" type="button" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
   <ul class="dropdown-menu">
       <li><?php echo anchor('admin/' . $this->module . '/preview/' . $log->id, lang('global:view'), 'class=""'); ?></li>
       <li><?php echo anchor('admin/' . $this->module . '/delete/' . $log->id, lang('global:delete'), array('class' => 'confirm delete')); ?></li>

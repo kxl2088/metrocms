@@ -34,8 +34,8 @@
                                     <td class="collapse"><?php echo $template->lang ?></td>
                                     <td class="actions">
 <div class="btn-group">
-  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
-  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <button type="button" class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" type="button" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
   <ul class="dropdown-menu">
       <li><?php echo anchor('admin/templates/preview/' . $template->id, lang('buttons:preview'), 'class="preview modal-ajax" title="'. lang('buttons:preview') . ' - ' . $template->name .'"') ?></li>
       <li><?php echo anchor('admin/templates/edit/' . $template->id, lang('buttons:edit'), 'class="edit"') ?></li>
@@ -91,8 +91,8 @@
 		                <td><?php echo $template->lang ?></td>
 		                <td class="actions">
 <div class="btn-group">
-  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
-  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <button type="button" class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" type="button" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
   <ul class="dropdown-menu">
       <li><?php echo anchor('admin/templates/preview/' . $template->id, lang('buttons:preview'), 'class= preview modal-ajax" title="'. lang('buttons:preview') . ' - ' . $template->name .'"') ?></li>
       <li><?php echo anchor('admin/templates/edit/' . $template->id, lang('buttons:edit'), 'class="edit"') ?></li>

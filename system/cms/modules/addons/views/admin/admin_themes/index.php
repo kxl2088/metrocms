@@ -2,14 +2,14 @@
     <div class="span12">
         <div class="content-widgets">
             <div class="widget-head blue">
-                    <h3><?php echo lang('addons:themes') ?></h3>
+                    <h3><?php echo lang('addons:admin_themes') ?></h3>
             </div>
 
             <div class="widget-container">
                     <div class="content">
                     <?php if ($themes): ?>
 
-                            <?php echo form_open('admin/addons/themes/set_default') ?>
+                            <?php echo form_open('admin/addons/admin_themes/set_default') ?>
                             <?php echo form_hidden('method', $this->method) ?>
                             <table class="table-list responsive table table-hover table-striped table-bordered" cellspacing="0">
                                     <thead>
@@ -50,9 +50,8 @@
   <button type="button" class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
   <button data-toggle="dropdown" type="button" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
   <ul class="dropdown-menu">
-      <?php echo isset($theme->options) ? '<li>' . anchor('admin/addons/themes/options/'.$theme->slug, lang('addons:themes:options'), 'title="'.$theme->name.'" class="options"') . '</li>' : '' ?>
-      <li><a href="<?php echo $theme->screenshot ?>" rel="screenshots" title="<?php echo $theme->name ?>" class="fancybox"><?php echo lang('buttons:preview') ?></a></li>
-      <?php if($theme->slug != 'admin_theme') { echo '<li>' . anchor('admin/addons/themes/delete/'.$theme->slug, lang('buttons:delete'), 'class="confirm delete"') . '</li>'; } ?>
+      <?php echo isset($theme->options) ? '<li>' . anchor('admin/addons/admin_themes/options/'.$theme->slug, lang('addons:themes:options'), 'title="'.$theme->name.'" class="options"') . '</li>' : '' ?>
+      <li><a href="<?php echo $theme->screenshot ?>" rel="screenshots" title="<?php echo $theme->name ?>" class="fancybox"><?php echo lang('buttons:preview') ?></a></li>      
   </ul>
 </div>
 

@@ -7,11 +7,10 @@
 if (typeof(metro) == 'undefined') {
 	var metro = {};
 }
-
 $(document).ready(function(){
 
     metro.init_ace_editor = function(){
-        
+         
         // HTML EDITOR
         $('.html_editor').each(function(index) {
             var $ace_html = $(this);

@@ -33,19 +33,26 @@ if (typeof(metro) == 'undefined') {
 			var textarea = $('.editor textarea');
 
 			// Destroy existing WYSIWYG instance
-			if (textarea.hasClass('wysiwyg-simple') || textarea.hasClass('wysiwyg-advanced') || textarea.hasClass('html') || textarea.hasClass('markdown')) {
-                                textarea.removeClass('html');
-                                textarea.removeClass('markdown');
-				textarea.removeClass('wysiwyg-simple');
-				textarea.removeClass('wysiwyg-advanced');
+                        textarea.removeClass('html');
+                        textarea.removeClass('html_editor');
+                        textarea.removeClass('markdown');
+                        textarea.removeClass('markdown_editor');
+                        textarea.removeClass('wysiwyg-simple');
+                        textarea.removeClass('wysiwyg-advanced');
+                        $('.ace_edit_html').remove(); 
+                        $('.ace_edit_markdown').remove(); 
 
-				var instance = CKEDITOR.instances[textarea.attr('id')];
-				instance && instance.destroy();
-			}
+                        var instance = CKEDITOR.instances[textarea.attr('id')];
+                        instance && instance.destroy();
+                        
+                        if(this.value == 'html' || this.value == 'markdown'){
+                                textarea.addClass(this.value + '_editor');
+                        }
+                        
 			// Set up the new instance
-                        textarea.attr('rows', 15);
 			textarea.addClass(this.value);
 			metro.init_ckeditor();
+                        metro.init_ace_editor();
 		});
                 
                 $('#add_category').livequery(function(){

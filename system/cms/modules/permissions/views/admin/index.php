@@ -21,8 +21,8 @@
                                                     <td class="buttons actions">
 <?php if ($admin_group != $group->name):?>
 <div class="btn-group">
-  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
-  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <button type="button" class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" type="button" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
   <ul class="dropdown-menu">
                                                             <?php if ($admin_group != $group->name):?>
       <li><?php echo anchor('admin/permissions/group/' . $group->id, lang('permissions:edit'), array('class'=>'')) ?></li>

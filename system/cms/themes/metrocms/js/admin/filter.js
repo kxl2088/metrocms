@@ -103,6 +103,7 @@ $(function(){
                                         metro.fancyboxes();
                                         metro.checkboxes();
                                         metro.confirm_box();
+                                        metro.disable_action_buttons();
 				});
 			});
 		},

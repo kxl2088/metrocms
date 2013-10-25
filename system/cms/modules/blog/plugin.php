@@ -171,6 +171,8 @@ class Plugin_Blog extends Plugin
 	 */
 	public function posts()
 	{
+                $this->load->library('markdown_parser');
+                
 		$limit     = $this->attribute('limit', 10);
 		$offset    = $this->attribute('offset', 0);
 		$category  = $this->attribute('category');
@@ -215,6 +217,20 @@ class Plugin_Blog extends Plugin
                         $post->intro = Settings::get('blog_use_intro_limit') ? prepare_intro($post->body, Settings::get('blog_intro_limit'), Settings::get('blog_intro_delimiter')) : $post->body;
 			$post->url = site_url('blog/'.date('Y', $post->created_on).'/'.date('m', $post->created_on).'/'.$post->slug);
                         $post->author_url = site_url('users/'.$post->author_username);
+                        
+                        if($post->type == 'html' || $post->type == 'wysiwyg-simple' || $post->type == 'wysiwyg-advanced')
+                        {
+                            $post->body = $this->parser->parse_string($post->body, array(), true);
+                        }
+                        else if($post->type == 'markdown')
+                        {                            
+                            $post->body = $this->markdown_parser->transform($post->body);
+                        }
+                        else
+                        {
+                            $post->body = strip_tags($post->body);
+                        }
+                        
 			$post->count = $i++;
 		}
 		

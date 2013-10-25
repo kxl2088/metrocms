@@ -1,10 +1,14 @@
 <?php 
 
 $lang['addons:modules'] 						= 'Módulos';
-$lang['addons:admin_themes'] 					= 'Temas Admin'; 
+$lang['addons:admin_themes'] 					= 'Temas Administrador'; 
 $lang['addons:themes'] 							= 'Temas';
 $lang['addons:widgets'] 						= 'Widgets';
 
+$lang['addons:modules:disabled']                                = 'Desativado';
+$lang['addons:modules:uninstalled']                             = 'Não Instalado';
+$lang['addons:modules:installed']                               = 'Ativo';
+$lang['addons:modules:status'] 					= 'Status';
 $lang['addons:modules:core_list']				= 'Módulos nativos';
 $lang['addons:modules:addon_list']				= 'Módulos de terceiros';
 $lang['addons:modules:introduction']			= 'Abaixo está a lista de módulos instalados e suas informações, incluindo a descrição e versão.';

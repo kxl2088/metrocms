@@ -23,8 +23,8 @@
                                                             <td><?php echo $group->name ?></td>
                                                             <td class="actions">
 <div class="btn-group">
-  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
-  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <button type="button" class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" type="button" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
   <ul class="dropdown-menu">
       <li><?php echo anchor('admin/groups/edit/'.$group->id, lang('buttons:edit'), 'class=" edit"') ?></li>
                                                             <?php if ( ! in_array($group->name, array('user', 'admin'))): ?>

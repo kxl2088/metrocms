@@ -29,8 +29,8 @@
                                                     <td><?php echo $category->slug ?></td>
                                                     <td class="align-center buttons buttons-small">
 <div class="btn-group">
-  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
-  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <button type="button" class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" type="button" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
   <ul class="dropdown-menu">
       <li><?php echo anchor('admin/blog/categories/edit/'.$category->id, lang('global:edit'), 'class="edit"') ?></li>
       <li><?php echo anchor('admin/blog/categories/delete/'.$category->id, lang('global:delete'), 'class="confirm delete"') ;?></li>

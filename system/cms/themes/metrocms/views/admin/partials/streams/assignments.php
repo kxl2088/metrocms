@@ -12,7 +12,7 @@
                             <tbody>		
                             <?php foreach ($assignments as $assignment):?>
                                     <tr>
-                                            <td width="30" style="text-align: center"><i class="icon-move"></i></td>
+                                            <td width="30" style="text-align: center" class="handle"><i class="icon-move"></i></td>
                                             <td>
                                                     <input type="hidden" name="action_to[]" value="<?php echo $assignment->assign_id;?>" />
                                                     <?php echo $this->fields->translate_label($assignment->field_name); ?></td>
@@ -20,8 +20,8 @@
                                             <td><?php echo $this->type->types->{$assignment->field_type}->field_type_name; ?></td>
                                             <td class="actions">
 <div class="btn-group">
-  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
-  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <button type="button" class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" type="button" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
   <ul class="dropdown-menu">
                                                     <?php
 

@@ -31,8 +31,8 @@
 					<td class="collapse"><?php echo ($member->last_login > 0 ? format_date($member->last_login) : lang('user:never_label')) ?></td>
 					<td class="actions">
 <div class="btn-group">
-  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
-  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <button type="button" class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" type="button" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
   <ul class="dropdown-menu">
       <li><?php echo anchor('admin/users/edit/' . $member->id, lang('global:edit'), array('class'=>' edit')) ?></li>
       <li><?php echo anchor('admin/users/delete/' . $member->id, lang('global:delete'), array('class'=>'confirm delete')) ?></li>

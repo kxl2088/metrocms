@@ -6,14 +6,14 @@
  * @author      MetroCMS Dev Team
  * @copyright   Copyright (c) 2013
  */
-class Admin_themes extends Admin_Controller
+class Admin_themes_adm extends Admin_Controller
 {
 	/**
 	 * The current active section
 	 *
 	 * @var string
 	 */
-	protected $section = 'themes';
+	protected $section = 'admin_themes';
 
 	/**
 	 * Validation array
@@ -47,9 +47,9 @@ class Admin_themes extends Admin_Controller
 
 		foreach ($themes as $theme)
 		{
-			if ( ! isset($theme->type) or $theme->type != 'admin')
+			if ( isset($theme->type) and $theme->type == 'admin')
 			{
-				if ($theme->slug == $this->settings->default_theme)
+				if ($theme->slug == $this->settings->admin_theme)
 				{
 					$theme->is_default = true;
 				}
@@ -61,7 +61,7 @@ class Admin_themes extends Admin_Controller
 		// Render the view
 		$this->template
 			->title($this->module_details['name'])
-			->build('admin/themes/index', $data);
+			->build('admin/admin_themes/index', $data);
 	}
 	
 	/**
@@ -85,7 +85,7 @@ class Admin_themes extends Admin_Controller
 
 				$this->metrocache->delete_all('theme_m');
 
-				redirect('admin/addons/themes/options/'.$slug);
+				redirect('admin/addons/admin_themes/options/'.$slug);
 			}
 		}
 
@@ -138,7 +138,7 @@ class Admin_themes extends Admin_Controller
 
 				$this->metrocache->delete_all('theme_m');
 
-				redirect('admin/addons/themes/options/'.$slug);
+				redirect('admin/addons/admin_themes/options/'.$slug);
 			}
 		}
 
@@ -150,7 +150,7 @@ class Admin_themes extends Admin_Controller
 		$this->template->append_js('module::jquery.minicolors.min.js');
 		$this->template->append_css('module::jquery.minicolors.css');
 
-		$this->template->build('admin/themes/options', $data);
+		$this->template->build('admin/admin_themes/options', $data);
 	}
 
 	/**
@@ -177,10 +177,10 @@ class Admin_themes extends Admin_Controller
 
 		if ($this->input->post('method') == 'admin_themes')
 		{
-			redirect('admin/addons/themes/admin_themes');
+			redirect('admin/addons/admin_themes/admin_themes');
 		}
 
-		redirect('admin/addons/themes');
+		redirect('admin/addons/admin_themes');
 	}
 
 	/**
@@ -235,13 +235,13 @@ class Admin_themes extends Admin_Controller
 				$this->session->set_flashdata('error', $this->upload->display_errors());
 			}
 
-			redirect('admin/addons/themes');
+			redirect('admin/addons/admin_themes');
 		}
 
 		$this->template
 			->set_layout('modal')
 			->title($this->module_details['name'], lang('addons:themes:upload_title'))
-			->build('admin/themes/upload');
+			->build('admin/admin_themes/upload');
 	}
 
 	/**
@@ -308,7 +308,7 @@ class Admin_themes extends Admin_Controller
 			$this->session->set_flashdata('error', lang('addons:themes:delete_select_error'));
 		}
 
-		redirect('admin/addons/themes');
+		redirect('admin/addons/admin_themes');
 	}
 
 	/**

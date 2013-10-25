@@ -47,8 +47,8 @@
 			
 			<td class="actions">
 <div class="btn-group">
-  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
-  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <button type="button" class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" type="button" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
   <ul class="dropdown-menu">
       <?php if(group_has_role('streams', 'admin_streams')): echo '<li>' . anchor('admin/streams/manage/' . $stream->id, lang('streams:manage'), 'class="edit"') . '</li>'; endif; ?> 
       <li><?php echo anchor('admin/streams/entries/index/' . $stream->id, lang('streams:entries'), 'class="edit"');?></li>

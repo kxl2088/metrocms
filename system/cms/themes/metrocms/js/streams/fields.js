@@ -21,7 +21,7 @@
 			url:  SITE_URL+'streams_core/ajax/build_parameters',
 			success: function(returned_html){
 				$('.streams_param_input').remove();
-				$('.form_inputs > ul').append(returned_html);
+				$('#parameters').html(returned_html);
 				metro.chosen();
 			}
 		});

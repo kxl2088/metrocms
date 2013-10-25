@@ -5,6 +5,10 @@ $lang['addons:admin_themes'] 					= 'Admin Themes'; #translate
 $lang['addons:themes'] 							= 'Themes';
 $lang['addons:widgets'] 						= 'Widgets';
 
+$lang['addons:modules:disabled']                                = 'Disabled';
+$lang['addons:modules:uninstalled']                             = 'Not Installed';
+$lang['addons:modules:installed']                               = 'Actived';
+$lang['addons:modules:status'] 			= 'Status';
 $lang['addons:modules:core_list']               = 'Core Modules';
 $lang['addons:modules:addon_list']              = 'Add-on Modules';
 $lang['addons:modules:introduction']            = 'Below is a list of installed modules and their information, such as the description or version.';

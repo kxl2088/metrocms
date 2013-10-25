@@ -20,7 +20,7 @@ $lang['global:slug'] 					= 'Slug';
 $lang['global:slug_instructions']		= 'Lowercase characters and underscores only.';
 $lang['global:user'] 					= 'User';
 
-$lang['global:dialog:delete_message'] 	= 'Are you sure you want to delete this? It cannot be undone.';
+$lang['global:dialog:delete_message'] 	= 'Are you sure you want to execute this action? It cannot be undone.';
 $lang['global:dialog:confirm'] 			= 'Confirm';
 
 $lang['global:yes'] 					= 'Yes';

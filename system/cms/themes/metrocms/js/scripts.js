@@ -23,14 +23,17 @@ $(document).ready(function() {
         // Is Mobile?
 	metro.is_mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
         
-        if($(document).find('.no_data, .no-data').index() != -1)
-        {
-            $(document).find('.table_action_buttons').hide();
-        }
-        else
-        {
-            $(document).find('.table_action_buttons').show();
-        }
+        metro.disable_action_buttons = function()
+            {
+            if($(document).find('.no_data, .no-data').index() != -1)
+            {
+                $(document).find('.table_action_buttons').hide();
+            }
+            else
+            {
+                $(document).find('.table_action_buttons').show();
+            }
+        };
         
         // Add icon and button close to alert boxes
         metro.alert_boxes = function(){
@@ -724,6 +727,7 @@ $(document).ready(function() {
         metro.confirm_box();
         metro.fileupload();
         metro.dashboard_quick_links();
+        metro.disable_action_buttons();
         
         $('.topbar-search').find('.btn.ok').click(function(){
             return false;

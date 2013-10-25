@@ -13,7 +13,8 @@
                                             <tr>
                                                     <th><?php echo lang('name_label');?></th>
                                                     <th class="collapse"><span><?php echo lang('desc_label');?></span></th>
-                                                    <th><?php echo lang('version_label');?></th>
+                                                    <th class="center"><?php echo lang('version_label');?></th>
+                                                    <th width="140" class="center"><?php echo lang('addons:modules:status');?></th>
                                                     <th width="180"><?php echo lang('global:actions'); ?></th>
                                             </tr>
                                     </thead>
@@ -23,11 +24,24 @@
                                                     <td class="collapse"><?php echo ($module['is_backend'] and $module['installed']) ? anchor('admin/'.$module['slug'], $module['name']) : $module['name'] ?></td>
 
                                                     <td><?php echo $module['description'] ?></td>
-                                                    <td class="align-center"><?php echo $module['version'] ?></td>
+                                                    <td class="center"><?php echo $module['version'] ?></td>
+                                                    <td class="center">
+                                                    <?php if ($module['installed']): ?>
+                                                        <?php if (!$module['is_current']): ?>                
+                                                                <?php echo lang('global:upgrade'); ?>
+                                                        <?php elseif (!$module['enabled']): ?>
+                                                                <?php echo lang('addons:modules:disabled'); ?>  
+                                                        <?php elseif ($module['enabled']): ?>
+                                                                <?php echo lang('addons:modules:installed'); ?>  
+                                                        <?php endif ?>
+                                                    <?php else: ?>
+                                                        <?php echo lang('addons:modules:uninstalled'); ?>  
+                                                    <?php endif ?>        
+                                                    </td>
                                                     <td class="actions">
 <div class="btn-group">
-  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
-  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <button type="button" class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" type="button" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
   <ul class="dropdown-menu">
       
     <?php if ($module['installed']): ?>
@@ -78,7 +92,8 @@
                                             <tr>
                                                     <th><?php echo lang('name_label');?></th>
                                                     <th><span><?php echo lang('desc_label');?></span></th>
-                                                    <th><?php echo lang('version_label');?></th>
+                                                    <th class="center"><?php echo lang('version_label');?></th>
+                                                    <th width="140" class="center"><?php echo lang('addons:modules:status');?></th>
                                                     <th width="180"><?php echo lang('global:actions'); ?></th>
                                             </tr>
                                     </thead>	
@@ -88,11 +103,24 @@
                                             <tr>
                                                     <td><?php echo $module['is_backend'] ? anchor('admin/'.$module['slug'], $module['name']) : $module['name'] ?></td>
                                                     <td><?php echo $module['description'] ?></td>
-                                                    <td class="align-center"><?php echo $module['version'] ?></td>
+                                                    <td class="center"><?php echo $module['version'] ?></td>
+                                                    <td class="center">
+                                                    <?php if ($module['installed']): ?>
+                                                        <?php if (!$module['is_current']): ?>                
+                                                                <?php echo lang('global:upgrade'); ?>
+                                                        <?php elseif (!$module['enabled']): ?>
+                                                                <?php echo lang('addons:modules:disabled'); ?>  
+                                                        <?php elseif ($module['enabled']): ?>
+                                                                <?php echo lang('addons:modules:installed'); ?>  
+                                                        <?php endif ?>
+                                                    <?php else: ?>
+                                                        <?php echo lang('addons:modules:uninstalled'); ?>  
+                                                    <?php endif ?>   
+                                                    </td>
                                                     <td class="actions">
 <div class="btn-group">
-  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
-  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <button type="button" class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" type="button" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
   <ul class="dropdown-menu">
     <?php if ($module['enabled']): ?>
       <li><?php echo anchor('admin/addons/modules/disable/'.$module['slug'], lang('global:disable'), array('class'=>'confirm', 'title'=>lang('addons:modules:confirm_disable'))) ?><li>

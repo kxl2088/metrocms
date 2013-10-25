@@ -25,8 +25,8 @@
 							<td class="align-center"><?php echo $table['count'] ?></td>
 							<td class="buttons buttons-small align-center actions">
 <div class="btn-group">
-  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
-  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <button type="button" class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" type="button" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
   <ul class="dropdown-menu">
 								<?php if ($table['count'] > 0):
 									echo '<li>' . anchor('admin/maintenance/export/'.$table['name'].'/xml', lang('maintenance:export_xml'), array('class'=>'')).'</li>';
@@ -74,8 +74,8 @@
 							<td class="align-center"><?php echo $folder['count'] ?></td>
 							<td class="buttons buttons-small align-center actions">
 <div class="btn-group">
-  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
-  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <button type="button" class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" type="button" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
   <ul class="dropdown-menu">
 								<?php if ($folder['count'] > 0) echo '<li>' . anchor('admin/maintenance/cleanup/'.$folder['name'], lang('global:empty'), array('class'=>'confirm empty')) . '</li>' ?>
 								<?php if ( ! $folder['cannot_remove']) echo '<li>' . anchor('admin/maintenance/cleanup/'.$folder['name'].'/1', lang('global:remove'), array('class'=>'confirm remove')) . '</li>' ?>

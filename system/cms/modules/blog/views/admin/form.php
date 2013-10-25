@@ -49,7 +49,7 @@
                                                             </div>
 <br />
                                                             <div class="input controls editor">
-                                                                    <?php echo form_textarea(array('id' => 'body', 'name' => 'body', 'value' => $post->body, 'rows' => 30, 'class' => $post->type, 'id' => 'intro')) ?><?php echo form_hidden('preview_hash', $post->preview_hash)?>
+                                                                    <?php echo form_textarea(array('id' => 'body', 'name' => 'body', 'value' => $post->body, 'rows' => 30, 'class' => (($post->type == 'html' || $post->type == 'markdown') ? $post->type . '_editor' : $post->type), 'id' => 'intro')) ?><?php echo form_hidden('preview_hash', $post->preview_hash)?>
                                                             </div>
                                                     </div>
                                     

@@ -17,7 +17,7 @@ $lang['global:slug'] 					= 'Slug';
 $lang['global:slug_instructions']		= 'Apenas caracteres minúsculos e sublinhados.'; 
 $lang['global:user'] 					= 'Usuário'; 
 
-$lang['global:dialog:delete_message'] 			= 'Tem certeza de que deseja remover? Isto não pode ser desfeito.';
+$lang['global:dialog:delete_message'] 			= 'Tem certeza de que deseja executar esta ação? Isto não pode ser desfeito.';
 $lang['global:dialog:confirm'] 				= 'Confirmar';
 
 $lang['global:yes'] 					= 'Sim';

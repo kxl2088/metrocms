@@ -19,7 +19,8 @@ class Blog extends Public_Controller
 		$this->load->model('blog_m');
                 $this->load->helper('intro');
 		$this->load->model('blog_categories_m');
-		$this->load->library(array('keywords/keywords'));
+		$this->load->library('keywords/keywords');
+                $this->load->library('markdown_parser');
 		$this->lang->load('blog');
 
 		$this->load->driver('Streams');
@@ -345,6 +346,19 @@ class Blog extends Public_Controller
                 
                 $post['images'] = $images;
                 
+                if($post['type'] == 'html' || $post['type'] == 'wysiwyg-simple' || $post['type'] == 'wysiwyg-advanced')
+                {
+                    $post['body'] = $this->parser->parse_string($post['body'], array(), true);
+                }
+                else if($post['type'] == 'markdown')
+                {                            
+                    $post['body'] = $this->markdown_parser->transform($post['body']);
+                }
+                else
+                {
+                    $post['body'] = strip_tags($post['body']);
+                }
+                
 		// What is the preview? If there is a field called intro,
 		// we will use that, otherwise we will cut down the blog post itself.
 		$post['preview'] = Settings::get('blog_use_intro_limit') ? prepare_intro($post['body'],Settings::get('blog_intro_limit'), Settings::get('blog_intro_delimiter')) : $post['intro'];                
@@ -402,12 +416,6 @@ class Blog extends Public_Controller
 	 */
 	private function _single_view($post)
 	{
-		// if it uses markdown then display the parsed version
-		if ($post['type'] === 'markdown')
-		{
-			$post['body'] = $post->parsed;
-		}
-
 		$this->session->set_flashdata(array('referrer' => $this->uri->uri_string()));
 
                 $this->template->set_breadcrumb(lang('blog:blog_title'), 'blog');

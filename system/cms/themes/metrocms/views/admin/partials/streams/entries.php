@@ -17,7 +17,7 @@
 
 			<tr>
 
-				<?php if ($stream->sorting == 'custom'): ?><td width="30" style="text-align: center"><i class="icon-move"></i></td><?php endif; ?>
+				<?php if ($stream->sorting == 'custom'): ?><td width="30" style="text-align: center"  class="handle"><i class="icon-move"></i></td><?php endif; ?>
 
 				<?php if (is_array($stream->view_options)): foreach( $stream->view_options as $view_option ): ?>
 				<td>
@@ -44,8 +44,8 @@
 				<?php endforeach; endif; ?>
 				<td class="actions">
 <div class="btn-group">
-  <button class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
-  <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
+  <button type="button" class="btn btn-primary"><?php echo lang('global:actions'); ?></button>
+  <button data-toggle="dropdown" type="button" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
   <ul class="dropdown-menu">
                 <?php
 				
