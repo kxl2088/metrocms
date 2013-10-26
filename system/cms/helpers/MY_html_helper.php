@@ -169,7 +169,7 @@ if ( ! function_exists('script_tag'))
 
 		}
 
-		return $script."/></script>\r";
+		return $script."></script>\r";
 	}
 }
 
