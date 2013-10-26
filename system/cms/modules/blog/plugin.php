@@ -213,8 +213,7 @@ class Plugin_Blog extends Plugin
 		{
                                         prepare_intro($intro, $limit, $delimiter);
                         $post->image = file_path($post->image, TRUE);
-                        $post->thumb = str_replace('large', 'thumb', $post->image);
-                        $post->intro = Settings::get('blog_use_intro_limit') ? prepare_intro($post->body, Settings::get('blog_intro_limit'), Settings::get('blog_intro_delimiter')) : $post->body;
+                        $post->thumb = str_replace('large', 'thumb', $post->image);                        
 			$post->url = site_url('blog/'.date('Y', $post->created_on).'/'.date('m', $post->created_on).'/'.$post->slug);
                         $post->author_url = site_url('users/'.$post->author_username);
                         
@@ -230,7 +229,9 @@ class Plugin_Blog extends Plugin
                         {
                             $post->body = strip_tags($post->body);
                         }
-                        
+			
+                        $post->preview = Settings::get('blog_use_intro_limit') ? prepare_intro(($post->intro ? $post->intro : $post->body), Settings::get('blog_intro_limit'), Settings::get('blog_intro_delimiter')) : ($post->intro ? $post->intro : $post->body);
+			
 			$post->count = $i++;
 		}
 		

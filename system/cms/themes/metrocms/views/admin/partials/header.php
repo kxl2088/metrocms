@@ -38,9 +38,26 @@
                     <div class="left-nav clearfix">
                             <div class="left-primary-nav">
                                     <ul id="myTab">
-                                            <li class="<?php if(!$module_details['slug'] || empty($module_details['sections'])): ?>active<?php endif;?>"><a href="#main" class="icon-desktop" title="<?php echo lang('global:dashboard'); ?>"></a></li>
+                                            <li class="<?php if(!$module_details['slug'] || empty($module_details['sections'])): ?>active<?php endif;?>"><a href="#main" class="icon-desktop" title="<?php echo lang('global:dashboard'); ?>"></a></li>					    
                                             <?php if ( ! empty($module_details['sections'])): ?>
-                                            <li class="<?php if($module_details['slug'] && !empty($module_details['sections'])): ?>active<?php endif;?>"><a href="#sections-<?php echo $module_details['slug']; ?>" class="icon-th-large" title="<?php echo $module_details['name']; ?>"></a></li>
+					    <?php 
+						if($module_details['extra'])
+						{
+						    $module_details['extra'] = unserialize($module_details['extra']);
+												
+						    if(is_array($module_details['extra']))
+						    {	
+							if(array_key_exists('sections_icon', $module_details['extra']))
+							{
+							    $icons = get_falgun_icons(); 
+							    if(array_key_exists($module_details['extra']['sections_icon'], $icons)){
+								$module_details['sections_icon'] = $module_details['extra']['sections_icon'];
+							    }
+							}
+						    }
+						}
+					    ?>
+                                            <li class="<?php if($module_details['slug'] && !empty($module_details['sections'])): ?>active<?php endif;?>"><a href="#sections-<?php echo $module_details['slug']; ?>" class="<?php if(isset($module_details['sections_icon'])): echo $module_details['sections_icon']; else: echo 'icon-th-large'; endif;?>" title="<?php echo $module_details['name']; ?>"></a></li>
                                             <?php endif; ?>
                                     </ul>
                             </div>

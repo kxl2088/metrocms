@@ -46,9 +46,9 @@
       
     <?php if ($module['installed']): ?>
         <?php if ($module['enabled']): ?>
-                <li><?php echo anchor('admin/addons/modules/disable/'.$module['slug'], lang('global:disable'), array('class'=>'confirm', 'title'=>lang('addons:modules:confirm_disable'))) ?></li>
+                <li><?php echo anchor('admin/addons/modules/disable/'.$module['slug'], lang('global:disable'), array('class'=>'', 'title'=>lang('addons:modules:confirm_disable'))) ?></li>
         <?php else: ?>
-                <li><?php echo anchor('admin/addons/modules/enable/'.$module['slug'], lang('global:enable'), array('class'=>'confirm', 'title'=>lang('addons:modules:confirm_enable'))) ?></li>
+                <li><?php echo anchor('admin/addons/modules/enable/'.$module['slug'], lang('global:enable'), array('class'=>'', 'title'=>lang('addons:modules:confirm_enable'))) ?></li>
         <?php endif ?>
         <?php if ($module['is_current']): ?>
                 <li><?php echo anchor('admin/addons/modules/uninstall/'.$module['slug'], lang('global:uninstall'), array('class'=>'confirm', 'title'=>lang('addons:modules:confirm_uninstall'))) ?></li>
@@ -56,7 +56,7 @@
                 <li><?php echo anchor('admin/addons/modules/upgrade/'.$module['slug'], lang('global:upgrade'), array('class'=>'confirm', 'title'=>lang('addons:modules:confirm_upgrade'))) ?></li>
         <?php endif ?>
     <?php else: ?>
-        <li><?php echo anchor('admin/addons/modules/install/'.$module['slug'], lang('global:install'), array('class'=>'confirm', 'title'=>lang('addons:modules:confirm_install'))) ?></li>
+        <li><?php echo anchor('admin/addons/modules/install/'.$module['slug'], lang('global:install'), array('class'=>'', 'title'=>lang('addons:modules:confirm_install'))) ?></li>
     <?php endif ?>
         <li><?php echo anchor('admin/addons/modules/delete/'.$module['slug'], lang('global:delete'), array('class'=>'confirm ', 'title'=>lang('addons:modules:confirm_delete'))) ?></li>
      

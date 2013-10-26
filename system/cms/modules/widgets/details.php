@@ -20,6 +20,9 @@ class Module_Widgets extends Module {
 				'en' => 'Manage small sections of self-contained logic in blocks or "Widgets".',
 				'br' => 'Gerenciar pequenas seções de conteúdos em bloco conhecidos como "Widgets".',
 			),
+			'extra' => array(
+			    'sections_icon' => 'icon-th',
+			),
 			'frontend' 	=> false,
 			'backend'  	=> true,
 			'menu'	  	=> 'content',

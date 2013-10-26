@@ -22,6 +22,7 @@ class Module_Blog extends Module
 				'br' => 'Escrever publicações de blog.',
 			),
                         'extra' => array(
+			    'sections_icon' => 'icon-file',
                             'dashboard' => array(
                                 'class' => 'magenta',
                                 'title' => 'lang:cp:manage_blog',

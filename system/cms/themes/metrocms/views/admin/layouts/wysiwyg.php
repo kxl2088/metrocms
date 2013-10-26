@@ -16,9 +16,10 @@
 	</script>
         <!-- styles -->
         <link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css('font-awesome.css', TRUE); ?>">
-
+	
 	<?php echo $template['metadata']; ?>
-
+	<link rel="stylesheet" type="text/css" href="<?php echo Asset::get_filepath_css($theme_options->default_theme, TRUE); ?>">
+	
 	<script type="text/javascript">
 
 		var CKEDITOR = window.parent.CKEDITOR;

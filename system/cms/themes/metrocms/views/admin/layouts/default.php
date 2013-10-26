@@ -29,6 +29,7 @@
 
 	<!-- Load up some favicons -->        
         <link rel="shortcut png" href="<?php echo Asset::get_filepath_img('favicon/favicon.png', true); ?>">
+	<link rel="shortcut icon" href="<?php echo Asset::get_filepath_img('favicon/favicon.ico', true); ?>">
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo Asset::get_filepath_img('favicon/apple-touch-icon-144-precomposed.png', true); ?>">
 	<link rel="apple-touch-icon-precomposed" sizes="114x114"  href="<?php echo Asset::get_filepath_img('favicon/apple-touch-icon-114-precomposed.png', true); ?>">
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo Asset::get_filepath_img('favicon/apple-touch-icon-72-precomposed.png', true); ?>">

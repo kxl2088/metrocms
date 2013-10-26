@@ -157,6 +157,8 @@ class MY_Controller extends MX_Controller
                     }                    
                 }                
                 
+		$this->template->modules_extra =  ci()->modules_extra ? ci()->modules_extra : false;
+			
 		// now that we have a list of enabled modules
 		$this->load->library('events');
 

@@ -18,6 +18,9 @@ class Module_Log extends Module
                 'en' => 'Creates viewable error reports of your log files.',
                 'br' => 'Cria um relatório de seus arquivos de logs.',
             ),
+	    'extra' => array(
+		'sections_icon' => 'icon-warning-sign',
+	    ),
             'frontend' => FALSE,
             'backend' => TRUE,
             'skip_xss' => TRUE,

@@ -22,6 +22,7 @@ class Module_Pages extends Module
 				'br' => 'Adicionar páginas personalizadas ao site com qualquer conteúdo que você queira.',
 			),
                         'extra' => array(
+			    'sections_icon' => 'icon-file-alt',
                             'dashboard' => array(
                                 'class' => 'dark-yellow',
                                 'title' => 'lang:cp:manage_pages',

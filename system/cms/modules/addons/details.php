@@ -21,6 +21,9 @@ class Module_Addons extends Module
 				'en' => 'Allows admins to see a list of currently installed modules.',
 				'br' => 'Permite aos administradores ver a lista dos módulos instalados atualmente.',
 			),
+			'extra' => array(
+			    'sections_icon' => 'icon-list-alt',
+			),
                         'roles' => array(
                           'admin_themes', 'modules', 'themes', 'plugins', 'widgets', 'fields'  
                         ),
@@ -111,12 +114,12 @@ class Module_Addons extends Module
                 {
                     $menu['lang:cp:nav_addons']['lang:global:themes'] = 'admin/addons/themes';
                 }
-                /*
+                
                 if(group_has_role('addons', 'admin_themes'))
                 {
                     $menu['lang:cp:nav_addons']['lang:addons:admin_themes'] = 'admin/addons/admin_themes';
                 }
-                 */
+                 
                 if(group_has_role('addons', 'plugins'))
                 {
                     $menu['lang:cp:nav_addons']['lang:global:plugins'] = 'admin/addons/plugins';

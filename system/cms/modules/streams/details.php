@@ -27,6 +27,9 @@ class Module_Streams extends Module {
 				'en' => 'Manage, structure, and display data.',
 				'br' => 'Gerencie, estruture e exiba fluxos de dados.',
 			),
+			'extra' => array(
+			    'sections_icon' => 'icon-table',
+			),
 			'frontend' => TRUE,
 			'backend' => TRUE,
 			'is_core' => TRUE,

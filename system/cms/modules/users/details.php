@@ -22,6 +22,7 @@ class Module_Users extends Module {
 				'br' => 'Permite com que usuários se registrem e entrem no site e também que eles sejam gerenciáveis apartir do painel de controle.',
 			),
                         'extra' => array(
+			    'sections_icon' => 'icon-user',
                             'dashboard' => array(
                                 'class' => 'brown',
                                 'title' => 'lang:cp:manage_users',
@@ -116,8 +117,8 @@ class Module_Users extends Module {
 				'field_type' => 'image',
 				'extra'		 => array(
 					'folder' 	=> 1,
-					'resize_width' 	=> 250,
-					'resize_height'	=> 250,
+					'resize_width' 	=> 350,
+					'resize_height'	=> 350,
 					'keep_ratio'	=> 'yes',
                                         'allowed_types'	=> 'jpg|jpeg|gif|png'
 				),
