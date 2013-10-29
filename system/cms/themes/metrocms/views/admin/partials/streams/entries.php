@@ -2,14 +2,14 @@
 
 <?php if ($entries) { ?>
 
-    <table class="table-list responsive table table-hover table-striped table-bordered" cellpadding="0" cellspacing="0">
+    <table class="table-list responsive table table-hover table-striped table-bordered" >
 		<thead>
 			<tr>
 				<?php if ($stream->sorting == 'custom'): ?><th></th><?php endif; ?>
 				<?php foreach ($stream->view_options as $view_option): ?>
 				<th><?php echo lang_label($stream_fields->$view_option->field_name); ?></th>
 				<?php endforeach; ?>
-                                <th width="180"><?php echo lang('global:actions'); ?></th>
+                                <th style="width: 180px"><?php echo lang('global:actions'); ?></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -17,7 +17,7 @@
 
 			<tr>
 
-				<?php if ($stream->sorting == 'custom'): ?><td width="30" style="text-align: center"  class="handle"><i class="icon-move"></i></td><?php endif; ?>
+				<?php if ($stream->sorting == 'custom'): ?><td style="width: 30px; text-align: center"  class="handle"><i class="icon-move"></i></td><?php endif; ?>
 
 				<?php if (is_array($stream->view_options)): foreach( $stream->view_options as $view_option ): ?>
 				<td>

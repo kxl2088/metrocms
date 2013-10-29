@@ -14,16 +14,16 @@
                                     <?php echo form_open(uri_string(), 'class="crud form-horizontal"') ?>
                                     <!-- Available Widget List -->
 
-                                    <table border="0" id="widgets-list" class="table-list responsive table table-hover table-striped table-bordered" cellspacing="0">
+                                    <table  id="widgets-list" class="table-list responsive table table-hover table-striped table-bordered" >
                                             <thead>
                                             <tr>
-                                                    <th width="30"></th>
-                                                    <th width="30"><?php echo form_checkbox(array('name' => 'action_to_all', 'class' => 'check-all'));?></th>
-                                                    <th width="20%"><?php echo lang('global:title') ?></th>
+                                                    <th style="width: 30px"></th>
+                                                    <th style="width: 30px"><?php echo form_checkbox(array('name' => 'action_to_all', 'class' => 'check-all'));?></th>
+                                                    <th style="width: 20%"><?php echo lang('global:title') ?></th>
                                                     <th><?php echo lang('desc_label') ?></th>
-                                                    <th width="130"><?php echo lang('global:author') ?></th>
-                                                    <th width="80" class="align-center"><?php echo lang('version_label') ?></th>
-                                                    <th width="150"></th>
+                                                    <th style="width: 130px"><?php echo lang('global:author') ?></th>
+                                                    <th style="width: 80px" class="align-center"><?php echo lang('version_label') ?></th>
+                                                    <th style="width: 150px"></th>
                                             </tr>
                                             </thead>
                                             <tbody>

@@ -12,13 +12,13 @@
 
                             <?php echo form_open('admin/blog/categories/delete') ?>
 
-                            <table border="0" class="table-list responsive table table-hover table-striped table-bordered" cellspacing="0">
+                            <table class="table-list responsive table table-hover table-striped table-bordered" >
                                     <thead>
                                         <tr>
-                                                <th width="20"><?php echo form_checkbox(array('name' => 'action_to_all', 'class' => 'check-all')) ?></th>
+                                                <th style="width: 20px"><?php echo form_checkbox(array('name' => 'action_to_all', 'class' => 'check-all')) ?></th>
                                                 <th><?php echo lang('cat:category_label') ?></th>
                                                 <th><?php echo lang('global:slug') ?></th>
-                                                <th width="180"><?php echo lang('global:actions'); ?></th>
+                                                <th style="width: 180px"><?php echo lang('global:actions'); ?></th>
                                         </tr>
                                     </thead>
                                     <tbody>

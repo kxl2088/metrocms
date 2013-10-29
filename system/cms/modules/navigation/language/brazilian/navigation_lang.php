@@ -12,7 +12,7 @@ $lang['nav:location_label'] 					= 'Endereço';
 $lang['nav:type_label'] 						= 'Tipo do Link';
 $lang['nav:uri_label'] 							= 'Link do Site (URI)';
 $lang['nav:page_label'] 						= 'Página';
-$lang['nav:module_label'] 						= 'Modulo';
+$lang['nav:module_label'] 						= 'Módulo';
 $lang['nav:restricted_to']						= 'Restrito para';
 $lang['nav:abbrev_label'] 						= 'Abreviação';
 

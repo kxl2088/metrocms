@@ -1,4 +1,4 @@
-<table class="table-list responsive table table-hover table-striped table-bordered" cellspacing="0">
+<table class="table-list responsive table table-hover table-striped table-bordered" >
 
 	<thead>
 		<tr>
@@ -12,8 +12,8 @@
 	<tbody>
 	<?php foreach ($plugins as $plugin): ?>
 	<tr>
-		<td width="30%"><?php echo $plugin['name'] ?></td>
-		<td width="60%"><?php echo $plugin['description'] ?></td>
+		<td style="width: 30%"><?php echo $plugin['name'] ?></td>
+		<td style="width: 60%"><?php echo $plugin['description'] ?></td>
 		<td><?php echo $plugin['version'] ?></td>
 		<td style="text-align: center"><?php if ($plugin['self_doc']): ?>
 			<a href="#<?php echo $plugin['slug'] ?>" title="<?php echo $plugin['name'] .' - '. lang('global:preview')?>"  class="icon-search ti inline-modal" style="margin-right:8px;"></a>

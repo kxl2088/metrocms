@@ -100,13 +100,13 @@
                                     <fieldset>
                                                     <div class="control-group">
                                                             <p><?php echo lang('streams:permissions_desc'); ?></p>
-                                                            <table class="responsive table table-hover table-striped table-bordered" border="0" cellspacing="0">
+                                                            <table class="responsive table table-hover table-striped table-bordered"  >
                                                                     <thead>
                                                                             <tr>
-                                                                                    <th width="30"><?php echo form_checkbox(array('id'=>'check-all', 'name' => 'action_to_all', 'class' => 'check-all')) ?></th>
-                                                                                    <th width="200"><?php echo lang('streams:permission:stream_slug') ?></th>
+                                                                                    <th style="width: 30px"><?php echo form_checkbox(array('id'=>'check-all', 'name' => 'action_to_all', 'class' => 'check-all')) ?></th>
+                                                                                    <th style="width: 200px"><?php echo lang('streams:permission:stream_slug') ?></th>
                                                                                     <th><?php echo lang('streams:permission:stream_namespace') ?></th>
-                                                                                    <th width="30%"><?php echo lang('streams:permission:roles') ?></th>
+                                                                                    <th style="width: 30%"><?php echo lang('streams:permission:roles') ?></th>
                                                                             </tr>
                                                                     </thead>
                                                                     <tbody>

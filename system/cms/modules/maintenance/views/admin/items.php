@@ -10,12 +10,12 @@
 		<div class="content">
 	
 			<?php if ( ! empty($tables)): ?>
-				<table border="0" class="table-list responsive table table-hover table-striped table-bordered" cellspacing="0">
+				<table  class="table-list responsive table table-hover table-striped table-bordered" >
 					<thead>
 						<tr>
 							<th><?php echo lang('maintenance:table_label') ?></th>
 							<th class="align-center"><?php echo lang('maintenance:record_label') ?></th>
-							<th width="180"><?php echo lang('global:actions'); ?></th>
+							<th style="width: 180px"><?php echo lang('global:actions'); ?></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -59,12 +59,12 @@
 		<div class="content">
 	
 			<?php if ( ! empty($folders)): ?>
-				<table border="0" class="table-list">
+				<table  class="table-list">
 					<thead>
 						<tr>
 							<th><?php echo lang('name_label') ?></th>
 							<th class="align-center"><?php echo lang('maintenance:count_label') ?></th>
-							<th width="180"><?php echo lang('global:actions'); ?></th>
+							<th style="width: 180px"><?php echo lang('global:actions'); ?></th>
 						</tr>
 					</thead>
 					<tbody>

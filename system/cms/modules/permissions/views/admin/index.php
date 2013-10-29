@@ -7,11 +7,11 @@
             <div class="widget-container">
                     <div class="content">
                             <p><?php echo lang('permissions:introduction') ?></p>
-                            <table border="0" class="table-list responsive table table-hover table-striped table-bordered" cellspacing="0">
+                            <table  class="table-list responsive table table-hover table-striped table-bordered" >
                                     <thead>
                                             <tr>
                                                     <th style="text-align: left !important;"><?php echo lang('permissions:group') ?></th>
-                                                    <th width="290"><?php echo lang('global:actions'); ?></th>
+                                                    <th style="width: 180px"><?php echo lang('global:actions'); ?></th>
                                             </tr>
                                     </thead>
                                     <tbody>

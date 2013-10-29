@@ -61,7 +61,7 @@
 	<div class="navbar navbar-inverse top-nav">
 		<div class="navbar-inner">
 			<div class="container">
-				<a class="brand" href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>assets/images/metrocms_logo_large.png" width="103" height="50" alt="MetroCMS"></a>
+				<a class="brand" href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>assets/images/metrocms_logo_large.png" style="width: 103px; height: 50px" alt="MetroCMS"></a>
 				
 				<div class="btn-toolbar pull-right notification-nav">
 					<div class="btn-group language_nav">

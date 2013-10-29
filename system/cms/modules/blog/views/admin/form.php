@@ -78,7 +78,7 @@
                                                                 <li>
                                                                     <span>
                                                                         <input type="hidden" name="images[]" value="<?php echo $value; ?>" />
-                                                                        <a href="<?php echo ( file_path($value) ? $this->parser->parse_string(file_path($value), false, true) : Asset::get_filepath_img('module::no_image.jpg', true) ); ?>" class="fancybox" data-fancybox-group="gallery"><img src="<?php echo ( file_path($value) ? site_url('files/thumb/'.$value.'/100') : Asset::get_filepath_img('module::no_image.jpg', true) ); ?>" width="100" /></a>
+                                                                        <a href="<?php echo ( file_path($value) ? $this->parser->parse_string(file_path($value), false, true) : Asset::get_filepath_img('module::no_image.jpg', true) ); ?>" class="fancybox" data-fancybox-group="gallery"><img src="<?php echo ( file_path($value) ? site_url('files/thumb/'.$value.'/100') : Asset::get_filepath_img('module::no_image.jpg', true) ); ?>" style="width: 100px" /></a>
                                                                         
                                                                         <a class="delete-image" onclick="javascript:metro.delete_image(this, '<?php echo $value; ?>');return false;" href="#"><?php echo lang('global:delete'); ?></a>
                                                                     </span>
@@ -90,7 +90,7 @@
                                                                 <li>
                                                                     <span>
                                                                         <input type="hidden" name="images[]" value="<?php echo $img->file_id; ?>" />
-                                                                        <a href="<?php echo ( file_path($img->file_id) ? $this->parser->parse_string(file_path($img->file_id), false, true) : Asset::get_filepath_img('module::no_image.jpg', true) ); ?>" class="fancybox" data-fancybox-group="gallery"><img src="<?php echo ( file_path($img->file_id) ? site_url('files/thumb/'.$img->file_id.'/100') : Asset::get_filepath_img('module::no_image.jpg', true) ); ?>" width="100" /></a>
+                                                                        <a href="<?php echo ( file_path($img->file_id) ? $this->parser->parse_string(file_path($img->file_id), false, true) : Asset::get_filepath_img('module::no_image.jpg', true) ); ?>" class="fancybox" data-fancybox-group="gallery"><img src="<?php echo ( file_path($img->file_id) ? site_url('files/thumb/'.$img->file_id.'/100') : Asset::get_filepath_img('module::no_image.jpg', true) ); ?>" style="width: 100px" /></a>
                                                                         <a class="move-image" href="#<?php echo $img->id ?>">X</a>
                                                                         <a class="delete-image" onclick="javascript:metro.delete_image(this, '<?php echo $img->file_id ?>');return false;" href="#"><?php echo lang('global:delete'); ?></a>
                                                                     </span>

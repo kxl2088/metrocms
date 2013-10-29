@@ -32,50 +32,53 @@ class Module_Addons extends Module
 			'menu' => false,
 		);
                 
-                $info['sections'] = array();                
-                               
-                if(group_has_role('addons', 'modules'))
-                {
-                    $info['sections']['modules'] = array(
-                                        'name' => 'addons:modules',
-                                        'uri' => 'admin/addons/modules',
-                    );
-                }
-                if(group_has_role('addons', 'themes'))
-                {
-                    $info['sections']['themes'] = array(
-                                        'name' => 'global:themes',
-                                        'uri' => 'admin/addons/themes',
-                    );
-                }
-                if(group_has_role('addons', 'admin_themes'))
-                {
-                    $info['sections']['admin_themes'] = array(
-                                        'name' => 'addons:admin_themes',
-                                        'uri' => 'admin/addons/admin_themes',
-                    );
-                } 
-                if(group_has_role('addons', 'plugins'))
-                {
-                    $info['sections']['plugins'] = array(
-                                        'name' => 'global:plugins',
-                                        'uri' => 'admin/addons/plugins',
-                    );
-                }
-                if(group_has_role('addons', 'widgets'))
-                {
-                    $info['sections']['widgets'] = array(
-                                        'name' => 'global:widgets',
-                                        'uri' => 'admin/addons/widgets',
-                    );
-                }
-                if(group_has_role('addons', 'field_types'))
-                {
-                    $info['sections']['field_types'] = array(
-                                        'name' => 'global:field_types',
-                                        'uri' => 'admin/addons/field-types',
-                    );
-                }
+		if (function_exists('group_has_role'))
+		{
+		    $info['sections'] = array();                
+
+		    if(group_has_role('addons', 'modules'))
+		    {
+			$info['sections']['modules'] = array(
+					    'name' => 'addons:modules',
+					    'uri' => 'admin/addons/modules',
+			);
+		    }
+		    if(group_has_role('addons', 'themes'))
+		    {
+			$info['sections']['themes'] = array(
+					    'name' => 'global:themes',
+					    'uri' => 'admin/addons/themes',
+			);
+		    }
+		    if(group_has_role('addons', 'admin_themes'))
+		    {
+			$info['sections']['admin_themes'] = array(
+					    'name' => 'addons:admin_themes',
+					    'uri' => 'admin/addons/admin_themes',
+			);
+		    } 
+		    if(group_has_role('addons', 'plugins'))
+		    {
+			$info['sections']['plugins'] = array(
+					    'name' => 'global:plugins',
+					    'uri' => 'admin/addons/plugins',
+			);
+		    }
+		    if(group_has_role('addons', 'widgets'))
+		    {
+			$info['sections']['widgets'] = array(
+					    'name' => 'global:widgets',
+					    'uri' => 'admin/addons/widgets',
+			);
+		    }
+		    if(group_has_role('addons', 'field_types'))
+		    {
+			$info['sections']['field_types'] = array(
+					    'name' => 'global:field_types',
+					    'uri' => 'admin/addons/field-types',
+			);
+		    }
+		}
                 	
 		// Add upload options to various modules
 		if ( ! class_exists('Module_import') and Settings::get('addons_upload'))

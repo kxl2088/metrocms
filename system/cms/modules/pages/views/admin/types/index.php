@@ -10,12 +10,12 @@
                             <?php echo form_open('admin/pages/types/delete');?>
 
                                     <?php if ( ! empty($page_types)): ?>
-                                            <table class="responsive table table-hover table-striped table-bordered" border="0" cellspacing="0">		    
+                                            <table class="responsive table table-hover table-striped table-bordered"  >		    
                                                     <thead>
                                                             <tr>
                                         <th><?php echo lang('global:title');?></th>
                                         <th><?php echo lang('global:description');?></th>
-                                        <th width="180"><?php echo lang('global:actions');?></th>
+                                        <th style="width: 180px"><?php echo lang('global:actions');?></th>
                                                             </tr>
                                                     </thead>
 

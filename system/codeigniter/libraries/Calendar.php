@@ -442,7 +442,7 @@ class CI_Calendar {
 	public function default_template()
 	{
 		return  array(
-			'table_open'				=> '<table border="0" cellpadding="4" cellspacing="0" class="responsive table table-hover table-striped table-bordered">',
+			'table_open'				=> '<table  cellpadding="4"  class="responsive table table-hover table-striped table-bordered">',
 			'heading_row_start'			=> '<tr>',
 			'heading_previous_cell'		=> '<th><a href="{previous_url}">&lt;&lt;</a></th>',
 			'heading_title_cell'		=> '<th colspan="{colspan}">{heading}</th>',

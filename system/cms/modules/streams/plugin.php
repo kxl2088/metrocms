@@ -1096,7 +1096,7 @@ class Plugin_Streams extends Plugin
 	 */
 	public $calendar_template = '
 	
-	   {table_open}<table border="0" cellpadding="0" cellspacing="0">{/table_open}
+	   {table_open}<table>{/table_open}
 	
 	   {heading_row_start}<tr>{/heading_row_start}
 	

@@ -1,4 +1,4 @@
-<table border="0" celspadding="0" celspacing="0" class="responsive table table-hover table-striped table-bordered">
+<table  class="responsive table table-hover table-striped table-bordered">
     <thead>
         <tr>
             <th colspan="2"><?php echo lang('cp:about_system'); ?></th>

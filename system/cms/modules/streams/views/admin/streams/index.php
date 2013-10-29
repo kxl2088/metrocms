@@ -10,14 +10,14 @@
 
 <?php if (!empty($streams)): ?>
 			
-<table border="0" class="table-list responsive table table-hover table-striped table-bordered" cellspacing="0">
+<table  class="table-list responsive table table-hover table-striped table-bordered" >
 	<thead>
 		<tr>
 		    <th><?php echo lang('streams:stream_name');?></th>
 		    <th><?php echo lang('streams:stream_slug');?></th>
 		    <th><?php echo lang('streams:about');?></th>
 		    <th><?php echo lang('streams:total_entries');?></th>
-		    <th width="180"><?php echo lang('global:actions'); ?></th>
+		    <th style="width: 180px"><?php echo lang('global:actions'); ?></th>
 		</tr>
 	</thead>
 	<tbody>

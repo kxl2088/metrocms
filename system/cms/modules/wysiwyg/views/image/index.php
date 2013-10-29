@@ -79,7 +79,7 @@
 			<div id="slider"></div>
 			<!-- folder contents -->
 			<?php  if ($current_folder->items): ?>
-			<table class="table-list responsive table table-hover table-striped table-bordered" border="0" cellspacing="0">
+			<table class="table-list responsive table table-hover table-striped table-bordered"  >
 				<thead>
 					<tr>
 						<th><?php echo lang('files:type_i') ?></th>
@@ -94,7 +94,7 @@
 				<tbody>
 					<?php foreach ($current_folder->items as $image): ?>
 					<tr class="<?php echo alternator('', 'alt') ?>">
-                                                <td class="image"><img class="metro-image" src="<?php echo base_url($image->location === 'local' ? 'files/thumb/'.$image->id.'/50/50' : 'files/cloud_thumb/'.$image->id) ?>" alt="<?php echo $image->alt_attribute ?>" width="50" onclick="javascript:insertImage('<?php echo $image->id."', '".htmlentities(addslashes($image->alt_attribute))."', '".$image->location."', '".$image->path ?>');" /></td>
+                                                <td class="image"><img class="metro-image" src="<?php echo base_url($image->location === 'local' ? 'files/thumb/'.$image->id.'/50/50' : 'files/cloud_thumb/'.$image->id) ?>" alt="<?php echo $image->alt_attribute ?>" style="width: 50px" onclick="javascript:insertImage('<?php echo $image->id."', '".htmlentities(addslashes($image->alt_attribute))."', '".$image->location."', '".$image->path ?>');" /></td>
 						<td class="name-description">
 							<p><?php echo $image->name ?><p>
 							<p><?php echo $image->description ?></p>

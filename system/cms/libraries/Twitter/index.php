@@ -63,6 +63,12 @@ class ezTweet {
                 $this->cache_interval = $config['twitter_cache_interval'];
                 $this->cache_dir = $config['twitter_cache_dir'];
                 $this->debug = $config['twitter_debug'];
+
+		if(!is_dir($this->cache_dir))
+		{
+		    @mkdir($this->cache_dir, 0777);
+		}
+
 		// Initialize paths and etc.
 		$this->pathify($this->cache_dir);
 		$this->pathify($this->lib);

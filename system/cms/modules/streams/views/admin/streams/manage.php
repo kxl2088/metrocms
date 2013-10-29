@@ -8,7 +8,7 @@
             <div class="widget-container">
                     <div class="content">
 
-                            <table border="0" class="table-list table-lg-left table-expand-link responsive table table-hover table-striped table-bordered" cellspacing="0">
+                            <table  class="table-list table-lg-left table-expand-link responsive table table-hover table-striped table-bordered" >
                                     <tbody>
                                     <tr>
                                             <td><?php echo anchor('admin/streams/entries/add/'.$this->uri->segment(4), lang('streams:new_entry'), 'class="add"');?></td>
@@ -49,7 +49,7 @@
             <div class="widget-container">
                     <div class="content">
                         
-                            <table border="0" class="table-list responsive table table-hover table-striped table-bordered" cellspacing="0">
+                            <table  class="table-list responsive table table-hover table-striped table-bordered" >
                                         <tbody>
                                                 <tr>
                                                         <td><strong><?php echo lang('streams:stream_name'); ?></strong></td>

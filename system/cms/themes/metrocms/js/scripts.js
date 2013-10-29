@@ -19,6 +19,10 @@ $(document).ready(function() {
         $('.responsive-leftbar').click(function(){
             $('.leftbar').toggleClass('leftbar-close expand', 500, 'easeOutExpo');
         });
+	
+	$('.topbar-search').submit(function(){
+	    return false;
+	});
 
         // Is Mobile?
 	metro.is_mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
@@ -54,7 +58,7 @@ $(document).ready(function() {
              $(document).find('.button.green').removeClass('button green').addClass('btn btn-success');
              $(document).find('.button.orange').removeClass('button orange').addClass('btn btn-warning');
              $(document).find('.button.black').removeClass('button black').addClass('btn btn-inverse');
-             $(document).find('.button').removeClass('button btn').addClass('btn');
+             $(document).find('.button').removeClass('button').addClass('btn');
              $(document).find('.add.btn i.icon-plus').remove();
              $(document).find('.add.btn').prepend('<i class="icon-plus"></i>&nbsp;').removeClass('add').addClass('add_button');
              $(document).find('button[value=delete]').removeClass('btn-primary').addClass('btn-danger');

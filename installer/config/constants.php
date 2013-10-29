@@ -92,5 +92,5 @@ unset($base_uri, $base_url);
 */
 
 define('CMS_VERSION', '1.0.1');
-define('CMS_REVISION', '20131025');
+define('CMS_REVISION', '20131029');
 define('CMS_EDITION', 'Community Edition');

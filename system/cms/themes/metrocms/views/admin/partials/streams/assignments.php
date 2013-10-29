@@ -1,18 +1,18 @@
 <?php if ($assignments): ?>
-                <table class="table-list responsive table table-hover table-striped table-bordered" border="0" cellspacing="0">
+                <table class="table-list responsive table table-hover table-striped table-bordered"  >
                             <thead>
                                     <tr>	
-                                        <th width="30"></th>
+                                        <th style="width: 30px"></th>
                                         <th><?php echo lang('streams:label.field_name');?></th>
                                         <th><?php echo lang('streams:label.field_slug');?></th>
                                         <th><?php echo lang('streams:label.field_type');?></th>
-                                        <th width="180"><?php echo lang('global:actions'); ?></th>
+                                        <th style="width: 180px"><?php echo lang('global:actions'); ?></th>
                                     </tr>
                             </thead>
                             <tbody>		
                             <?php foreach ($assignments as $assignment):?>
                                     <tr>
-                                            <td width="30" style="text-align: center" class="handle"><i class="icon-move"></i></td>
+                                            <td style="width: 30px; text-align: center" class="handle"><i class="icon-move"></i></td>
                                             <td>
                                                     <input type="hidden" name="action_to[]" value="<?php echo $assignment->assign_id;?>" />
                                                     <?php echo $this->fields->translate_label($assignment->field_name); ?></td>

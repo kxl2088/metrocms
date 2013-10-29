@@ -12,7 +12,7 @@
                                       <span class="icon-bar"></span>
                                       <span class="icon-bar"></span>
                                     </button>
-                                    <?php echo anchor('admin', Asset::img('metrocms_logo_large.png'), ' class="brand"') ?>    
+                                    <?php echo anchor('admin', Asset::img('metrocms_logo_large.png', 'MetroCMS'), ' class="brand"') ?>    
                                     <?php file_partial('navigation') ?>                                   
                                 </div>
                         </div>
@@ -71,14 +71,14 @@
                                             <div class="search-box">
                                                 <form class="topbar-search">
                                                     <div class="input-append input-icon ui-widget">                                    
-                                                                <input type="text" class="search-query search-input" id="nav-search" placeholder="<?php echo lang("cp:search"); ?>" ontouchstart="">
+                                                                <input type="text" class="search-query search-input" id="nav-search" placeholder="<?php echo lang("cp:search"); ?>">
                                                                 <i class="icon-search"></i>
                                                     </div>
                                                 </form>
                                             </div>                                              
-                                            <!--- Quick Links --->
+                                            <!-- Quick Links -->
 <?php file_partial('dashboard') ?>  
-                                            <!--- /Quick Links --->
+                                            <!-- /Quick Links -->
                                             <?php if($cpanel_stats): ?>
                                             <div class="side-widget">
                                                     <div class="board-widgets light-blue">

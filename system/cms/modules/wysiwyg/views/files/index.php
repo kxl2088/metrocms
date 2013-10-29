@@ -58,7 +58,7 @@
 				</ul>
 			</div>
 			<?php  if ($current_folder->items): ?>
-			<table class="table-list responsive table table-hover table-striped table-bordered" border="0" cellspacing="0">
+			<table class="table-list responsive table table-hover table-striped table-bordered"  >
 				<thead>
 					<tr>
 						<th><?php echo lang('global:actions') ?></th>

@@ -1,14 +1,14 @@
 <?php if ($blog) : ?>
-        <table cellspacing="0" class="responsive table table-hover table-striped table-bordered">
+        <table  class="responsive table table-hover table-striped table-bordered">
 		<thead>
 			<tr>
-				<th width="20"><?php echo form_checkbox(array('name' => 'action_to_all', 'class' => 'check-all')) ?></th>
+				<th style="width: 20px"><?php echo form_checkbox(array('name' => 'action_to_all', 'class' => 'check-all')) ?></th>
 				<th><?php echo lang('blog:post_label') ?></th>
 				<th class="collapse"><?php echo lang('blog:category_label') ?></th>
 				<th class="collapse"><?php echo lang('blog:date_label') ?></th>
 				<th class="collapse"><?php echo lang('blog:written_by_label') ?></th>
 				<th><?php echo lang('blog:status_label') ?></th>
-				<th width="180"><?php echo lang('global:actions') ?></th>
+				<th style="width: 180px"><?php echo lang('global:actions') ?></th>
 			</tr>
 		</thead>
 		<tbody>

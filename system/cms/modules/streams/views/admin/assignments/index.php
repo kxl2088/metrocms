@@ -13,7 +13,7 @@
     <table class="table-list responsive table table-hover table-striped table-bordered">
 		<thead>
 			<tr>	
-				<th></th>
+			    <th></th>
 			    <th><?php echo lang('streams:label.field_name');?></th>
 			    <th><?php echo lang('streams:label.field_slug');?></th>
 			    <th></th>
@@ -22,7 +22,7 @@
 		<tbody>		
 		<?php foreach ($stream_fields as $stream_field):?>
 			<tr>
-				<td width="30" class="handle"><?php echo Asset::img('icons/drag_handle.gif', 'Drag Handle'); ?></td>
+				<td style="width: 30px" class="handle"><?php echo Asset::img('icons/drag_handle.gif', 'Drag Handle'); ?></td>
 				<td>
 					<input type="hidden" name="action_to[]" value="<?php echo $stream_field->assign_id;?>" />
 					<?php echo $stream_field->field_name; ?></td>

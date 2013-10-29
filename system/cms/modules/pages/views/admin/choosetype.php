@@ -7,11 +7,11 @@
 
             <div class="widget-container">
                 <div class="content">
-                    <table class="responsive table table-hover table-striped table-bordered" border="0" cellspacing="0">
+                    <table class="responsive table table-hover table-striped table-bordered"  >
                         <thead>
-                            <th width="20%"><?php echo lang('global:title');?></th>
+                            <th style="width: 20%"><?php echo lang('global:title');?></th>
                             <th><?php echo lang('global:description');?></th>
-                            <th width="20%"></th>
+                            <th style="width: 20%"></th>
                         </thead>
                         <tbody>
                             <?php foreach ($page_types as $pt): ?>

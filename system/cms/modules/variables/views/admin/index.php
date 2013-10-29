@@ -10,14 +10,14 @@
                 <?php if ($variables): ?>
 
                         <?php echo form_open('admin/variables/delete') ?>
-                                <table border="0" class="table-list responsive table table-hover table-striped table-bordered" cellspacing="0">
+                                <table  class="table-list responsive table table-hover table-striped table-bordered" >
                                         <thead>
                                         <tr>
-                                                <th width="30"><?php echo form_checkbox(array('name' => 'action_to_all', 'class' => 'check-all'));?></th>
-                                                <th width="20%"><?php echo lang('name_label');?></th>
+                                                <th style="width: 30px"><?php echo form_checkbox(array('name' => 'action_to_all', 'class' => 'check-all'));?></th>
+                                                <th style="width: 20%"><?php echo lang('name_label');?></th>
                                                 <th class="collapse"><?php echo lang('variables:data_label');?></th>
-                                                <th class="collapse" width="20%"><?php echo lang('variables:syntax_label');?></th>
-                                                <th width="180"><?php echo lang('global:actions'); ?></th>
+                                                <th class="collapse" style="width: 20%"><?php echo lang('variables:syntax_label');?></th>
+                                                <th style="width: 180px"><?php echo lang('global:actions'); ?></th>
                                         </tr>
                                         </thead>
                                         <tbody>

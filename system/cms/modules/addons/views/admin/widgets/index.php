@@ -10,16 +10,16 @@
                         <?php echo form_open(uri_string(), 'class="crud"') ?>
                         <!-- Available Widget List -->
 
-                        <table border="0" id="widgets-list" class="table-list responsive table table-hover table-striped table-bordered" cellspacing="0">
+                        <table  id="widgets-list" class="table-list responsive table table-hover table-striped table-bordered" >
                                 <thead>
                                 <tr>
-                                        <th width="30"></th>
-                                        <th width="20%"><?php echo lang('global:title') ?></th>
+                                        <th style="width: 30px"></th>
+                                        <th style="width: 20%"><?php echo lang('global:title') ?></th>
                                         <th><?php echo lang('desc_label') ?></th>
-                                        <th width="130"><?php echo lang('global:author') ?></th>
-                                        <th width="80" class="center"><?php echo lang('version_label') ?></th>
-					<th width="100" class="center"><?php echo lang('addons:modules:status');?></th>
-                                        <th width="180"><?php echo lang('global:actions'); ?></th>
+                                        <th style="width: 130px"><?php echo lang('global:author') ?></th>
+                                        <th style="width: 80px" class="center"><?php echo lang('version_label') ?></th>
+					<th style="width: 100px" class="center"><?php echo lang('addons:modules:status');?></th>
+                                        <th style="width: 180px"><?php echo lang('global:actions'); ?></th>
                                 </tr>
                                 </thead>
                                 <tbody>

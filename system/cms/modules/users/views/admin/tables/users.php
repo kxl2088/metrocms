@@ -1,15 +1,15 @@
 <?php if (!empty($users)): ?>
-	<table border="0" class="table-list responsive table table-hover table-striped table-bordered" cellpadding="0" cellspacing="0">
+	<table  class="table-list responsive table table-hover table-striped table-bordered" >
 		<thead>
 			<tr>
-				<th with="30" class="align-center"><?php echo form_checkbox(array('name' => 'action_to_all', 'class' => 'check-all'));?></th>
+				<th style="width: 30px" class="align-center"><?php echo form_checkbox(array('name' => 'action_to_all', 'class' => 'check-all'));?></th>
 				<th><?php echo lang('user:name_label');?></th>
 				<th class="collapse"><?php echo lang('global:email');?></th>
 				<th><?php echo lang('user:group_label');?></th>
 				<th class="collapse"><?php echo lang('user:active') ?></th>
 				<th class="collapse"><?php echo lang('user:joined_label');?></th>
 				<th class="collapse"><?php echo lang('user:last_visit_label');?></th>
-				<th width="180"><?php echo lang('global:actions'); ?></th>
+				<th style="width: 180px"><?php echo lang('global:actions'); ?></th>
 			</tr>
 		</thead>
 		<tbody>

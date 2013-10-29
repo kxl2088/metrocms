@@ -135,7 +135,7 @@ function koggle(elem)
 				</p>
 			<?php if (isset($args_id)): ?>
 				<div id="<?php echo $args_id ?>" class="collapsed">
-					<table cellspacing="0">
+					<table >
 					<?php foreach ($step['args'] as $name => $arg): ?>
 						<tr>
 							<td><code><?php echo $name ?></code></td>
@@ -160,7 +160,7 @@ function koggle(elem)
 	<?php $included = get_included_files() ?>
 		<h3><a href="#<?php echo $env_id = $error_id.'environment_included' ?>" onclick="return koggle('<?php echo $env_id ?>')"><?php echo 'Included files' ?></a> (<?php echo count($included) ?>)</h3>
 		<div id="<?php echo $env_id ?>" class="collapsed">
-			<table cellspacing="0">
+			<table >
 			<?php foreach ($included as $file): ?>
 				<tr>
 					<td><code><?php echo MY_Exceptions::debug_path($file) ?></code></td>
@@ -172,7 +172,7 @@ function koggle(elem)
 	<?php $included = get_loaded_extensions() ?>
 		<h3><a href="#<?php echo $env_id = $error_id.'environment_loaded' ?>" onclick="return koggle('<?php echo $env_id ?>')"><?php echo 'Loaded extensions' ?></a> (<?php echo count($included) ?>)</h3>
 		<div id="<?php echo $env_id ?>" class="collapsed">
-			<table cellspacing="0">
+			<table >
 			<?php foreach ($included as $file): ?>
 				<tr>
 					<td><code><?php echo MY_Exceptions::debug_path($file) ?></code></td>
@@ -185,7 +185,7 @@ function koggle(elem)
 		<?php if (empty($GLOBALS[$var]) or ! is_array($GLOBALS[$var])) continue ?>
 		<h3><a href="#<?php echo $env_id = $error_id.'environment'.strtolower($var) ?>" onclick="return koggle('<?php echo $env_id ?>')">$<?php echo $var ?></a></h3>
 		<div id="<?php echo $env_id ?>" class="collapsed">
-			<table cellspacing="0">
+			<table >
 			<?php foreach ($GLOBALS[$var] as $key => $value): ?>
 				<tr>
 					<td><code><?php echo $key ?></code></td>

@@ -23,7 +23,7 @@
 </code>
 </pre>
 							<?php if (isset($doc['attributes']) and $doc['attributes']): ?>
-								<table cellpadding="0" cellspacing="0" class="responsive table table-hover table-striped table-bordered">
+								<table class="responsive table table-hover table-striped table-bordered">
 									<tbody>
 										<tr>
 											<th>Name</th>

@@ -386,7 +386,7 @@ class Admin extends Admin_Controller
         );
         $log           = $this->log_m->get($id);
         $log or redirect('admin/' . $this->module);
-        $tmpl = array('table_open' => '<table border="0" cellpadding="0" cellspacing="0" class="log_errors responsive table table-hover table-striped table-bordered">');
+        $tmpl = array('table_open' => '<table  class="log_errors responsive table table-hover table-striped table-bordered">');
         $this->table->set_template($tmpl);
         $this->table->set_heading(lang('log.date_label'), lang('log.header_label'), lang('log.error_label'));
         // Get all lines, by splitting them on the newline
@@ -456,7 +456,7 @@ class Admin extends Admin_Controller
             $total_errors += $value;
         }
         $errors_overview[] = array(null, lang('log.total_counted_errors'), $total_errors, null);
-        $tmpl              = array('table_open' => '<table border="0" cellpadding="0" cellspacing="0" class="errors_overview responsive table table-hover table-striped table-bordered">');
+        $tmpl              = array('table_open' => '<table  class="errors_overview responsive table table-hover table-striped table-bordered">');
         $this->table->set_template($tmpl);
         $this->table->set_heading(array('', lang('log.error_header_label'), lang('log.number_of_occurences_label'), lang('log.actions_label')));
         $errors_overview = $this->table->generate($errors_overview);

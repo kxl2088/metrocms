@@ -8,7 +8,7 @@
             <div class="widget-container">
                     <div class="content">
 
-    <table class="table-list responsive table table-hover table-striped table-bordered" cellpadding="0" cellspacing="0">
+    <table class="table-list responsive table table-hover table-striped table-bordered" >
 		<thead>
 			<tr>
 				<th><?php echo lang('streams:label.field');?></th>
@@ -17,7 +17,7 @@
 		</thead>
 		<tbody>
 		<tr>
-			<td width="25%"><strong><?php echo lang('streams:id');?></strong></td>
+			<td style="width: 25%"><strong><?php echo lang('streams:id');?></strong></td>
 			<td><?php echo $row->id;?></td>
 		</tr>
 		<tr>

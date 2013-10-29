@@ -8,14 +8,14 @@
             <div class="widget-container">
                     <div class="content">
                             <?php if ($addon_modules): ?>
-                            <table class="table-list responsive table table-hover table-striped table-bordered" cellspacing="0">
+                            <table class="table-list responsive table table-hover table-striped table-bordered" >
                                     <thead>
                                             <tr>
                                                     <th><?php echo lang('name_label');?></th>
                                                     <th class="collapse"><span><?php echo lang('desc_label');?></span></th>
-                                                    <th class="center" width="80"><?php echo lang('version_label');?></th>
-                                                    <th width="100" class="center"><?php echo lang('addons:modules:status');?></th>
-                                                    <th width="180"><?php echo lang('global:actions'); ?></th>
+                                                    <th class="center" style="width: 80px"><?php echo lang('version_label');?></th>
+                                                    <th style="width: 100px" class="center"><?php echo lang('addons:modules:status');?></th>
+                                                    <th style="width: 180px"><?php echo lang('global:actions'); ?></th>
                                             </tr>
                                     </thead>
                                     <tbody>
@@ -87,14 +87,14 @@
                     <div class="content">
                             <p><?php echo lang('addons:modules:core_introduction') ?></p>
 
-                            <table class="table-list responsive table table-hover table-striped table-bordered" cellspacing="0">
+                            <table class="table-list responsive table table-hover table-striped table-bordered" >
                                     <thead>
                                             <tr>
                                                     <th><?php echo lang('name_label');?></th>
                                                     <th><span><?php echo lang('desc_label');?></span></th>
-                                                    <th class="center" width="80"><?php echo lang('version_label');?></th>
-                                                    <th width="100" class="center"><?php echo lang('addons:modules:status');?></th>
-                                                    <th width="180"><?php echo lang('global:actions'); ?></th>
+                                                    <th class="center" style="width: 80px"><?php echo lang('version_label');?></th>
+                                                    <th style="width: 100px" class="center"><?php echo lang('addons:modules:status');?></th>
+                                                    <th style="width: 180px"><?php echo lang('global:actions'); ?></th>
                                             </tr>
                                     </thead>	
                                     <tbody>

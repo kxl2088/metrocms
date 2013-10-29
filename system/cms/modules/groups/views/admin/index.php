@@ -8,12 +8,12 @@
             <div class="widget-container">
                     <div class="content">
                             <?php if ($groups): ?>
-                                    <table class="table-list responsive table table-hover table-striped table-bordered" cellspacing="0">
+                                    <table class="table-list responsive table table-hover table-striped table-bordered" >
                                             <thead>
                                                     <tr>
                                                             <th style="text-align: left!important;"><?php echo lang('groups:name');?></th>
                                                             <th><?php echo lang('groups:short_name');?></th>
-                                                            <th width="180"><?php echo lang('global:actions'); ?></th>
+                                                            <th style="width: 180px"><?php echo lang('global:actions'); ?></th>
                                                     </tr>
                                             </thead>
                                             <tbody>

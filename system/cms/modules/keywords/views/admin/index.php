@@ -9,11 +9,11 @@
                 <div class="content">
 
                 <?php if ($keywords): ?>
-                    <table class="table-list responsive table table-hover table-striped table-bordered" cellspacing="0">
+                    <table class="table-list responsive table table-hover table-striped table-bordered" >
                                 <thead>
                                         <tr>
                                                 <th style="text-align: left!important;"><?php echo lang('keywords:name');?></th>
-                                                <th width="180"><?php echo lang('global:actions'); ?></th>
+                                                <th style="width: 180px"><?php echo lang('global:actions'); ?></th>
                                         </tr>
                                 </thead>
                                 <tbody>

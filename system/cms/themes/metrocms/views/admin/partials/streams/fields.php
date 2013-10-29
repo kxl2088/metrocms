@@ -1,12 +1,12 @@
 <?php if (!empty($fields)): ?>
 
-    <table class="table-list responsive table table-hover table-striped table-bordered" border="0" cellspacing="0">
+    <table class="table-list responsive table table-hover table-striped table-bordered"  >
 		<thead>
 			<tr>
 			    <th><?php echo lang('streams:label.field_name');?></th>
 			    <th><?php echo lang('streams:label.field_slug');?></th>
 			    <th><?php echo lang('streams:label.field_type');?></th>
-			    <th width="180"><?php echo lang('global:actions');?></th>
+			    <th style="width: 180px"><?php echo lang('global:actions');?></th>
 			</tr>
 		</thead>
 		<tbody>

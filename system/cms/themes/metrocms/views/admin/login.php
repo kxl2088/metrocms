@@ -46,7 +46,7 @@
             <div class="navbar navbar-inverse top-nav">
                     <div class="navbar-inner">
                             <div class="container">
-                                <a class="brand" href="<?php echo base_url('admin'); ?>"><img src="<?php echo Asset::get_filepath_img('metrocms_logo_large.png'); ?>" width="103" height="50" alt="MetroCMS" style="width:90px; height: 50px"></a><span class="home-link"><a href="<?php echo base_url(); ?>" class="icon-home"></a></span>
+                                <a class="brand" href="<?php echo base_url('admin'); ?>"><img src="<?php echo Asset::get_filepath_img('metrocms_logo_large.png'); ?>" alt="MetroCMS" style="width:90px; height: 50px"></a><span class="home-link"><a href="<?php echo base_url(); ?>" class="icon-home"></a></span>
                             </div>
                     </div>
             </div> 

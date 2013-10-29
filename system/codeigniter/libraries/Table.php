@@ -527,7 +527,7 @@ class CI_Table {
 	protected function _default_template()
 	{
 		return  array(
-				'table_open'		=> '<table border="0" cellpadding="4" cellspacing="0">',
+				'table_open'		=> '<table  cellpadding="4" >',
 
 				'thead_open'		=> '<thead>',
 				'thead_close'		=> '</thead>',

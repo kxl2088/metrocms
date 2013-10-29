@@ -11,14 +11,14 @@
                     <div class="content">
 
                 <?php echo form_open('admin/redirects/delete') ?>
-                    <table border="0" class="table-list responsive table table-hover table-striped table-bordered" cellspacing="0">
+                    <table  class="table-list responsive table table-hover table-striped table-bordered" >
                         <thead>
                                     <tr>
-                                            <th width="15"><?php echo form_checkbox(array('name' => 'action_to_all', 'class' => 'check-all'));?></th>
-                                            <th width="25"><?php echo lang('redirects:type');?></th>
-                                            <th width="25%"><?php echo lang('redirects:from');?></th>
+                                            <th style="width: 15px"><?php echo form_checkbox(array('name' => 'action_to_all', 'class' => 'check-all'));?></th>
+                                            <th style="width: 25px"><?php echo lang('redirects:type');?></th>
+                                            <th style="width: 25%"><?php echo lang('redirects:from');?></th>
                                             <th><?php echo lang('redirects:to');?></th>
-                                            <th width="180"><?php echo lang('global:actions'); ?></th>
+                                            <th style="width: 180px"><?php echo lang('global:actions'); ?></th>
                                     </tr>
                         </thead>
                         <tbody>

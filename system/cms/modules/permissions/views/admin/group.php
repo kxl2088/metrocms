@@ -7,7 +7,7 @@
             <div class="widget-container">
                     <div class="content">
                             <?php echo form_open(uri_string(), array('class'=> 'crud', 'id'=>'edit-permissions')) ?>
-                            <table border="0" class="table-list responsive table table-hover table-striped table-bordered" cellspacing="0">
+                            <table  class="table-list responsive table table-hover table-striped table-bordered" >
                                     <thead>
                                             <tr>
                                                     <th><?php echo form_checkbox(array('id'=>'check-all', 'name' => 'action_to_all', 'class' => 'check-all', 'title' => lang('permissions:checkbox_tooltip_action_to_all'))) ?></th>

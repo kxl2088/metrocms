@@ -86,15 +86,15 @@
 	</div> 
         <div class="copyright">
             <p class="credits"><?php echo sprintf_lang('global:dashboard_copyright', array(date('Y'), CMS_VERSION, CMS_EDITION, "{elapsed_time}", "{memory_usage}")); ?></p>
-                <ul id="lang">
-                        <form action="<?php echo current_url(); ?>" id="change_language" method="get">
-                                <select class="skip" name="lang" onchange="this.form.submit();">
-                                        <?php foreach(languages() as $key): ?>
-                                                <option value="<?php echo $key['code']; ?>" <?php echo CURRENT_LANGUAGE == $key['code'] ? ' selected="selected" ' : ''; ?>><?php echo $key['name']; ?></option>
-                                        <?php endforeach; ?>
-                                </select>
-                        </form>
-		</ul>
+		<div id="lang">
+		    <form action="<?php echo current_url(); ?>" id="change_language" method="get">		    
+			<select class="skip" name="lang" onchange="this.form.submit();">
+				<?php foreach(languages() as $key): ?>
+					<option value="<?php echo $key['code']; ?>" <?php echo CURRENT_LANGUAGE == $key['code'] ? ' selected="selected" ' : ''; ?>><?php echo $key['name']; ?></option>
+				<?php endforeach; ?>
+			</select>		    
+		    </form>
+		</div>
 	</div>	
         
 </div>

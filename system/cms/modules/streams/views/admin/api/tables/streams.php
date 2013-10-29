@@ -1,15 +1,15 @@
 <?php if ($apis) : ?>
-        <table cellspacing="0" class="responsive table table-hover table-striped table-bordered">
+        <table  class="responsive table table-hover table-striped table-bordered">
 		<thead>
 			<tr>
-				<th width="20"><?php echo form_checkbox(array('name' => 'action_to_all', 'class' => 'check-all')) ?></th>
+				<th style="width: 20px"><?php echo form_checkbox(array('name' => 'action_to_all', 'class' => 'check-all')) ?></th>
 				<th><?php echo lang('streams:application_label') ?></th>
                                 <th class="collapse"><?php echo lang('streams:token_label') ?></th>
 				<th class="collapse"><?php echo lang('streams:created_label') ?></th>
 				<th class="collapse"><?php echo lang('streams:expires_on_label') ?></th>
-                                <th width="100"><?php echo lang('streams:expired') ?></th>
-				<th width="100"><?php echo lang('streams:enabled_label') ?></th>
-				<th width="180"><?php echo lang('global:actions') ?></th>
+                                <th style="width: 100px"><?php echo lang('streams:expired') ?></th>
+				<th style="width: 100px"><?php echo lang('streams:enabled_label') ?></th>
+				<th style="width: 180px"><?php echo lang('global:actions') ?></th>
 			</tr>
 		</thead>
 		<tbody>

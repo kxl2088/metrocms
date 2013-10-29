@@ -44,10 +44,10 @@
 // ]]>
 </script>
 
-<table class="mult_lists responsive table table-hover table-striped table-bordered" cellpadding="0" cellspacing="0">
+<table class="mult_lists responsive table table-hover table-striped table-bordered" >
 
 <tr>
-	<th width="50%">Opções Disponíveis</th>
+	<th style="width: 50%">Opções Disponíveis</th>
 	<th>Opções Selecionadas</th>
 </tr>
 

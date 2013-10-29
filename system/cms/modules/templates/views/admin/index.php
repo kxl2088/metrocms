@@ -12,14 +12,14 @@
 
                         <?php echo form_open('admin/templates/action') ?>
 
-                        <table border="0" class="table-list responsive table table-hover table-striped table-bordered" cellspacing="0">
+                        <table  class="table-list responsive table table-hover table-striped table-bordered" >
                             <thead>
                                 <tr>
                                     <th><?php echo form_checkbox(array('name' => 'action_to_all', 'class' => 'check-all'));?></th>
                                     <th><?php echo lang('name_label') ?></th>
                                     <th class="collapse"><?php echo lang('global:description') ?></th>
                                     <th class="collapse"><?php echo lang('templates:language_label') ?></th>
-                                    <th width="180"><?php echo lang('global:actions'); ?></th>
+                                    <th style="width: 180px"><?php echo lang('global:actions'); ?></th>
                                 </tr>
                             </thead>
 
@@ -69,14 +69,14 @@
 	   
 	<div class="widget-container">
 		<div class="content">
-			<table border="0" class="table-list clear-both" cellspacing="0">
+			<table  class="table-list clear-both" >
 		        <thead>
 		            <tr>
 		                <th><?php echo form_checkbox(array('name' => 'action_to_all', 'class' => 'check-all'));?></th>
 		                <th><?php echo lang('name_label') ?></th>
 		                <th><?php echo lang('global:description') ?></th>
 		                <th><?php echo lang('templates:language_label') ?></th>
-		                <th width="180"><?php echo lang('global:actions'); ?></th>
+		                <th style="width: 180px"><?php echo lang('global:actions'); ?></th>
 		            </tr>
 		        </thead>
 		

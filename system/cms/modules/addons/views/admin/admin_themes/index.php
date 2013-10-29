@@ -11,15 +11,15 @@
 
                             <?php echo form_open('admin/addons/admin_themes/set_default') ?>
                             <?php echo form_hidden('method', $this->method) ?>
-                            <table class="table-list responsive table table-hover table-striped table-bordered" cellspacing="0">
+                            <table class="table-list responsive table table-hover table-striped table-bordered" >
                                     <thead>
                                             <tr>
-                                                    <th width="120" class="align-center"><?php echo lang('addons:themes:default_theme_label') ?></th>
-                                                    <th width="15%"><?php echo lang('addons:themes:theme_label') ?></th>
+                                                    <th style="width: 120px" class="align-center"><?php echo lang('addons:themes:default_theme_label') ?></th>
+                                                    <th style="width: 15%"><?php echo lang('addons:themes:theme_label') ?></th>
                                                     <th class="collapse"><?php echo lang('global:description') ?></th>
-                                                    <th class="collapse" width="10%"><?php echo lang('global:author') ?></th>
-                                                    <th width="50" class="center"><?php echo lang('addons:themes:version_label') ?></th>
-                                                    <th width="180"><?php echo lang('global:actions'); ?></th>
+                                                    <th class="collapse" style="width: 10%"><?php echo lang('global:author') ?></th>
+                                                    <th style="width: 50px" class="center"><?php echo lang('addons:themes:version_label') ?></th>
+                                                    <th style="width: 180px"><?php echo lang('global:actions'); ?></th>
                                             </tr>
                                     </thead>
                                     <tbody>
@@ -51,7 +51,7 @@
   <button data-toggle="dropdown" type="button" class="btn btn-primary dropdown-toggle"><span class="caret"></span> </button>
   <ul class="dropdown-menu">
       <?php echo isset($theme->options) ? '<li>' . anchor('admin/addons/admin_themes/options/'.$theme->slug, lang('addons:themes:options'), 'title="'.$theme->name.'" class="options"') . '</li>' : '' ?>
-      <li><a href="<?php echo $theme->screenshot ?>" rel="screenshots" title="<?php echo $theme->name ?>" class="fancybox"><?php echo lang('buttons:preview') ?></a></li>      
+      <?php if($theme->screenshot): ?><li><a href="<?php echo $theme->screenshot ?>" title="<?php echo $theme->name ?>" class="fancybox"><?php echo lang('buttons:preview') ?></a></li><?php endif; ?>
   </ul>
 </div>
 

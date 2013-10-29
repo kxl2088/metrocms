@@ -57,7 +57,7 @@ $lang['cp:access_denied'] 				= 'Você não possui privilégios suficientes para
 $lang['cp:delete_installer_message']              = 'O diretório de instalação ainda existe! Por favor, exclua-o do seu servidor! Deixá-lo on-line significa expor o controle deste site para alguém.'; 
 $lang['cp:delete_installer']					 = 'Remover Instalador'; 
 $lang['cp:delete_installer_successfully_message'] = 'O diretório de instalação foi excluído com sucesso.'; 
-$lang['cp:delete_installer_manually_message']     = 'O diretório de instalação não pôde ser excluído. <strong> removê-lo manualmente!</strong>'; 
+$lang['cp:delete_installer_manually_message']     = 'O diretório de instalação não pôde ser excluído. Teste <strong>removê-lo manualmente!</strong>'; 
 $lang['cp:upgrade_message']				= 'Você está rodando a versão %s, mas seu banco de dados é versão %s. Por favor, <a href="%s" title="Upgrade">clique aqui</a> para atualizar o banco de dados.';
 $lang['cp:google_analytics_missing']	= 'Faltam as configuração para o Google Analytics. Adicione-as em %s ou entre em contato com seu administrador.';
 $lang['cp:google_analytics_no_connect']	= 'Não foi possível se conectar ao Google Analytics. Verifique suas %s.';

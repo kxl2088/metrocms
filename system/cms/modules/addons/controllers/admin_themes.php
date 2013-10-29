@@ -53,6 +53,23 @@ class Admin_themes extends Admin_Controller
 				{
 					$theme->is_default = true;
 				}
+				
+				if(file_exists($theme->screenshot))
+				{
+				    $theme->screenshot = site_url($theme->screenshot);
+				}
+				elseif(file_exists(str_replace('.png', '.jpg', $theme->screenshot)))
+				{
+				    $theme->screenshot = site_url(str_replace('.png', '.jpg', $theme->screenshot));
+				}
+				elseif(file_exists(str_replace('.png', '.jpeg', $theme->screenshot)))
+				{
+				    $theme->screenshot = site_url(str_replace('.png', '.jpeg', $theme->screenshot));
+				}
+				else
+				{
+				    $theme->screenshot = FALSE;
+				}
 
 				$data['themes'][] = $theme;
 			}

@@ -243,7 +243,8 @@ table tr td i.icon-move{
 }
 #lang{
     padding: 0;
-    margin: 0 0 0 25px
+    margin: 0 0 0 25px;
+    display: inline-block;
 }
 #change_language{
     margin: 0;

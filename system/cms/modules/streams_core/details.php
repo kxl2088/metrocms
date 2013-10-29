@@ -24,11 +24,11 @@ class Module_Streams_core extends Module
 		return array(
 			'name' => array(
 				'en' => 'Streams Core',
-				'br' => 'Núcleo de Streams',
+				'br' => 'Núcleo de Fluxos',
 			),
 			'description' => array(
 				'en' => 'Core data module for streams.',
-				'br' => 'Módulo central de dados streams.',
+				'br' => 'Módulo central de fluxos de dados.',
 			),
 			'frontend' => false,
 			'backend' => false,

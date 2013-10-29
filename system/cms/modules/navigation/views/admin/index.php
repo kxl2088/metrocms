@@ -27,7 +27,7 @@
 								</div>
 							</div>
 
-							<div class="span6">
+							<div class="span5">
 								<div id="link-details" class="group-<?php echo $group->id ?>">
 
 									<p>
@@ -52,7 +52,7 @@
 							</div>
 						</div>
 
-						<div class="span6">
+						<div class="span5">
 							<div id="link-details" class="group-<?php echo $group->id ?>">
 
 								<p>
