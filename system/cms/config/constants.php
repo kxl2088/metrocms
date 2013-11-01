@@ -97,7 +97,7 @@ define('CMS_NAME', 'MetroCMS');
 |
 */
 
-define('CMS_VERSION', '1.0.1');
+define('CMS_VERSION', '1.0.2');
 
 /*
 |--------------------------------------------------------------------------
@@ -119,6 +119,6 @@ define('CMS_EDITION', 'Community Edition');
 |
 */
 
-define('CMS_REVISION', '20131031');
+define('CMS_REVISION', '20131101');
 
 /* End of file constants.php */

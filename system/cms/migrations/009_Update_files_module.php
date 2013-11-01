@@ -20,7 +20,7 @@ class Migration_Update_files_module extends CI_Migration {
 		{
 		    foreach ($files as $file)
 		    {
-			$newpath = $path . date('Y/m') . '/';
+			$newpath = $path . date('Y/m', $file->date_added) . '/';
 			
 			if( !is_dir($newpath) )
 			{
