@@ -119,6 +119,6 @@ define('CMS_EDITION', 'Community Edition');
 |
 */
 
-define('CMS_REVISION', '20131029');
+define('CMS_REVISION', '20131031');
 
 /* End of file constants.php */

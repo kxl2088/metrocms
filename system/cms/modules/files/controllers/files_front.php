@@ -32,6 +32,8 @@ class Files_front extends Public_Controller
 			->join('file_folders', 'file_folders.id = files.folder_id')
 			->get_by('files.id', $id) OR show_404();
 
+		$this->_path = $this->_path . date('Y/m', $file->date_added) . '/';
+		
 		// increment the counter
 		$this->file_m->update($id, array('download_count' => $file->download_count + 1));
 
@@ -56,11 +58,14 @@ class Files_front extends Public_Controller
 		if ((strlen($id) === 15 and strpos($id, '.') === false) or (is_numeric($id) and strpos($id, '.') === false))
 		{
 			$file = $this->file_m->get($id);
-		}
-		
+			$this->_path = $this->_path . date('Y/m', $file->date_added) . '/';
+		}		
 		// it's neither a legacy numeric id nor a new hash id so they've passed the filename itself
 		else
-		{
+		{		
+			$file = $this->file_m->get($id);
+			$this->_path = $this->_path . date('Y/m', $file->date_added) . '/';
+			
 			$data = getimagesize($this->_path.$id) OR show_404();
 			
 			$ext = '.'.end(explode('.', $id));
@@ -71,13 +76,13 @@ class Files_front extends Public_Controller
 			$file->extension 	= $ext;
 			$file->mimetype 	= $data['mime'];
 		}
-
+		
 		if ( ! $file)
 		{
 			set_status_header(404);
 			exit;
 		}
-
+		
 		$cache_dir = $this->config->item('cache_dir') . 'image_files/';
 
 		is_dir($cache_dir) or mkdir($cache_dir, 0777, true);
@@ -263,6 +268,8 @@ class Files_front extends Public_Controller
                             ->get_by('files.filename', $id);
                 }
 
+		$this->_path = $this->_path . date('Y/m', $file->date_added) . '/';
+		
 		// it is a cloud file, we will return the thumbnail made when it was uploaded
 		if ($file and $file->location !== 'local')
 		{
@@ -312,7 +319,7 @@ class Files_front extends Public_Controller
                 {
                     exit(json_encode($file));
                 }
-                
+                		
                 $file['status'] ? $file['data'] = (array)$file['data'] : false;
                 
 		if ( is_logged_in() && $file['status'] && $file['data']['user_id'] == $this->current_user->id || $level == 1)

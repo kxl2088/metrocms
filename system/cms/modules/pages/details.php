@@ -208,7 +208,7 @@ class Module_Pages extends Module
 			'slug' => 'default',
 			'description' => 'Um tipo de página simples com um editor WYSIWYG, para você iniciar a adição de conteúdo.',
 			'stream_id' => $stream_id,
-			'body' => "{{ if page:is_home == false }}\n<div class=\"container\">n<div class=\"row\">\n\n\t<div class=\"col-lg-12\">\n\t\t<h1 class=\"page-header\">{{ template:title }}</h1>\n\t\t{{ theme:partial name=\"breadcrumbs\" }}\n\t</div>\n\n</div>\n</div>\n{{ endif }}\n\n{{ body }}",
+			'body' => "{{ if page:is_home == false }}\n<div class=\"container\">\n<div class=\"row\">\n\n\t<div class=\"col-lg-12\">\n\t\t<h1 class=\"page-header\">{{ template:title }}</h1>\n\t\t{{ theme:partial name=\"breadcrumbs\" }}\n\t</div>\n\n</div>\n</div>\n{{ endif }}\n\n{{ body }}",
 			'css' => '',
 			'js' => '',
 			'updated_on' => now()

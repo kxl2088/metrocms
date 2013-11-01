@@ -12,6 +12,27 @@ class File_m extends MY_Model {
 	// ------------------------------------------------------------------------
 
 	/**
+	 * Get an exists file rows by id or filename
+	 *
+	 * 
+	 * @param	numeric or string		The file id or filename
+	 * @return	string	If the file exists
+	 */
+	public function get($id) 
+	{
+		if((strlen($id) === 15 and strpos($id, '.') === false) or (is_numeric($id) and strpos($id, '.') === false))
+		{
+		    return parent::get($id);
+		}
+		
+		return $this->db->where('filename', $id)
+				->get('files')
+				->row();
+		
+	}
+	// ------------------------------------------------------------------------
+
+	/**
 	 * Exists
 	 *
 	 * Checks if a given file exists.

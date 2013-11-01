@@ -27,6 +27,7 @@ class Files
 		ci()->load->config('files/files');
                 ci()->load->library('settings/settings');
                 ci()->load->helper('files/files');
+		ci()->load->helper('file');	
                 
 		self::$path = config_item('files:path');
 		self::$_cache_path = config_item('cache_dir').'cloud_cache/';
@@ -176,11 +177,13 @@ class Files
 
 		if ($files)
 		{
+		    
 			ci()->load->library('keywords/keywords');
 
 			foreach ($files as &$file) 
 			{
 				$file->keywords_hash = $file->keywords;
+				$file->real_path = self::$path . date('Y/m', $file->date_added) . '/' . $file->filename;
 				$file->keywords = ci()->keywords->get_string($file->keywords);
 				$file->formatted_date = format_date($file->date_added);
 			}
@@ -360,6 +363,17 @@ class Files
 		{
 			ci()->load->library('upload');
 
+			self::$path = self::$path . date('Y/m') . '/';
+			
+			if( !is_dir(self::$path) )
+			{			    
+			    if( !mkdir( self::$path, DIR_WRITE_MODE, true) )
+			    {
+				die(json_encode(array('status' => false, 'message' => 'Error while create directory!', 'data' => null)));
+			    }	    
+			    write_file(self::$path .'index.html', '');			    
+			}
+			
 			$upload_config = array(
 				'upload_path'	=> self::$path,
 				'file_name'		=> $replace_file ? $replace_file->filename : self::$_filename,
@@ -410,6 +424,7 @@ class Files
 
 					$data['width'] = ci()->image_lib->width;
 					$data['height'] = ci()->image_lib->height;	
+					function_exists('filesize') ? $data['filesize'] = filesize(self::$path.$data['filename']) / 1024 : FALSE;
                                         unset($config);
 				}
                                                                 
@@ -451,6 +466,7 @@ class Files
                                                 //Initialize watermark method                                        
                                                 ci()->image_lib->initialize($wm_config); 
                                                 ci()->image_lib->watermark();  
+						function_exists('filesize') ? $data['filesize'] = filesize(self::$path.$data['filename']) / 1024 : FALSE;	
                                         }
                                         
                                         //Config if watermark type is overlay    
@@ -483,6 +499,7 @@ class Files
                                                 //Initialize watermark method                                        
                                                 ci()->image_lib->initialize($wm_config); 
                                                 ci()->image_lib->watermark();  
+						function_exists('filesize') ? $data['filesize'] = filesize(self::$path.$data['filename']) / 1024 : FALSE;
                                         }
                                         
                                         ci()->image_lib->clear();
@@ -557,6 +574,8 @@ class Files
 		{
 			return self::result(false, lang('files:item_not_found'), $new_name ? $new_name : $file_id);
 		}
+		
+		self::$path =  self::$path . date('Y/m', $file->date_added) . '/';
 
 		// this keeps a long running transaction from stalling the site
 		session_write_close();
@@ -870,6 +889,7 @@ class Files
 			{
 				foreach ($results as $value) 
 				{
+					self::$path =  self::$path . date('Y/m', $value->date_added) . '/';
 					if (file_exists(self::$path.$value->filename))
 					{
 						$files[$i]['filesize'] 		= $value->filesize;
@@ -1046,7 +1066,9 @@ class Files
 
 			ci()->file_m->delete($id);
 
-			self::_unlink_file($file);
+			self::$path =  self::$path . date('Y/m', $file->date_added) . '/';
+			
+			self::_unlink_file($file, self::$path);
 
 			return self::result(true, lang('files:item_deleted'), $file->name);
 		}
@@ -1343,7 +1365,7 @@ class Files
 	 * @return	bool
 	 *
 	**/
-	private static function _unlink_file($file)
+	private static function _unlink_file($file, $path = false)
 	{
 		if( ! isset($file->filename) )
 		{
@@ -1352,7 +1374,7 @@ class Files
 
 		if ($file->location === 'local')
 		{
-			@unlink(self::$path.$file->filename);
+			@unlink(($path ? $path : self::$path).$file->filename);
 		}
 		else
 		{
