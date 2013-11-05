@@ -89,4 +89,11 @@ $lang['cp:update_shortcuts_order_success_message']    = 'Panels position saved s
 $lang['cp:update_user_shortcuts_success_message']    = 'Panels position saved successfully.'; 
 $lang['cp:update_user_shortcuts_error_message']    = 'An error occurred while trying to save the position of the panels.'; 
 
+// Analytics
+$lang['cp:analytic_browsers'] = 'Used Browsers';
+$lang['cp:analytic_systems'] = 'Operating Systems';
+$lang['cp:analytic_avgtimeonsite'] = 'Average Duration of Visits';
+$lang['cp:analytic_visits_and_views'] = 'Visits and Page Views';
+$lang['cp:analytic_average_time'] = 'Average Time';
+
 /* End of file admin_lang.php */

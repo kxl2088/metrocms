@@ -35,7 +35,8 @@ class Module_Blog extends Module
 			'menu' => 'content',
 
 			'roles' => array(
-				'put_live', 'edit_live', 'delete_live'
+				'put_live', 'edit_live', 'delete_live',
+				'admin_blog_fields'
 			),
 
 			'sections' => array(

@@ -92,4 +92,11 @@ $lang['cp:update_shortcuts_order_success_message']    = 'Posição dos painéis 
 $lang['cp:update_user_shortcuts_success_message']    = 'Posição dos painéis salva com sucesso.'; 
 $lang['cp:update_user_shortcuts_error_message']    = 'Ocorreu um erro ao tentar salvar a posição dos painéis.'; 
 
+// Analytics
+$lang['cp:analytic_browsers'] = 'Navegadores Utilizados';
+$lang['cp:analytic_systems'] = 'Sistemas Operacionais';
+$lang['cp:analytic_avgtimeonsite'] = 'Duração Média de Visitas';
+$lang['cp:analytic_visits_and_views'] = 'Visitas e Visualizações de Páginas';
+$lang['cp:analytic_average_time'] = 'Tempo Médio';
+
 /* End of file admin_lang.php */

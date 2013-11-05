@@ -267,8 +267,6 @@ class Files_front extends Public_Controller
                             ->join('file_folders', 'file_folders.id = files.folder_id')
                             ->get_by('files.filename', $id);
                 }
-
-		$this->_path = $this->_path . date('Y/m', $file->date_added) . '/';
 		
 		// it is a cloud file, we will return the thumbnail made when it was uploaded
 		if ($file and $file->location !== 'local')

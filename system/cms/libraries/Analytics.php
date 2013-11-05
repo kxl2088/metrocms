@@ -493,6 +493,19 @@ class Analytics {
 	}
 
 	/**
+	 * Get pageviews for given period
+	 *
+	 */
+	public function getAvgTimeOnSite()
+	{
+		return $this->getData(array(
+			'dimensions' => 'ga:date',
+			'metrics' => 'ga:avgTimeOnSite',
+			'sort' => 'ga:date'
+		));
+	}
+	
+	/**
 	 * Get visitors per hour for given period
 	 *
 	 */

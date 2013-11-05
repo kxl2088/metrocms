@@ -75,14 +75,9 @@ class Theme_Metrocms extends Theme {
 			{
 				$data['analytic_visits'] = $cached_response['analytic_visits'];
 				$data['analytic_views'] = $cached_response['analytic_views'];
-				$data['analytic_visits'] = $cached_response['analytic_visits'];
-				$data['analytic_views'] = $cached_response['analytic_views'];
-				$data['analytic_timeonsite'] = $cached_response['analytic_timeonsite'];
-				$data['analytic_visitsperhour'] = $cached_response['analytic_visitsperhour'];
+				$data['analytic_avgtimeonsite'] = $cached_response['analytic_avgtimeonsite'];
 				$data['analytic_browsers'] = $cached_response['analytic_browsers'];
-				$data['analytic_os'] = $cached_response['analytic_os'];
-				$data['analytic_refers'] = $cached_response['analytic_refers'];
-				$data['analytic_keywords'] = $cached_response['analytic_keywords'];
+				$data['analytic_systems'] = $cached_response['analytic_systems'];
 			}
 			else
 			{
@@ -103,14 +98,11 @@ class Theme_Metrocms extends Theme {
 
 					$visits = $this->analytics->getVisitors();
 					$views = $this->analytics->getPageviews();
-					$timeonsite = $this->analytics->getTimeOnSite();
-					$visitsperhour = $this->analytics->getVisitsPerHour();
+					$avgtimeonsite = $this->analytics->getAvgTimeOnSite();
 					$browsers = $this->analytics->getBrowsers();
-					$os = $this->analytics->getOperatingSystem();
-					$refers = $this->analytics->getReferrers();
-					$searchwords = $this->analytics->getSearchWords();
+					$os = $this->analytics->getOperatingSystem();					
 					
-					/* build tables */
+					/* build visits and page views */
 					if (count($visits))
 					{
 						foreach ($visits as $date => $visit)
@@ -128,26 +120,71 @@ class Theme_Metrocms extends Theme {
 						$flot_data_visits = '[' . implode(',', $flot_datas_visits) . ']';
 						$flot_data_views = '[' . implode(',', $flot_datas_views) . ']';
 					}
+					
+					/* build visits per hour */
+					if(count($avgtimeonsite))
+					{
+						foreach($avgtimeonsite as $date => $value)
+						{
+						    $year = substr($date, 0, 4);
+						    $month = substr($date, 4, 2);
+						    $day = substr($date, 6, 2);
+						    
+						    $utc = mktime(date('h') + 1, null, null, $month, $day, $year) * 1000;
+						    
+						    $value = round($value) * 1000;
+						    						    
+						    $flot_data_avgtimeonsite[] = '[' . $utc . ',' . $value . ']';
+						}
+						
+						$flot_data_avgtimeonsite = '[' . implode(',', $flot_data_avgtimeonsite) . ']';
+					}
+					
+					/* build browsers */
+					if( count($browsers))
+					{
+					    
+						$sum = [];
+						foreach($browsers as $item => $value) {
+							preg_match('/(.+) Version/', $item, $results);
+							$browser = $results[1];
+							$sum[$browser] = isset($sum[$browser]) ? $sum[$browser] + $value : $value;
+						}
 
+						$flot_data_browsers = "[ ";
+						foreach($sum as $browser => $value)
+						{
+						    $flot_data_browsers .= '{ label: "' . $browser . '", data: ' . (int)$value . '},';
+						}
+						$flot_data_browsers = substr($flot_data_browsers, 0, (strlen($flot_data_browsers)-1));
+						$flot_data_browsers = $flot_data_browsers . "]";
+					}
+					
+					/* build operating systems */
+					if(count($os))
+					{
+						$flot_data_os = "[ ";
+						foreach($os as $system => $value)
+						{
+						    $flot_data_os .= '{ label: "' . $system . '", data: ' . (int)$value . '},';
+						}
+						$flot_data_os = substr($flot_data_os, 0, (strlen($flot_data_os)-1));
+						$flot_data_os = $flot_data_os . "]";
+					}
+											
 					$data['analytic_visits'] = $flot_data_visits;
 					$data['analytic_views'] = $flot_data_views;
-					$data['analytic_timeonsite'] = $timeonsite;
-					$data['analytic_visitsperhour'] = $visitsperhour;
-					$data['analytic_browsers'] = $browsers;
-					$data['analytic_os'] = $os;
-					$data['analytic_refers'] = $refers;
-					$data['analytic_keywords'] = $searchwords;
+					$data['analytic_avgtimeonsite'] = $flot_data_avgtimeonsite;
+					$data['analytic_browsers'] = $flot_data_browsers;
+					$data['analytic_systems'] = $flot_data_os;
 
 					// Call the model or library with the method provided and the same arguments
 					$this->metrocache->write(array(
 						'analytic_visits' => $flot_data_visits, 
 						'analytic_views' => $flot_data_views,
-						'analytic_timeonsite' => $timeonsite,
-						'analytic_visitsperhour' => $visitsperhour,
-						'analytic_browsers' => $browsers,
-						'analytic_os' => $os,
-						'analytic_refers' => $refers,
-						'analytic_keywords' => $searchwords
+						'analytic_avgtimeonsite' => $flot_data_avgtimeonsite,
+						'analytic_browsers' => $flot_data_browsers,
+						'analytic_systems' => $flot_data_os,
 					), 'analytics', 60 * 60 * 6); // 6 hours
 				}
 

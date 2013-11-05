@@ -15,7 +15,7 @@ class Files
 	public		static $max_size_possible;
 	public		static $max_size_allowed;
 	protected	static $_cache_path;
-	protected 	static $_ext;
+	protected 	static $_ext = '*';
 	protected	static $_type = '';
 	protected	static $_filename = null;
 	protected	static $_mimetype;
@@ -358,7 +358,7 @@ class Files
 		session_write_close();
 
 		$folder = ci()->file_folders_m->get($folder_id);
-
+					
 		if ($folder)
 		{
 			ci()->load->library('upload');
@@ -367,24 +367,27 @@ class Files
 			
 			if( !is_dir(self::$path) )
 			{			    
-			    if( !mkdir( self::$path, DIR_WRITE_MODE, true) )
+			    if( !mkdir( self::$path, DIR_WRITE_MODE, TRUE) )
 			    {
-				die(json_encode(array('status' => false, 'message' => 'Error while create directory!', 'data' => null)));
+				die(json_encode(array('status' => FALSE, 'message' => 'Error while create directory!', 'data' => NULL)));
 			    }	    
 			    write_file(self::$path .'index.html', '');			    
 			}
 			
 			$upload_config = array(
 				'upload_path'	=> self::$path,
-				'file_name'		=> $replace_file ? $replace_file->filename : self::$_filename,
+				'file_name'	=> $replace_file ? $replace_file->filename : self::$_filename,
 				// if we want to replace a file, the file name should already be encrypted, the option was true then
-				'encrypt_name'	=> (config_item('files:encrypt_filename') && ! $replace_file) ? TRUE : FALSE
+				'encrypt_name'	=> (config_item('files:encrypt_filename') && ! $replace_file) ? TRUE : FALSE,
+				'max_size' => ci()->settings->get('files_upload_limit') * 1024,
+				'file_ext_tolower' => TRUE,
+				'overwrite'	=> $replace_file ? TRUE : FALSE
 			);
 
 			// If we don't have allowed types set, we'll set it to the
 			// current file's type.
-			$upload_config['allowed_types'] = ($allowed_types) ? $allowed_types : '*';
-
+			$upload_config['allowed_types'] = ($allowed_types) ? $allowed_types : self::$_ext;
+			
 			ci()->upload->initialize($upload_config);
 
 			if (ci()->upload->do_upload($field))
@@ -1308,7 +1311,7 @@ class Files
 				if (in_array(strtolower($ext), $ext_arr))
 				{
 					self::$_type		= $type;
-					self::$_ext			= implode('|', $ext_arr);
+					self::$_ext		= implode('|', $ext_arr);
 					self::$_filename	= trim(url_title($_FILES[$field]['name'], 'dash', true), '-');
 
 					break;
@@ -1349,7 +1352,7 @@ class Files
 			if (in_array(strtolower($ext), $ext_arr))
 			{
 				self::$_type		= $type;
-				self::$_ext			= '.'.$ext;
+				self::$_ext		= '.'.$ext;
 				self::$_filename	= $filename;
 				self::$_mimetype	= get_mime_by_extension($filename);
 
