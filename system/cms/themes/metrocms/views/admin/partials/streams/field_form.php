@@ -89,10 +89,9 @@
                                         endif;
 
                                 ?>
-
                                 <div class="control-group">
                                         <label class="control-label" for="field_type"><?php echo lang('streams:label.field_type'); ?> <span>*</span></label>
-                                        <div class="input controls"><?php echo ($current_field->is_locked == 'no' || $this->method == 'create') ? form_dropdown('field_type', $field_types, $field->field_type, 'data-placeholder="'.lang('streams:choose_a_field_type').'" id="field_type"') : form_hidden('field_type', $field->field_type) . '<em>' . $field_types[$field->field_type] . '</em>'; ?></div>
+                                        <div class="input controls"><?php echo (!$current_field->is_locked || $current_field->is_locked == 'no') ? form_dropdown('field_type', $field_types, $field->field_type, 'data-placeholder="'.lang('streams:choose_a_field_type').'" id="field_type"') : form_hidden('field_type', $field->field_type) . '<em>' . $field_types[$field->field_type] . '</em>'; ?></div>
                                 </div>
 
                                 <div id="parameters" class="form_parameters" style="<?php if($current_field->is_locked && $current_field->is_locked == 'yes'): ?>display: none;<?php endif; ?>">

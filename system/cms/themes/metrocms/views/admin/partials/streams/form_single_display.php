@@ -7,6 +7,6 @@
 		<?php endif; ?>
 		</label>
 
-		<div class="input controls"><?php echo $field['input']; ?></div>
+		<div class="input controls skip"><?php echo $field['input']; ?></div>
 
 	</div>

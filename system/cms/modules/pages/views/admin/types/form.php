@@ -106,7 +106,7 @@
                                                                     <div class="control-group">
                                                                             <label class="control-label" for="html_editor"><?php echo lang('page_types:layout'); ?> <span>*</span></label>
                                                                             <div class="input controls">
-                                                                            <?php echo form_textarea(array('id'=>'html_editor', 'name'=>'body', 'value' => ($page_type->body == '' ? '<h2>{{ title }}</h2>' : $page_type->body), 'rows' => 30)); ?></div>
+                                                                            <?php echo form_textarea(array('id'=>'html_editor', 'class' => 'html_editor', 'name'=>'body','rows' => 30), ($page_type->body == '' ? '<h2>{{ title }}</h2>' : htmlentities($page_type->body))); ?></div>
                                                                     </div>
                                                             
 

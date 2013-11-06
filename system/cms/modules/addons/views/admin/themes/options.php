@@ -42,8 +42,8 @@
 <script type="text/javascript">
 	(function($) {
 		$(function() {
-			$('.colour-picker').miniColors({
-				letterCase: 'uppercase',
+			$('.colour-picker').colorpicker({
+				 format: 'hex'
 			});
 		});
 	})(jQuery);

@@ -32,11 +32,11 @@ class Admin_types extends Admin_Controller
 			'label' => 'lang:global:slug',
 			'rules' => 'trim|required|alpha_dot_dash|max_length[60]|callback__check_pt_slug'
 		),
-        array(
-             'field' => 'description',
-             'label' => 'lang:global:description',
-             'rules' => 'trim'
-        ),
+		array(
+		     'field' => 'description',
+		     'label' => 'lang:global:description',
+		     'rules' => 'trim'
+		),
 		array(
 			'field' => 'stream_id',
 			'label' => 'lang:page_types:select_stream',
@@ -196,7 +196,7 @@ class Admin_types extends Admin_Controller
 				//'meta_keywords' 	=> isset($input['meta_keywords']) ? $this->keywords->process($input['meta_keywords']) : '',
 				'meta_description' 	=> isset($input['meta_description']) ? $input['meta_description'] : null,
 				'theme_layout' 		=> $input['theme_layout'],
-				'body' 				=> ($input['body'] ? $input['body'] : false),
+				'body' 				=> ($input['body'] ? html_entity_decode ($input['body']) : false),
 				'css' 				=> $input['css'],
 				'js' 				=> $input['js'],
 				'content_label'		=> $this->input->post('content_label'),
@@ -444,7 +444,6 @@ class Admin_types extends Admin_Controller
 				'confirm'   => true,
 			)
 		);
-
 
 		// Show our fields list.
 		$this->streams->cp->assignments_table($stream->stream_slug, $stream->stream_namespace, Settings::get('records_per_page'), 'admin/pages/types/fields/'.$page_type->id, true, $extra);

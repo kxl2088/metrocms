@@ -10,3 +10,6 @@ $lang['streams:image.need_folder']		= 'Você precisa definir uma pasta de upload
 $lang['streams:image.keep_ratio'] 		= 'Manter Proporções';
 $lang['streams:image.keep_ratio_instr']		= 'Deseja manter as proporções da imagem quando ela for redimensionada?';
 $lang['streams:image.allowed_types_instr'] 	= 'Ex: jpg|jpeg|png';
+$lang['streams:image.select_image'] 		= 'Selecionar Imagem';
+$lang['streams:image.change']			= 'Alterar';
+$lang['streams:image.remove']			= 'Remover';

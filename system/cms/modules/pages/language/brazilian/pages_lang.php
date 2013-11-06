@@ -51,6 +51,7 @@ $lang['pages:edit_title']               = 'Editar página "%s"';
 $lang['pages:list_title']               = 'Listar páginas';
 $lang['pages:types_create_title']       = 'Adicionar página de layout';
 $lang['pages:types_list_title']         = 'Listar páginas de layout'; 
+$lang['pages:choose_type_title']        = 'Que tipo de página você deseja criar?';
 
 // messages
 $lang['pages:no_pages']                 = 'Nenhuma página encontrada.';

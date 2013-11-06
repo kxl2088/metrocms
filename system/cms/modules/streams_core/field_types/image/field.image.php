@@ -12,18 +12,12 @@
 class Field_image
 {
 	public $field_type_slug			= 'image';
-
-	// Files are saved as 15 character strings.
-	public $db_col_type				= 'char';
+	public $db_col_type			= 'char';
 	public $col_constraint 			= 15;
-
 	public $custom_parameters		= array('folder', 'resize_width', 'resize_height', 'keep_ratio', 'allowed_types');
-
-	public $version					= '1.3.0';
-
-	public $author					= array('name' => 'Parse19', 'url' => 'http://parse19.com');
-
-	public $input_is_file			= true;
+	public $version				= '1.3.0';
+	public $author				= array('name' => 'Parse19', 'url' => 'http://parse19.com');
+	public $input_is_file			= TRUE;
 
 	// --------------------------------------------------------------------------
 
@@ -32,13 +26,6 @@ class Field_image
 		get_instance()->load->library('image_lib');
 	}
 
-	// --------------------------------------------------------------------------
-        
-	public function event()
-	{
-		$this->CI->type->add_js('image', 'imagefield.js');
-		$this->CI->type->add_css('image', 'imagefield.css');		
-	}
 	/**
 	 * Output form input
 	 *
@@ -46,28 +33,37 @@ class Field_image
 	 * @param	array
 	 * @return	string
 	 */
-	public function form_output($params)
+	public function form_output($data, $entry_id, $field)
 	{
 		$this->CI->load->config('files/files');
-
-                $file = $this->CI->db->where('id', $params['value'])
-                                     ->get('files')
-                                     ->row();
-		$out = '';
+		
+		$html = "<div class=\"fileupload fileupload-new\" data-provides=\"fileupload\">\n";
+		
 		// if there is content and it is not dummy or cleared
-		if ($params['value'] and $params['value'] != null and $file)
-		{                        
-			$out .= '<span class="image_remove" data-name="'.$params['form_slug'].'" id="'.$params['form_slug'].'">X</span><a class="image_link colorbox" href="'.file_path($params['value'], true).'" title="'.$file->name.'" id="'.$params['form_slug'].'_preview"><img src="'.site_url('files/thumb/'.$params['value']).'" /><br /></a>';
-			$out .= form_hidden($params['form_slug'], $params['value'], 'id="'.$params['form_slug'].'_hidden"');
+		if ($data['value'] and $data['value'] != 'dummy')
+		{   
+			$html .= "\t<div class=\"fileupload-new thumbnail\" style=\"width: 200px; height: 150px;\">\n";
+			$html .= "\t\t<img src=\"".site_url('files/thumb/'.$data['value'].'/200/150/fit')."\" alt=\"\"/>\n\t\t";
+			$html .= form_input(array('name' => $data['form_slug'], 'type' => 'hidden', 'value' => $data['value'], 'id' => $data['form_slug'].'_hidden"'));
+			$html .= "\n\t</div>\n";		    
 		}
 		else
 		{
-			$out .= form_hidden($params['form_slug'], '', 'id="'.$params['form_slug'].'_hidden"');
+			$html .= "\t<div class=\"fileupload-new thumbnail\" style=\"width: 200px; height: 150px;\">\n";
+			$html .= "\t\t<img src=\"". Asset::get_filepath_img('bg_grain@2x.png', true)."\" style=\"width: 200px; height: 150px;\" alt=\"\"/>\n\t\t";
+			$html .= form_input(array('name' => $data['form_slug'], 'type' => 'hidden', 'id' => $data['form_slug'].'_hidden"'), 'dummy');
+			$html .= "\n\t</div>\n";			
 		}
+		
+		$options['name'] 	= $data['form_slug'].'_file';
+		
+		$html .= "\n\t<div class=\"fileupload-preview fileupload-exists thumbnail\" style=\"max-width: 200px; max-height: 150px; line-height: 20px;\"></div>\n";
+		$html .= "\t<div> <span class=\"btn btn-primary btn-file\"><span class=\"fileupload-new\">".lang('streams:image.select_image')."</span><span class=\"fileupload-exists\">".lang('streams:image.change')."</span>\n\t\t";
+		$html .= form_upload($options, '', 'id="'.$data['form_slug'].'_file"');
+		$html .= "\n\t\t</span><a href=\"#\" class=\"btn btn-danger fileupload-exists\" data-dismiss=\"fileupload\">".lang('streams:image.remove')."</a> </div>\n";
+		$html .= "</div>";
 
-		$options['name'] 	= $params['form_slug'].'_file';
-
-		return $out .= form_upload($options, '', 'id="'.$params['form_slug'].'_file"');
+		return $html;
 	}
 
 	// --------------------------------------------------------------------------
@@ -85,9 +81,11 @@ class Field_image
 		// If we do not have a file that is being submitted. If we do not,
 		// it could be the case that we already have one, in which case just
 		// return the numeric file record value.
-            
+
 		if ( ! isset($_FILES[$field->field_slug.'_file']['name']) or ! $_FILES[$field->field_slug.'_file']['name'])
 		{
+			
+			
 			// allow dummy as a reset
 			if (isset($form_data[$field->field_slug]) and $form_data[$field->field_slug])
 			{

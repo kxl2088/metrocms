@@ -70,6 +70,7 @@ $config['allowed_functions']	=	array(
         'form_error',
         'validation_errors',
         'prepare_intro',
+        'avatar'
 	);
 
 /* End of file parser.php */

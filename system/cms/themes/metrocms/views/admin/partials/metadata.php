@@ -25,6 +25,7 @@
         <script type="text/javascript" src="<?php echo Asset::get_filepath_js('jquery/bootstrap.min.js', TRUE); ?>"></script>
         <script type="text/javascript" src="<?php echo Asset::get_filepath_js('jquery/bootstrap-fileupload.min.js', TRUE); ?>"></script>
         <script type="text/javascript" src="<?php echo Asset::get_filepath_js('jquery/bootstrap-datetimepicker.min.js', TRUE); ?>"></script>  
+	<script type="text/javascript" src="<?php echo Asset::get_filepath_js('jquery/bootstrap-colorpicker.min.js', TRUE); ?>"></script>  
         <!-- Ace Builder -->
         <script type="text/javascript" src="<?php echo Asset::get_filepath_js('ace/ace.js', TRUE); ?>"></script>
         <script type="text/javascript" src="<?php echo Asset::get_filepath_js('ace/config.js', TRUE); ?>"></script>

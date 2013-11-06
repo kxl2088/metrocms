@@ -25,6 +25,12 @@ class Field_file
 
 	public $input_is_file			= true;
 
+	public function event()
+	{
+	    	$this->CI->type->add_js('file', 'filefield.js');
+		$this->CI->type->add_css('file', 'filefield.css');
+	}
+	
 	// --------------------------------------------------------------------------
 
 	/**
@@ -69,13 +75,17 @@ class Field_file
 			$out .= form_hidden($params['form_slug'], 'dummy');
 		}
 
-		$options['name'] 	= $params['form_slug'];
 		$options['name'] 	= $params['form_slug'].'_file';
+		
+		$out .= '<div class="fileupload fileupload-new" data-provides="fileupload">';
+		$out .= '<div class="input-append">';
+		$out .= '<div class="uneditable-input span3"> <i class="icon-file fileupload-exists"></i><span class="fileupload-preview"></span> </div>';
+		$out .= '<span class="btn btn-primary btn-file"><span class="fileupload-new">'.lang('streams:file.select_file').'</span><span class="fileupload-exists">'.lang('streams:file.change').'</span>';
+		$out .= form_upload($options);
+		$out .= '</span><a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">'.lang('global:delete').'</a> </div>';
+		$out .= '</div>';
 
-		$this->CI->type->add_js('file', 'filefield.js');
-		$this->CI->type->add_css('file', 'filefield.css');
-
-		return $out .= form_upload($options);
+		return $out;
 	}
 
 	// --------------------------------------------------------------------------

@@ -24,6 +24,13 @@ $(document).ready(function() {
 	    return false;
 	});
 
+	/*====Color Picker====*/
+	$('.colorpicker, #colorpicker').colorpicker();
+	 
+	$('.hexpicker, #hexpicker').colorpicker({
+            format: 'hex'
+        });
+	
         // Is Mobile?
 	metro.is_mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
         
