@@ -1,7 +1,5 @@
 # MetroCMS Community Edition
 
-[![Build Status](https://travis-ci.org/fabriciojbo/metrocms.png?branch=1.0.2)](https://travis-ci.org/fabriciojbo/metrocms)
-
 * [Website](http://fabriciojbo.github.io/metrocms)
 * Version: 1.0.2
 
