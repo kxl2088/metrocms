@@ -20,21 +20,21 @@ class TestInstallerValidDbCreds extends PHPUnit_Framework_TestCase
 
     /** 
      * @test
-     * Given a fresh Pyro install
+     * Given a fresh Metro install
      * When a user provides valid db auth credentials
      * Then the install should authenticate that db user and continue
      */
     public function DatabaseAuthenticationWithValidCreds()
     {
         $formFields = array(
-            'hostname'=>PYRO_DB_HOST,
+            'hostname'=>METRO_DB_HOST,
             'username'=>'metrocms',
             'password'=>'password',
             'create_db'=>'true',
             'database'=>'metrocms'
         );
-        $crawler = $this->client->request('GET', 'http://'.PYRO_HOST);
-        $this->assertEquals($crawler->filter('title')->text(),'PyroCMS Installer');
+        $crawler = $this->client->request('GET', 'http://'.METRO_HOST);
+        $this->assertEquals($crawler->filter('title')->text(),'MetroCMS Installer');
         $link = $crawler->selectLink('Step #1')->link();
         $crawler = $this->client->click($link);
         $form = $crawler->selectButton('Step #2')->form();

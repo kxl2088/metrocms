@@ -144,7 +144,7 @@ class Theme_Metrocms extends Theme {
 					if( count($browsers))
 					{
 					    
-						$sum = [];
+						$sum = array();
 						foreach($browsers as $item => $value) {
 							preg_match('/(.+) Version/', $item, $results);
 							$browser = $results[1];

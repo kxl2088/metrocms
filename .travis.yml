@@ -1,7 +1,7 @@
 language: php
 php:
-  - "5.3.3"
-  - "5.4"
+  - "5.3.27"
+  - "5.4.21"
 before_script:
   - "sudo chmod -R 777  ."
   - "sudo apt-get update"
@@ -19,5 +19,4 @@ script: phpunit -c tests/integration
 
 branches:
   exclude:
-    - 1.0.3/develop
-    - 1.0.2/master
+    - master

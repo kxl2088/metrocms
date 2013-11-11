@@ -154,5 +154,5 @@ Not sure yet, needs to handle:
 I don't have a clue how this will work.
 
 Needs to be able to handle packages
-that are used multiple times within the application (i.e. EE/Pyro modules)
+that are used multiple times within the application (i.e. EE/Metro modules)
 as well as packages that are used by multiple applications (library distributions)

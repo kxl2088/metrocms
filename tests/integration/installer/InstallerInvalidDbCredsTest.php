@@ -20,16 +20,16 @@ class TestInstallerInvalidDbCreds extends PHPUnit_Framework_Testcase
     }
     /**
      * @test
-     * Given a fresh Pyro install
+     * Given a fresh Metro install
      * When a user provides invalid db credentials
      * Then the install should error and halt
      */
     public function InstallWithInvalidDBCredentials()
     {
-        $crawler = $this->client->request('GET', 'http://'.PYRO_HOST);
+        $crawler = $this->client->request('GET', 'http://'.METRO_HOST);
         $link = $crawler->selectLink('Step #1')->link();
         $crawler = $this->client->click($link);
-        $this->assertEquals($crawler->filter('title')->text(),'PyroCMS Installer');
+        $this->assertEquals($crawler->filter('title')->text(),'MetroCMS Installer');
         $form = $crawler->selectButton('Step #2')->form();
         $crawler = $this->client->submit($form, array(
             'username'=>'test',
@@ -47,10 +47,10 @@ class TestInstallerInvalidDbCreds extends PHPUnit_Framework_Testcase
      */
      public function InstallWithMissingDB()
      {
-        $crawler = $this->client->request('GET', 'http://'.PYRO_HOST);
+        $crawler = $this->client->request('GET', 'http://'.METRO_HOST);
         $link = $crawler->selectLink('Step #1')->link();
         $crawler = $this->client->click($link);
-        $this->assertEquals($crawler->filter('title')->text(),'PyroCMS Installer');
+        $this->assertEquals($crawler->filter('title')->text(),'MetroCMS Installer');
         $form = $crawler->selectButton('Step #2')->form();
         $crawler = $this->client->submit($form,array(
             'username'=>'metrocms',

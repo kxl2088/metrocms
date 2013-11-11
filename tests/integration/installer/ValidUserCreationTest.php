@@ -17,7 +17,7 @@ class CreateValidUserTest extends PHPUnit_Framework_TestCase
 
     public function navigateToStepFour()
     {
-        $crawler = $this->client->request('GET', 'http://'.PYRO_HOST);
+        $crawler = $this->client->request('GET', 'http://'.METRO_HOST);
 
         $link = $crawler->selectLink('Step #1')->link();
         $crawler = $this->client->click($link);
@@ -27,7 +27,7 @@ class CreateValidUserTest extends PHPUnit_Framework_TestCase
             'password'=>'password',
             'database'=>'metrocms',
             'create_db'=>'true',
-            'hostname' => PYRO_DB_HOST
+            'hostname' => METRO_DB_HOST
         );
         $crawler = $this->client->submit($form,$formFields);
 
@@ -45,7 +45,7 @@ class CreateValidUserTest extends PHPUnit_Framework_TestCase
         $form = $crawler->selectButton('Install')->form();
         $formFields = array(
             'user_name'=>'admin',
-            'user_firstname'=> 'Pyro',
+            'user_firstname'=> 'Metro',
             'user_lastname' => 'Admin',
             'user_email' => 'admin@admin.com',
             'user_password' => 'administrator'
